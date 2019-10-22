@@ -21,62 +21,11 @@ al
 q0
 v2
 ov
-m-1
+m40
 l2
 r2
 
 # Left window history (oldest to newest):
-d/home/oskar/Kurser/lösningsförslag
-	Envar 1
-1
-d/home/oskar/Kurser
-	lösningsförslag
-5
-d/home/oskar/Kurser/lösningsförslag
-	Vektoranalys
-8
-d/home/oskar/Kurser/lösningsförslag/Vektoranalys
-	lösningsförslag+vektoranalys.pdf
-3
-d/home/oskar/Kurser/lösningsförslag
-	Vektoranalys
-8
-d/home/oskar/Kurser
-	lösningsförslag
-5
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	git_school
-2
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	magpi.pdf
-6
-d/home/oskar
-	Kurser
-4
-d/home/oskar/Kurser
-	TATA24
-2
-d/home/oskar/Kurser/TATA24
-	..
-0
-d/home/oskar/Kurser
-	TATA24
-2
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	magpi.pdf
-7
-d/home/oskar
-	Documents
-2
 d/home/oskar/Documents
 	git_school
 2
@@ -324,8 +273,59 @@ d/home/oskar
 	Desktop
 1
 d/home/oskar/Desktop
-	cookie_test.json
-3
+	classic
+2
+d/home/oskar
+	Kurser
+4
+d/home
+	oskar
+2
+d/home/oskar
+	Public
+7
+d/home/oskar/Public
+	..
+0
+d/home/oskar
+	Kurser
+4
+d/home
+	oskar
+2
+d/home/oskar
+	dotfiles
+11
+d/home/oskar/dotfiles
+	bash
+1
+d/home/oskar/dotfiles/bash
+	..
+0
+d/home/oskar/dotfiles
+	vifm
+4
+d/home/oskar/dotfiles/vifm
+	..
+0
+d/home/oskar/dotfiles
+	vifm
+4
+d/home/oskar/dotfiles/vifm
+	..
+0
+d/home/oskar/dotfiles
+	..
+0
+d/home/oskar
+	Desktop
+1
+d/home/oskar/Desktop
+	classic
+2
+d/home/oskar
+	Desktop
+1
 d
 
 # Right window history (oldest to newest):
@@ -336,8 +336,14 @@ D/home
 	lost+found
 1
 D/
-	etc
-4
+	cdrom
+2
+D/cdrom
+	..
+0
+D/
+	media
+9
 D
 
 # Command line history (oldest to newest):
@@ -347,6 +353,7 @@ D
 :op
 :mkdir TATA24
 :q
+:diff
 
 # Search history (oldest to newest):
 
