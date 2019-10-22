@@ -2,8 +2,14 @@
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-alias matlab="/mnt/40BBB8EC7B78F1B3/linux/matlab/bin/matlab"
 
+# Host specific example
+#if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
+	#echo surface
+#else
+	#echo not_surface
+#fi
+	
 
 set -o vi
 # ~/.bashrc: executed by bash(1) for non-login shells.

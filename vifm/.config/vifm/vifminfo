@@ -21,17 +21,20 @@ al
 q0
 v2
 ov
-m-1
+m40
 l2
 r2
 
 # Left window history (oldest to newest):
+<<<<<<< HEAD
 d/home/oskar/Documents
 	magpi.pdf
 7
 d/home/oskar
 	Documents
 2
+=======
+>>>>>>> e608bc2cefd3d246d44fe8a1ee4f8c0e9c7ad504
 d/home/oskar/Documents
 	git_school
 2
@@ -279,6 +282,7 @@ d/home/oskar
 	Desktop
 1
 d/home/oskar/Desktop
+<<<<<<< HEAD
 	Super pro 280u Windows
 1
 d/home/oskar
@@ -326,6 +330,61 @@ d/home/oskar/Documents
 d/home/oskar/Documents/Genus
 	reflektion.log
 4
+=======
+	classic
+2
+d/home/oskar
+	Kurser
+4
+d/home
+	oskar
+2
+d/home/oskar
+	Public
+7
+d/home/oskar/Public
+	..
+0
+d/home/oskar
+	Kurser
+4
+d/home
+	oskar
+2
+d/home/oskar
+	dotfiles
+11
+d/home/oskar/dotfiles
+	bash
+1
+d/home/oskar/dotfiles/bash
+	..
+0
+d/home/oskar/dotfiles
+	vifm
+4
+d/home/oskar/dotfiles/vifm
+	..
+0
+d/home/oskar/dotfiles
+	vifm
+4
+d/home/oskar/dotfiles/vifm
+	..
+0
+d/home/oskar/dotfiles
+	..
+0
+d/home/oskar
+	Desktop
+1
+d/home/oskar/Desktop
+	classic
+2
+d/home/oskar
+	Desktop
+1
+>>>>>>> e608bc2cefd3d246d44fe8a1ee4f8c0e9c7ad504
 d
 
 # Right window history (oldest to newest):
@@ -336,8 +395,14 @@ D/home
 	lost+found
 1
 D/
-	etc
-4
+	cdrom
+2
+D/cdrom
+	..
+0
+D/
+	media
+9
 D
 
 # Command line history (oldest to newest):
@@ -347,6 +412,7 @@ D
 :op
 :mkdir TATA24
 :q
+:diff
 
 # Search history (oldest to newest):
 
