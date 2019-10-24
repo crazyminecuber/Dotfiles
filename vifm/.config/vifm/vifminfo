@@ -20,60 +20,78 @@
 al
 q0
 v2
-ov
-m40
+oh
+m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-<<<<<<< HEAD
-d/home/oskar/Documents
-	magpi.pdf
-7
-d/home/oskar
-	Documents
-2
-=======
->>>>>>> e608bc2cefd3d246d44fe8a1ee4f8c0e9c7ad504
-d/home/oskar/Documents
-	git_school
-2
-d/home/oskar
-	Kurser
-4
-d/home/oskar/Kurser
-	TATA44
+d/usr/share/icons/hicolor/scalable
+	apps
 3
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	latex
+d/usr/share/icons/hicolor
+	512x512
+15
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor/512x512/apps
+	..
+0
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor
+	..
+0
+d/usr/share/icons
+	hicolor
+11
+d/usr/share
+	icons
+13
+d/usr/share/icons
+	hicolor
+11
+d/usr/share/icons/hicolor
+	512x512
+13
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor/512x512/apps
+	org.gnome.Nautilus.png
 4
-d/home/oskar
-	Desktop
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor
+	scalable
+14
+d/usr/share/icons/hicolor/scalable
+	apps
+3
+d/usr/share/icons/hicolor/scalable/apps
+	Alecive-Flatwoken-Apps-Matlab.svg
 1
-d/home/oskar/Desktop
+d/usr/share/icons/hicolor/scalable
 	..
 0
-d/home/oskar
-	Kurser
-4
-d/home/oskar/Kurser
-	TATA44
-3
-d/home/oskar
-	Pictures
-6
-d/home/oskar/Pictures
-	..
-0
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	latex
-4
+d/usr/share/icons/hicolor
+	scalable
+14
+d/usr/share/icons
+	hicolor
+11
+d/usr/share
+	icons
+13
+d/usr
+	share
+7
+d/
+	usr
+13
 d/home/oskar
 	Kurser
 4
@@ -81,310 +99,233 @@ d/home/oskar/Kurser
 	TANA21
 1
 d/home/oskar/Kurser/TANA21
-	2019-09-02-Lecture-10-15.xopp~
+	lisam
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	09_Lecture
+9
+d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
+	09_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	02_Lecture
 2
+d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
+	02_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	02_Lecture
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
+	02_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	03_Lecture
+3
+d/home/oskar/Kurser/TANA21/lisam/Lectures/03_Lecture
+	03_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	04_Lecture
+4
+d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
+	04_script.pdf
+1
+d/home/oskar
+	..
+0
+d/home
+	oskar
+2
+d/home/oskar
+	Kurser
+4
+d/home/oskar/Kurser
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	06_Lecture
+6
+d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
+	06_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	06_Lecture
+6
+d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
+	06_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_slides.pdf
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	08_Lecture
+8
+d/home/oskar/Kurser/TANA21/lisam/Lectures/08_Lecture
+	08_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	09_Lecture
+9
+d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
+	09_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	10_Lecture
+10
+d/home/oskar/Kurser/TANA21/lisam/Lectures/10_Lecture
+	10_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_slides.pdf
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	04_Lecture
+4
+d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
+	04_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	..
+0
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
 d/home/oskar/Kurser
 	TANA21
 1
 d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar/Downloads/Project
-	..
-0
-d/home/oskar/Downloads
-	mathexersizes
-2
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Lösningförslag Y.zip
-3
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	reflektion.pdf
-4
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	reflektion.pdf
-4
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	git_uni
-2
-d/home/oskar/Documents/git_uni
-	tana21
-2
-d/home/oskar/Documents/git_uni/tana21
-	06_script.pdf
-2
-d/home/oskar/Documents/git_uni
-	tana21
-2
-d/home/oskar/Documents
-	git_uni
-2
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar/Downloads/Project
-	..
-0
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	MATLAB
-1
-d/home/oskar
 	Kurser
 4
 d/home/oskar/Kurser
-	lösningsförslag
-6
-d/home/oskar/Kurser/lösningsförslag
-	Vågfysik tentor
-10
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
 d/home/oskar/Kurser
-	lösningsförslag
-6
-d/home/oskar/Kurser/lösningsförslag
-	Vektoranalys
-8
-d/home/oskar/Kurser/lösningsförslag/Vektoranalys
-	..
-0
-d/home/oskar/Kurser/lösningsförslag
-	Vektoranalys
-8
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
 d/home/oskar/Kurser
-	lösningsförslag
-6
-d/home/oskar
-	Kurser
-4
+	TATA24
+2
+d/home/oskar/Kurser/TATA24
+	..
+0
 d/home/oskar/Kurser
-	lösningsförslag
-6
-d/home/oskar
-	Downloads
+	TATA44
 3
-d/home/oskar/Downloads
-	Lösningförslag Y.zip
+d/home/oskar/Kurser/TATA44
+	..
+0
+d/home/oskar/Kurser
+	TATA44
 3
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar/Downloads/Project
-	..
-0
-d/home/oskar/Downloads
-	mathexersizes
-2
-d/home/oskar/Downloads/mathexersizes
-	__MACOSX
-11
-d/home/oskar/Downloads/mathexersizes/__MACOSX
-	Envar 2
-1
-d/home/oskar/Downloads/mathexersizes/__MACOSX/Envar 2
-	..
-0
-d/home/oskar/Downloads/mathexersizes/__MACOSX
-	Envar 2
-1
-d/home/oskar/Downloads/mathexersizes
-	Vektoranalys
-8
-d/home/oskar/Downloads
-	mathexersizes
-2
-d/home/oskar
-	Downloads
-3
-d/home/oskar/Downloads
-	Project
-1
-d/home/oskar
-	Downloads
-3
-d/home
-	oskar
-2
-d/
-	home
-5
-d/home
-	oskar
-2
-d/home/oskar
-	Pictures
-6
-d/home/oskar/Pictures
-	..
-0
-d/home/oskar
-	Public
-7
-d/home/oskar/Public
-	..
-0
-d/home/oskar
-	Steam
-8
-d/home/oskar/Steam
-	..
-0
-d/home/oskar
-	Templates
-9
-d/home/oskar/Templates
-	..
-0
-d/home/oskar
-	Unity
-10
-d/home/oskar/Unity
-	..
-0
-d/home/oskar
-	dotfiles
-11
-d/home/oskar/dotfiles
-	..
-0
-d/home/oskar
-	Desktop
-1
-d/home/oskar/Desktop
-<<<<<<< HEAD
-	Super pro 280u Windows
-1
-d/home/oskar
-	Desktop
-1
-d/home/oskar/Desktop
-	Super pro 280u Windows
-1
-d/home/oskar
-	Documents
-2
-d/home/oskar/Documents
-	SwarmController
-6
-d/home/oskar/Documents/SwarmController
-	..
-0
-d/home/oskar/Documents
-	SwarmController
-6
-d/home/oskar/Documents/SwarmController
-	..
-0
-d/home/oskar/Documents
-	MATLAB
-5
-d/home/oskar/Documents/MATLAB
-	..
-0
-d/home/oskar/Documents
-	LTspiceXVII
-4
-d/home/oskar/Documents/LTspiceXVII
-	..
-0
-d/home/oskar/Documents
-	Genus
-3
-d/home/oskar/Documents/Genus
-	..
-0
-d/home/oskar/Documents
-	Genus
-3
-d/home/oskar/Documents/Genus
-	reflektion.log
-4
-=======
-	classic
-2
-d/home/oskar
-	Kurser
-4
-d/home
-	oskar
-2
-d/home/oskar
-	Public
-7
-d/home/oskar/Public
-	..
-0
-d/home/oskar
-	Kurser
-4
-d/home
-	oskar
-2
-d/home/oskar
-	dotfiles
-11
-d/home/oskar/dotfiles
-	bash
-1
-d/home/oskar/dotfiles/bash
-	..
-0
-d/home/oskar/dotfiles
-	vifm
-4
-d/home/oskar/dotfiles/vifm
-	..
-0
-d/home/oskar/dotfiles
-	vifm
-4
-d/home/oskar/dotfiles/vifm
-	..
-0
-d/home/oskar/dotfiles
-	..
-0
-d/home/oskar
-	Desktop
-1
-d/home/oskar/Desktop
-	classic
-2
-d/home/oskar
-	Desktop
-1
->>>>>>> e608bc2cefd3d246d44fe8a1ee4f8c0e9c7ad504
 d
 
 # Right window history (oldest to newest):
@@ -403,25 +344,94 @@ D/cdrom
 D/
 	media
 9
+D/media
+	oskar
+1
+D/
+	media
+9
+D/media
+	oskar
+1
+D/media/oskar
+	..
+0
+D/media
+	oskar
+1
+D/
+	etc
+4
+D/home/oskar
+	git_programs
+12
+D/home/oskar/git_programs
+	qutebrowser
+1
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs/qutebrowser/icons
+	qutebrowser-512x512.png
+9
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs/qutebrowser/icons
+	qutebrowser-all.svg
+10
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs
+	qutebrowser
+1
+D/home/oskar
+	Downloads
+3
+D/home/oskar/Downloads
+	Alecive-Flatwoken-Apps-Matlab.svg
+0
+D/home/oskar
+	Downloads
+0
+D/home
+	oskar
+2
+D/home/oskar
+	Public
+7
 D
 
 # Command line history (oldest to newest):
-:wq
 :open
 :open 2019
 :op
 :mkdir TATA24
-:q
 :diff
+:cd /usr/share/icons/hicolor/scalable/apps/apport.svg
+:resize 20
+:resize
+:registers
+:split 
+:=
+:wq
+:q
+:split
+:split h
+:split ~
 
 # Search history (oldest to newest):
+/ico
+/ic
+/Mat
 
 # Prompt history (oldest to newest):
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/oskar/.local/share/Trash/files/000_classic
+""/home/oskar/Downloads/Alecive-Flatwoken-Apps-Matlab.svg
 
 # Directory stack (oldest to newest):
 
