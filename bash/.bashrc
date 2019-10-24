@@ -9,8 +9,21 @@ export EDITOR="$VISUAL"
 #else
 	#echo not_surface
 #fi
-	
 
+# Make vifm exit on current directory
+
+vicd()
+{
+	echo "something is happening"	
+	local dst="$(command vifm --choose-dir - "$@")"
+    	if [ -z "$dst" ]; then
+		echo 'Directory picking cancelled/failed'
+	return 1
+	fi
+	cd "$dst"
+}
+
+#----------------------------------------------------------------
 set -o vi
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

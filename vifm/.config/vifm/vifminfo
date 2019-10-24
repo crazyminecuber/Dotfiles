@@ -20,12 +20,17 @@
 al
 q0
 v2
+<<<<<<< HEAD
 oh
+=======
+ov
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
+<<<<<<< HEAD
 d/usr/share/icons/hicolor/scalable
 	apps
 3
@@ -296,9 +301,252 @@ d/home/oskar/Kurser/TANA21
 d/home/oskar/Kurser
 	TANA21
 1
+=======
+d/home
+	oskar
+2
 d/home/oskar
-	Kurser
+	Dotfiles
+5
+d/home/oskar/Dotfiles
+	vifm
+5
+d/home/oskar/Dotfiles/vifm
+	.config
+1
+d/home/oskar/Dotfiles/vifm/.config
+	vifm
+1
+d/home/oskar/Dotfiles/vifm/.config/vifm
+	vifmrc
+5
+d/home/oskar/Dotfiles/vifm/.config
+	vifm
+1
+d/home/oskar/Dotfiles/vifm
+	.config
+1
+d/home/oskar/Dotfiles
+	bash
+2
+d/home/oskar/Dotfiles/bash
+	..
+0
+d/home/oskar/Dotfiles
+	bash
+2
+d/home/oskar/Dotfiles/bash
+	..
+0
+d/home/oskar/Dotfiles
+	input
 4
+d/home/oskar/Dotfiles/input
+	..
+0
+d/home/oskar/Dotfiles
+	input
+4
+d/home/oskar
+	Dotfiles
+5
+d/home
+	oskar
+2
+d/home/oskar
+	.mozilla
+6
+d/home/oskar/.mozilla
+	firefox
+2
+d/home/oskar/.mozilla/firefox
+	1k1hslu9.default
+1
+d/home/oskar/.mozilla
+	extensions
+1
+d/home/oskar/.mozilla/extensions
+	..
+0
+d/home/oskar/.mozilla
+	firefox
+2
+d/home/oskar/.mozilla/firefox
+	1k1hslu9.default
+1
+d/home/oskar/.mozilla/firefox/1k1hslu9.default
+	bookmarkbackups
+1
+d/home/oskar/.mozilla/firefox/1k1hslu9.default/bookmarkbackups
+	..
+0
+d/home/oskar/.mozilla/firefox/1k1hslu9.default
+	bookmarkbackups
+1
+d/home/oskar/.mozilla/firefox/1k1hslu9.default/bookmarkbackups
+	..
+0
+d/home/oskar/.mozilla/firefox/1k1hslu9.default
+	bookmarkbackups
+1
+d/home/oskar/.mozilla/firefox
+	1k1hslu9.default
+1
+d/home/oskar/.mozilla
+	firefox
+2
+d/home/oskar
+	.gimp-2.8
+4
+d/home
+	oskar
+2
+d/
+	usr
+16
+d/usr
+	local
+5
+d/usr/local
+	bin
+2
+d/usr/local/bin
+	matlab
+6
+d/usr/local
+	bin
+2
+d/usr
+	local
+5
+d/
+	lib64
+7
+d/home/oskar
+	Documents
+2
+d/home/oskar/Documents
+	EEPROM-programmer
+1
+d/home/oskar
+	git_programs
+14
+d/home/oskar/git_programs
+	qutebrowser
+1
+d/home/oskar/git_programs/qutebrowser
+	.git
+1
+d/home/oskar/git_programs/qutebrowser/.git
+	objects
+5
+d/home/oskar/git_programs/qutebrowser
+	.git
+1
+d/home/oskar/git_programs
+	qutebrowser
+1
+d/home/oskar
+	git_programs
+14
+d/home/oskar/git_programs
+	qutebrowser
+1
+d/home/oskar/git_programs/qutebrowser
+	..
+0
+d/home/oskar/git_programs
+	qutebrowser
+1
+d/home/oskar
+	.config
+4
+d/home/oskar/.config
+	qutebrowser
+8
+d/home/oskar
+	.config
+4
+d/home/oskar/.config
+	qutebrowser
+8
+d/home/oskar/.config/qutebrowser
+	bookmarks
+1
+d/home/oskar/.config/qutebrowser/bookmarks
+	urls
+1
+d/home/oskar/.config/qutebrowser
+	bookmarks
+1
+d/home/oskar/.config
+	qutebrowser
+8
+d/home/oskar/.config/qutebrowser
+	..
+0
+d/home/oskar/.config
+	compton.conf
+42
+d/home/oskar
+	.config
+4
+d/home/oskar/.config
+	ranger
+21
+d/home/oskar
+	Dotfiles
+32
+d/home/oskar/Dotfiles
+	qutebrowser
+5
+d/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+d/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	bookmarks
+1
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
+	..
+0
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	quickmarks
+3
+d/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+d/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+d/home/oskar/Dotfiles
+	qutebrowser
+5
+d/home/oskar
+	.config
+4
+d/home/oskar/.config
+	ranger
+21
+d/home/oskar/.config/ranger
+	..
+0
+d/home/oskar/.config
+	qutebrowser
+20
+d/home/oskar/.config/qutebrowser
+	bookmarks
+1
+d/home/oskar/.config
+	qutebrowser
+16
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
+d/home/oskar
+	.config
+4
+<<<<<<< HEAD
 d/home/oskar/Kurser
 	TANA21
 1
@@ -326,9 +574,71 @@ d/home/oskar/Kurser/TATA44
 d/home/oskar/Kurser
 	TATA44
 3
+=======
+d/home
+	oskar
+2
+d/home/oskar
+	Dotfiles
+3
+d/home/oskar/Dotfiles
+	qutebrowser
+4
+d/home/oskar/Dotfiles/qutebrowser
+	..
+0
+d/home/oskar/Dotfiles
+	qutebrowser
+4
+d/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+d/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	bookmarks
+1
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
+	urls
+1
+d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	quickmarks
+3
+d/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+d/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+d/home/oskar/Dotfiles
+	qutebrowser
+5
+d/home/oskar
+	git_programs
+7
+d/home/oskar/git_programs
+	qutebrowser
+1
+d/home/oskar/git_programs/qutebrowser
+	scripts
+10
+d/home/oskar/git_programs/qutebrowser/scripts
+	importer.py
+10
+d/home/oskar/git_programs/qutebrowser
+	scripts
+10
+d/home/oskar/git_programs/qutebrowser/scripts
+	hist_importer.py
+8
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 d
 
 # Right window history (oldest to newest):
+D/
+	media
+9
 D/home/oskar
 	Documents
 2
@@ -348,6 +658,7 @@ D/media
 	oskar
 1
 D/
+<<<<<<< HEAD
 	media
 9
 D/media
@@ -401,6 +712,31 @@ D/home
 D/home/oskar
 	Public
 7
+=======
+	etc
+4
+D/home/oskar
+	Dotfiles
+10
+D/home/oskar/Dotfiles
+	qutebrowser
+5
+D/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+D/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	bookmarks
+1
+D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
+	urls
+1
+D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
+	bookmarks
+1
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 D
 
 # Command line history (oldest to newest):
@@ -409,6 +745,7 @@ D
 :op
 :mkdir TATA24
 :diff
+<<<<<<< HEAD
 :cd /usr/share/icons/hicolor/scalable/apps/apport.svg
 :resize 20
 :resize
@@ -425,13 +762,31 @@ D
 /ico
 /ic
 /Mat
+=======
+:Q
+:vicd
+:vicd()
+:reload
+:mkdir qutebrowser
+:mkdir .config
+:q
+
+# Search history (oldest to newest):
+/fireqq
+/vim
+/b1b08
+/.con
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Prompt history (oldest to newest):
 
 # Local filter history (oldest to newest):
 
 # Registers:
+<<<<<<< HEAD
 ""/home/oskar/Downloads/Alecive-Flatwoken-Apps-Matlab.svg
+=======
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Directory stack (oldest to newest):
 
@@ -550,10 +905,10 @@ t/home/oskar/.local/share/Trash/000_000_SOR2.pdf
 # State:
 f
 i1
-[.1
+[.0
 [F
 F
 I1
-].1
+].0
 ]F
 s0
