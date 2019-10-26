@@ -20,12 +20,288 @@
 al
 q0
 v2
+<<<<<<< HEAD
+oh
+=======
 ov
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
+<<<<<<< HEAD
+d/usr/share/icons/hicolor/scalable
+	apps
+3
+d/usr/share/icons/hicolor
+	512x512
+15
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor/512x512/apps
+	..
+0
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor
+	..
+0
+d/usr/share/icons
+	hicolor
+11
+d/usr/share
+	icons
+13
+d/usr/share/icons
+	hicolor
+11
+d/usr/share/icons/hicolor
+	512x512
+13
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor/512x512/apps
+	org.gnome.Nautilus.png
+4
+d/usr/share/icons/hicolor/512x512
+	apps
+3
+d/usr/share/icons/hicolor
+	scalable
+14
+d/usr/share/icons/hicolor/scalable
+	apps
+3
+d/usr/share/icons/hicolor/scalable/apps
+	Alecive-Flatwoken-Apps-Matlab.svg
+1
+d/usr/share/icons/hicolor/scalable
+	..
+0
+d/usr/share/icons/hicolor
+	scalable
+14
+d/usr/share/icons
+	hicolor
+11
+d/usr/share
+	icons
+13
+d/usr
+	share
+7
+d/
+	usr
+13
+d/home/oskar
+	Kurser
+4
+d/home/oskar/Kurser
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	09_Lecture
+9
+d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
+	09_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	02_Lecture
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
+	02_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	02_Lecture
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
+	02_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	03_Lecture
+3
+d/home/oskar/Kurser/TANA21/lisam/Lectures/03_Lecture
+	03_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	04_Lecture
+4
+d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
+	04_script.pdf
+1
+d/home/oskar
+	..
+0
+d/home
+	oskar
+2
+d/home/oskar
+	Kurser
+4
+d/home/oskar/Kurser
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	06_Lecture
+6
+d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
+	06_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	06_Lecture
+6
+d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
+	06_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_slides.pdf
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	08_Lecture
+8
+d/home/oskar/Kurser/TANA21/lisam/Lectures/08_Lecture
+	08_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	09_Lecture
+9
+d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
+	09_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	10_Lecture
+10
+d/home/oskar/Kurser/TANA21/lisam/Lectures/10_Lecture
+	10_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_slides.pdf
+2
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	04_Lecture
+4
+d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
+	04_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	05_Lecture
+5
+d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
+	05_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
+	07_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	07_Lecture
+7
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	..
+0
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
+	01_script.pdf
+1
+d/home/oskar/Kurser/TANA21/lisam/Lectures
+	01_Lecture
+1
+d/home/oskar/Kurser/TANA21/lisam
+	Lectures
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser
+	TANA21
+1
+=======
 d/home
 	oskar
 2
@@ -266,9 +542,39 @@ d/home/oskar/.config/qutebrowser
 d/home/oskar/.config
 	qutebrowser
 16
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 d/home/oskar
 	.config
 4
+<<<<<<< HEAD
+d/home/oskar/Kurser
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser
+	TANA21
+1
+d/home/oskar/Kurser/TANA21
+	lisam
+1
+d/home/oskar/Kurser
+	TATA24
+2
+d/home/oskar/Kurser/TATA24
+	..
+0
+d/home/oskar/Kurser
+	TATA44
+3
+d/home/oskar/Kurser/TATA44
+	..
+0
+d/home/oskar/Kurser
+	TATA44
+3
+=======
 d/home
 	oskar
 2
@@ -326,6 +632,7 @@ d/home/oskar/git_programs/qutebrowser
 d/home/oskar/git_programs/qutebrowser/scripts
 	hist_importer.py
 8
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 d
 
 # Right window history (oldest to newest):
@@ -351,6 +658,61 @@ D/media
 	oskar
 1
 D/
+<<<<<<< HEAD
+	media
+9
+D/media
+	oskar
+1
+D/media/oskar
+	..
+0
+D/media
+	oskar
+1
+D/
+	etc
+4
+D/home/oskar
+	git_programs
+12
+D/home/oskar/git_programs
+	qutebrowser
+1
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs/qutebrowser/icons
+	qutebrowser-512x512.png
+9
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs/qutebrowser/icons
+	qutebrowser-all.svg
+10
+D/home/oskar/git_programs/qutebrowser
+	icons
+2
+D/home/oskar/git_programs
+	qutebrowser
+1
+D/home/oskar
+	Downloads
+3
+D/home/oskar/Downloads
+	Alecive-Flatwoken-Apps-Matlab.svg
+0
+D/home/oskar
+	Downloads
+0
+D/home
+	oskar
+2
+D/home/oskar
+	Public
+7
+=======
 	etc
 4
 D/home/oskar
@@ -374,15 +736,33 @@ D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
 D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
 	bookmarks
 1
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 D
 
 # Command line history (oldest to newest):
-:wq
 :open
 :open 2019
 :op
 :mkdir TATA24
 :diff
+<<<<<<< HEAD
+:cd /usr/share/icons/hicolor/scalable/apps/apport.svg
+:resize 20
+:resize
+:registers
+:split 
+:=
+:wq
+:q
+:split
+:split h
+:split ~
+
+# Search history (oldest to newest):
+/ico
+/ic
+/Mat
+=======
 :Q
 :vicd
 :vicd()
@@ -396,12 +776,17 @@ D
 /vim
 /b1b08
 /.con
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Prompt history (oldest to newest):
 
 # Local filter history (oldest to newest):
 
 # Registers:
+<<<<<<< HEAD
+""/home/oskar/Downloads/Alecive-Flatwoken-Apps-Matlab.svg
+=======
+>>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Directory stack (oldest to newest):
 
