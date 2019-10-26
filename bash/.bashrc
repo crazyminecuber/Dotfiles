@@ -140,11 +140,13 @@ vicd()
 # Sets colors diffrently on diffrent devices
 if [ "$color_prompt" = yes ]; then
 	if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
+		#echo Surface-Pro
     		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
 	elif [ $(hostname) = "raspberrypi" ]; then
+		#echo Raspberry-pi
     		export PS1="\n\[\e[01;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;32m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
 	elif [ $(hostname) = "oskar" ]; then
-		echo triggered
+		#echo Desktop-pc
     		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
 	else
 		echo Warning! Unrecognized hostname from .bashrc! /Oskar
