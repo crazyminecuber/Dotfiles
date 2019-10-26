@@ -1,30 +1,3 @@
-# Own modifications
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-# Host specific example
-#if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
-	#echo surface
-#else
-	#echo not_surface
-#fi
-
-# Make vifm exit on current directory
-
-vicd()
-{
-	echo "something is happening"	
-	local dst="$(command vifm --choose-dir - "$@")"
-    	if [ -z "$dst" ]; then
-		echo 'Directory picking cancelled/failed'
-	return 1
-	fi
-	cd "$dst"
-}
-
-#----------------------------------------------------------------
-set -o vi
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -70,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -83,13 +56,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -143,3 +109,52 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#----------------------------------------------------------------
+# Own modifications
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Host specific example
+#if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
+	#echo surface
+#else
+	#echo not_surface
+#fi
+
+# Make vifm exit on current directory
+
+vicd()
+{
+	echo "something is happening"	
+	local dst="$(command vifm --choose-dir - "$@")"
+    	if [ -z "$dst" ]; then
+		echo 'Directory picking cancelled/failed'
+	return 1
+	fi
+	cd "$dst"
+}
+
+
+# Sets colors diffrently on diffrent devices
+if [ "$color_prompt" = yes ]; then
+	if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
+    		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
+	elif [ $(hostname) = "raspberrypi" ]; then
+    		export PS1="\n\[\e[01;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;32m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
+	elif [ $(hostname) = "oskar" ]; then
+		echo triggered
+    		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
+	else
+		echo Warning! Unrecognized hostname from .bashrc! /Oskar
+    		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	fi
+else
+	echo triggerd nto
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+set -o vi
+
+unset color_prompt force_color_prompt
