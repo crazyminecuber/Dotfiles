@@ -115,8 +115,8 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-alias add-stow="echo test"
 
+export PATH=$PATH:~/local/bin
 # Host specific example
 #if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
 	#echo surface
@@ -128,7 +128,6 @@ alias add-stow="echo test"
 
 vicd()
 {
-	echo "something is happening"	
 	local dst="$(command vifm --choose-dir - "$@")"
     	if [ -z "$dst" ]; then
 		echo 'Directory picking cancelled/failed'

@@ -1,4 +1,5 @@
 " own changes
+set dotfiles!
 
 " vim: filetype=vifm :
 " Sample configuration file for vifm (last updated: 21 January, 2018)
@@ -401,7 +402,7 @@ set classify+=' ::*.doc,,*.docx::, ::*.xls,,*.xls[mx]::, ::*.pptx,,*.pp
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+set vifminfo=dhistory,chistory,state,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " ------------------------------------------------------------------------------
