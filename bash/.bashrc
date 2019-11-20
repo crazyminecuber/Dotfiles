@@ -115,6 +115,7 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+alias add-stow="echo test"
 
 # Host specific example
 #if [ $(hostname) = "oskar-Surface-Pro-2" ]; then

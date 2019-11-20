@@ -17,622 +17,315 @@
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
-<<<<<<< HEAD
-oh
-=======
 ov
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 m-1
 l2
 r2
 
 # Left window history (oldest to newest):
-<<<<<<< HEAD
-d/usr/share/icons/hicolor/scalable
-	apps
-3
-d/usr/share/icons/hicolor
-	512x512
-15
-d/usr/share/icons/hicolor/512x512
-	apps
-3
-d/usr/share/icons/hicolor/512x512/apps
+d/home/oskar/Documents/Fritzing/bins
 	..
 0
-d/usr/share/icons/hicolor/512x512
-	apps
-3
-d/usr/share/icons/hicolor
+d/home/oskar/Documents/Fritzing
+	bins
+1
+d/home/oskar/Documents
+	EEPROM-programmer
+1
+d/home/oskar/Documents/EEPROM-programmer
 	..
 0
-d/usr/share/icons
-	hicolor
-11
-d/usr/share
-	icons
-13
-d/usr/share/icons
-	hicolor
-11
-d/usr/share/icons/hicolor
-	512x512
-13
-d/usr/share/icons/hicolor/512x512
-	apps
-3
-d/usr/share/icons/hicolor/512x512/apps
-	org.gnome.Nautilus.png
+d/home/oskar/Documents
+	MATLAB
 4
-d/usr/share/icons/hicolor/512x512
-	apps
-3
-d/usr/share/icons/hicolor
-	scalable
-14
-d/usr/share/icons/hicolor/scalable
-	apps
-3
-d/usr/share/icons/hicolor/scalable/apps
-	Alecive-Flatwoken-Apps-Matlab.svg
-1
-d/usr/share/icons/hicolor/scalable
+d/home/oskar/Documents/MATLAB
 	..
 0
-d/usr/share/icons/hicolor
-	scalable
-14
-d/usr/share/icons
-	hicolor
-11
-d/usr/share
-	icons
-13
-d/usr
-	share
-7
-d/
-	usr
-13
-d/home/oskar
-	Kurser
-4
-d/home/oskar/Kurser
-	TANA21
-1
-d/home/oskar/Kurser/TANA21
-	lisam
-1
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	09_Lecture
-9
-d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
-	09_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
-	01_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	02_Lecture
-2
-d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
-	02_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
-	01_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	02_Lecture
-2
-d/home/oskar/Kurser/TANA21/lisam/Lectures/02_Lecture
-	02_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	03_Lecture
-3
-d/home/oskar/Kurser/TANA21/lisam/Lectures/03_Lecture
-	03_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	04_Lecture
-4
-d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
-	04_script.pdf
-1
-d/home/oskar
-	..
-0
-d/home
-	oskar
-2
-d/home/oskar
-	Kurser
-4
-d/home/oskar/Kurser
-	TANA21
-1
-d/home/oskar/Kurser/TANA21
-	lisam
-1
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
-	05_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
-	01_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	06_Lecture
+d/home/oskar/Documents
+	Wolfram Mathematica
 6
-d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
-	06_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	07_Lecture
+d/home/oskar/Documents/Wolfram Mathematica
+	..
+0
+d/home/oskar/Documents
+	github_school
 7
-d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
-	07_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	06_Lecture
-6
-d/home/oskar/Kurser/TANA21/lisam/Lectures/06_Lecture
-	06_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	07_Lecture
-7
-d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
-	07_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
-	05_slides.pdf
-2
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	08_Lecture
+d/home/oskar/Documents/github_school
+	..
+0
+d/home/oskar/Documents
+	kicad
 8
-d/home/oskar/Kurser/TANA21/lisam/Lectures/08_Lecture
-	08_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	09_Lecture
-9
-d/home/oskar/Kurser/TANA21/lisam/Lectures/09_Lecture
-	09_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	10_Lecture
-10
-d/home/oskar/Kurser/TANA21/lisam/Lectures/10_Lecture
-	10_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
-	05_slides.pdf
-2
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
-	05_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	04_Lecture
-4
-d/home/oskar/Kurser/TANA21/lisam/Lectures/04_Lecture
-	04_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	05_Lecture
-5
-d/home/oskar/Kurser/TANA21/lisam/Lectures/05_Lecture
-	05_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	07_Lecture
-7
-d/home/oskar/Kurser/TANA21/lisam/Lectures/07_Lecture
-	07_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	07_Lecture
-7
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
+d/home/oskar/Documents/kicad
 	..
 0
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures/01_Lecture
-	01_script.pdf
-1
-d/home/oskar/Kurser/TANA21/lisam/Lectures
-	01_Lecture
-1
-d/home/oskar/Kurser/TANA21/lisam
-	Lectures
-1
-d/home/oskar/Kurser/TANA21
-	lisam
-1
-d/home/oskar/Kurser
-	TANA21
-1
-=======
-d/home
-	oskar
-2
-d/home/oskar
-	Dotfiles
-5
-d/home/oskar/Dotfiles
-	vifm
-5
-d/home/oskar/Dotfiles/vifm
-	.config
-1
-d/home/oskar/Dotfiles/vifm/.config
-	vifm
-1
-d/home/oskar/Dotfiles/vifm/.config/vifm
-	vifmrc
-5
-d/home/oskar/Dotfiles/vifm/.config
-	vifm
-1
-d/home/oskar/Dotfiles/vifm
-	.config
-1
-d/home/oskar/Dotfiles
-	bash
-2
-d/home/oskar/Dotfiles/bash
-	..
-0
-d/home/oskar/Dotfiles
-	bash
-2
-d/home/oskar/Dotfiles/bash
-	..
-0
-d/home/oskar/Dotfiles
-	input
-4
-d/home/oskar/Dotfiles/input
-	..
-0
-d/home/oskar/Dotfiles
-	input
-4
-d/home/oskar
-	Dotfiles
-5
-d/home
-	oskar
-2
-d/home/oskar
-	.mozilla
-6
-d/home/oskar/.mozilla
-	firefox
-2
-d/home/oskar/.mozilla/firefox
-	1k1hslu9.default
-1
-d/home/oskar/.mozilla
-	extensions
-1
-d/home/oskar/.mozilla/extensions
-	..
-0
-d/home/oskar/.mozilla
-	firefox
-2
-d/home/oskar/.mozilla/firefox
-	1k1hslu9.default
-1
-d/home/oskar/.mozilla/firefox/1k1hslu9.default
-	bookmarkbackups
-1
-d/home/oskar/.mozilla/firefox/1k1hslu9.default/bookmarkbackups
-	..
-0
-d/home/oskar/.mozilla/firefox/1k1hslu9.default
-	bookmarkbackups
-1
-d/home/oskar/.mozilla/firefox/1k1hslu9.default/bookmarkbackups
-	..
-0
-d/home/oskar/.mozilla/firefox/1k1hslu9.default
-	bookmarkbackups
-1
-d/home/oskar/.mozilla/firefox
-	1k1hslu9.default
-1
-d/home/oskar/.mozilla
-	firefox
-2
-d/home/oskar
-	.gimp-2.8
-4
-d/home
-	oskar
-2
-d/
-	usr
-16
-d/usr
-	local
-5
-d/usr/local
-	bin
-2
-d/usr/local/bin
-	matlab
-6
-d/usr/local
-	bin
-2
-d/usr
-	local
-5
-d/
-	lib64
-7
+d/home/oskar/Documents
+	kicad
+8
 d/home/oskar
 	Documents
+13
+d/home/oskar/Documents
+	kicad
+8
+d/home/oskar/Documents/kicad
+	test.pro
 2
+d/home/oskar/Documents
+	kicad
+8
+d/home/oskar
+	Downloads
+15
+d/home/oskar/Downloads
+	font
+1
+d/home/oskar/Downloads/font
+	..
+0
+d/home/oskar/Downloads
+	Intyg.pdf
+1
+d/home/oskar
+	Matlab
+15
+d/home/oskar/Matlab
+	..
+0
+d/home/oskar
+	Matlab
+15
+d/home/oskar/Matlab
+	..
+0
+d/home/oskar
+	Matlab
+14
+d/home/oskar/Matlab
+	NewFolder
+1
+d/home/oskar/Matlab/NewFolder
+	..
+0
+d/home/oskar/Matlab
+	NewFolder
+1
+d/home/oskar
+	VirtualBox VMs
+14
+d/home/oskar/VirtualBox VMs
+	..
+0
+d/home/oskar
+	Desktop
+8
+d/home/oskar/Desktop
+	Super pro 280u Windows
+1
+d/home/oskar/Desktop/Super pro 280u Windows
+	..
+0
+d/home/oskar/Desktop
+	Super pro 280u Windows
+1
+d/home/oskar
+	Desktop
+8
+d/home/oskar/Desktop
+	complete.desktop
+2
+d/home/oskar
+	Dotfiles
+10
+d/home/oskar/Dotfiles
+	qutebrowser
+5
+d/home/oskar
+	Desktop
+8
+d/home/oskar/Desktop
+	complete.desktop
+2
+d/home/oskar
+	Documents
+9
+d/home/oskar/Documents
+	EEPROM-programmer
+1
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
+d/home/oskar/Documents/EEPROM-programmer/Super pro 280u Windows
+	..
+0
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
+d/home/oskar/Documents
+	EEPROM-programmer
+1
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
+d/home/oskar/Documents/EEPROM-programmer/Super pro 280u Windows
+	..
+0
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
+d/home/oskar/Documents
+	EEPROM-programmer
+1
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
+d/home/oskar/Documents/EEPROM-programmer/Super pro 280u Windows
+	driver_READ_readme_before_opening
+2
+d/home/oskar/Documents/EEPROM-programmer/Super pro 280u Windows/driver_READ_readme_before_opening
+	..
+0
+d/home/oskar/Documents/EEPROM-programmer/Super pro 280u Windows
+	sp3000uw.exe
+4
+d/home/oskar/Documents/EEPROM-programmer
+	Super pro 280u Windows
+1
 d/home/oskar/Documents
 	EEPROM-programmer
 1
 d/home/oskar
-	git_programs
-14
-d/home/oskar/git_programs
-	qutebrowser
-1
-d/home/oskar/git_programs/qutebrowser
-	.git
-1
-d/home/oskar/git_programs/qutebrowser/.git
-	objects
-5
-d/home/oskar/git_programs/qutebrowser
-	.git
-1
-d/home/oskar/git_programs
-	qutebrowser
-1
-d/home/oskar
-	git_programs
-14
-d/home/oskar/git_programs
-	qutebrowser
-1
-d/home/oskar/git_programs/qutebrowser
-	..
-0
-d/home/oskar/git_programs
-	qutebrowser
-1
-d/home/oskar
-	.config
-4
-d/home/oskar/.config
-	qutebrowser
-8
-d/home/oskar
-	.config
-4
-d/home/oskar/.config
-	qutebrowser
-8
-d/home/oskar/.config/qutebrowser
-	bookmarks
-1
-d/home/oskar/.config/qutebrowser/bookmarks
-	urls
-1
-d/home/oskar/.config/qutebrowser
-	bookmarks
-1
-d/home/oskar/.config
-	qutebrowser
-8
-d/home/oskar/.config/qutebrowser
-	..
-0
-d/home/oskar/.config
-	compton.conf
-42
-d/home/oskar
-	.config
-4
-d/home/oskar/.config
-	ranger
-21
-d/home/oskar
-	Dotfiles
-32
-d/home/oskar/Dotfiles
-	qutebrowser
-5
-d/home/oskar/Dotfiles/qutebrowser
-	.config
-1
-d/home/oskar/Dotfiles/qutebrowser/.config
-	qutebrowser
-1
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
-	bookmarks
-1
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
-	..
-0
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
-	quickmarks
-3
-d/home/oskar/Dotfiles/qutebrowser/.config
-	qutebrowser
-1
-d/home/oskar/Dotfiles/qutebrowser
-	.config
-1
-d/home/oskar/Dotfiles
-	qutebrowser
-5
-d/home/oskar
-	.config
-4
-d/home/oskar/.config
-	ranger
-21
-d/home/oskar/.config/ranger
-	..
-0
-d/home/oskar/.config
-	qutebrowser
-20
-d/home/oskar/.config/qutebrowser
-	bookmarks
-1
-d/home/oskar/.config
-	qutebrowser
-16
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
-d/home/oskar
-	.config
-4
-<<<<<<< HEAD
-d/home/oskar/Kurser
-	TANA21
-1
-d/home/oskar/Kurser/TANA21
-	lisam
-1
-d/home/oskar/Kurser
-	TANA21
-1
-d/home/oskar/Kurser/TANA21
-	lisam
-1
-d/home/oskar/Kurser
-	TATA24
+	Documents
+9
+d/home
+	oskar
 2
-d/home/oskar/Kurser/TATA24
-	..
-0
-d/home/oskar/Kurser
-	TATA44
-3
-d/home/oskar/Kurser/TATA44
-	..
-0
-d/home/oskar/Kurser
-	TATA44
-3
-=======
+d/
+	cdrom
+2
+d/home/oskar
+	.Mathematica
+1
 d/home
 	oskar
 2
 d/home/oskar
-	Dotfiles
-3
-d/home/oskar/Dotfiles
-	qutebrowser
-4
-d/home/oskar/Dotfiles/qutebrowser
-	..
-0
-d/home/oskar/Dotfiles
-	qutebrowser
-4
-d/home/oskar/Dotfiles/qutebrowser
-	.config
-1
-d/home/oskar/Dotfiles/qutebrowser/.config
-	qutebrowser
-1
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
-	bookmarks
-1
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
-	urls
-1
-d/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
-	quickmarks
-3
-d/home/oskar/Dotfiles/qutebrowser/.config
-	qutebrowser
-1
-d/home/oskar/Dotfiles/qutebrowser
-	.config
-1
-d/home/oskar/Dotfiles
-	qutebrowser
+	Documents
+2
+d/home/oskar/Documents
+	SwarmController
 5
 d/home/oskar
-	git_programs
+	Documents
+2
+d/home/oskar/Documents
+	github_school
 7
+d/home/oskar/Documents/github_school
+	uppgift2
+3
+d/home/oskar/Documents/github_school/uppgift2
+	uppgift2.tex
+10
+d/home/oskar/Documents/github_school
+	uppgift2
+3
+d/home/oskar/Documents
+	github_school
+9
+d/home/oskar
+	Arduino
+1
+d/home
+	oskar
+2
+d/home/oskar
+	Documents
+3
+d/home
+	oskar
+2
+d/home/oskar
+	..
+0
+d/home
+	oskar
+2
+d/home/oskar
+	GNUstep
+6
+d/home/oskar/GNUstep
+	..
+0
+d/home/oskar
+	git_programs
+16
+d/home/oskar/git_programs
+	st
+3
+d/home/oskar/git_programs/st
+	FAQ
+1
+d/home/oskar/git_programs
+	st
+3
+d/home/oskar/git_programs/st
+	st-alpha-0.8.2.diff
+9
+d/home/oskar/git_programs
+	st
+3
+d/home/oskar/git_programs/st
+	.gitignore
+2
+d/home/oskar/git_programs
+	st
+3
+d/home/oskar
+	Public
+9
+d/home
+	oskar
+3
+d/home/oskar
+	Public
+9
+d/home/oskar/Public
+	..
+0
+d/home/oskar
+	Documents
+4
+d/home/oskar/Documents
+	github_school
+8
+d/home/oskar
+	git_programs
+4
+d/home/oskar/git_programs
+	st
+3
+d/home/oskar/git_programs/st
+	.gitignore
+3
+d/home/oskar/git_programs
+	Xresources
+1
+d/home/oskar/git_programs/Xresources
+	..
+0
 d/home/oskar/git_programs
 	qutebrowser
 1
-d/home/oskar/git_programs/qutebrowser
-	scripts
-10
-d/home/oskar/git_programs/qutebrowser/scripts
-	importer.py
-10
-d/home/oskar/git_programs/qutebrowser
-	scripts
-10
-d/home/oskar/git_programs/qutebrowser/scripts
-	hist_importer.py
-8
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
+d/home/oskar
+	Dotfiles
+13
+d/home/oskar/Dotfiles
+	input
+5
 d
 
 # Right window history (oldest to newest):
@@ -658,9 +351,8 @@ D/media
 	oskar
 1
 D/
-<<<<<<< HEAD
-	media
-9
+	<<<<<<< HEAD
+0
 D/media
 	oskar
 1
@@ -712,12 +404,6 @@ D/home
 D/home/oskar
 	Public
 7
-=======
-	etc
-4
-D/home/oskar
-	Dotfiles
-10
 D/home/oskar/Dotfiles
 	qutebrowser
 5
@@ -736,7 +422,36 @@ D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser/bookmarks
 D/home/oskar/Dotfiles/qutebrowser/.config/qutebrowser
 	bookmarks
 1
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
+D/home/oskar/Dotfiles/qutebrowser/.config
+	qutebrowser
+1
+D/home/oskar/Dotfiles/qutebrowser
+	.config
+1
+D/home/oskar/Dotfiles
+	i3
+3
+D/home/oskar
+	git_programs
+16
+D/home/oskar/git_programs
+	qutebrowser
+1
+D/home/oskar
+	Arduino
+4
+D/home
+	oskar
+3
+D/
+	home
+5
+D/home
+	oskar
+2
+D/home/oskar
+	.steampid
+43
 D
 
 # Command line history (oldest to newest):
@@ -745,7 +460,6 @@ D
 :op
 :mkdir TATA24
 :diff
-<<<<<<< HEAD
 :cd /usr/share/icons/hicolor/scalable/apps/apport.svg
 :resize 20
 :resize
@@ -753,40 +467,32 @@ D
 :split 
 :=
 :wq
-:q
 :split
 :split h
 :split ~
-
-# Search history (oldest to newest):
-/ico
-/ic
-/Mat
-=======
 :Q
 :vicd
 :vicd()
 :reload
 :mkdir qutebrowser
 :mkdir .config
+:mkdir Xresources
 :q
 
 # Search history (oldest to newest):
+/ico
+/ic
+/Mat
 /fireqq
 /vim
 /b1b08
 /.con
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Prompt history (oldest to newest):
 
 # Local filter history (oldest to newest):
 
 # Registers:
-<<<<<<< HEAD
-""/home/oskar/Downloads/Alecive-Flatwoken-Apps-Matlab.svg
-=======
->>>>>>> 0b0b940104f58daf699d84410870ee5d17d20910
 
 # Directory stack (oldest to newest):
 
@@ -901,6 +607,42 @@ t/home/oskar/.local/share/Trash/000_reflektion.pdf
 	/home/oskar/Downloads/reflektion.pdf
 t/home/oskar/.local/share/Trash/000_000_SOR2.pdf
 	/home/oskar/Downloads/000_SOR2.pdf
+t/home/oskar/.local/share/Trash/files/000_content.xml
+	/home/oskar/Documents/content.xml
+t/home/oskar/.local/share/Trash/files/000_manifest.rdf
+	/home/oskar/Documents/manifest.rdf
+t/home/oskar/.local/share/Trash/files/000_meta.xml
+	/home/oskar/Documents/meta.xml
+t/home/oskar/.local/share/Trash/files/000_mimetype
+	/home/oskar/Documents/mimetype
+t/home/oskar/.local/share/Trash/files/000_styles.xml
+	/home/oskar/Documents/styles.xml
+t/home/oskar/.local/share/Trash/files/000_settings.xml
+	/home/oskar/Documents/settings.xml
+t/home/oskar/.local/share/Trash/files/000_Configurations2
+	/home/oskar/Documents/Configurations2
+t/home/oskar/.local/share/Trash/files/000_META-INF
+	/home/oskar/Documents/META-INF
+t/home/oskar/.local/share/Trash/files/000_thumbnail.png
+	/home/oskar/Documents/Thumbnails/thumbnail.png
+t/home/oskar/.local/share/Trash/files/000_Thumbnails
+	/home/oskar/Documents/Thumbnails
+t/home/oskar/.local/share/Trash/files/000_Fritzing
+	/home/oskar/Documents/Fritzing
+t/home/oskar/.local/share/Trash/files/000_lösningsförslag+vektoranalys.pdf
+	/home/oskar/Downloads/lösningsförslag+vektoranalys.pdf
+t/home/oskar/.local/share/Trash/files/000_font
+	/home/oskar/Downloads/font
+t/home/oskar/.local/share/Trash/files/000_classic
+	/home/oskar/Desktop/classic
+t/home/oskar/.local/share/Trash/files/000_modern.txt
+	/home/oskar/Desktop/modern.txt
+t/home/oskar/.local/share/Trash/files/000_zathurarc
+	/home/oskar/Desktop/zathurarc
+t/home/oskar/.local/share/Trash/files/000_elektronik_och_matteknik_2018.zip
+	/home/oskar/Desktop/elektronik_och_matteknik_2018.zip
+t/home/oskar/.local/share/Trash/files/000_Super pro 280u Windows
+	/home/oskar/Desktop/Super pro 280u Windows
 
 # State:
 f
