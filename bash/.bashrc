@@ -115,7 +115,7 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
+alias pi="ssh -p 2718 pi@crazyminecuber.xyz"
 export PATH=$PATH:~/local/bin
 # Host specific example
 #if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
