@@ -1,5 +1,6 @@
 " own changes
-set dotfiles!
+" Starts vifm with dotfiles hidden
+windo normal! zm
 
 " vim: filetype=vifm :
 " Sample configuration file for vifm (last updated: 21 January, 2018)
