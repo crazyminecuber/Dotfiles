@@ -1,0 +1,2 @@
+# Start firefox with the folowing environmental variable
+env MOZ_USE_XINPUT2=1 /path/to/firefox

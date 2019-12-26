@@ -160,3 +160,7 @@ fi
 set -o vi
 
 unset color_prompt force_color_prompt
+
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
