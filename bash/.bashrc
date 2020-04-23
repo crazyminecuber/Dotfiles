@@ -1,3 +1,15 @@
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_NUMERIC="sv_SE.UTF-8"
+
+export BROWSER="firefox"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+alias pi="ssh -p 2718 pi@crazyminecuber.xyz"
+alias vim="nvim"
+export PATH=$PATH:~/local/bin
+alias svim='vim -u ~/.SpaceVim/vimrc'
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -113,10 +125,6 @@ fi
 #----------------------------------------------------------------
 # Own modifications
 
-export VISUAL=vim
-export EDITOR="$VISUAL"
-alias pi="ssh -p 2718 pi@crazyminecuber.xyz"
-export PATH=$PATH:~/local/bin
 # Host specific example
 #if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
 	#echo surface
@@ -142,16 +150,20 @@ if [ "$color_prompt" = yes ]; then
 	if [ $(hostname) = "oskar-Surface-Pro-2" ]; then
 		#echo Surface-Pro
     		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
-	elif [ $(hostname) = "raspberrypi" ]; then
+	elif [ $(hostname) = "RP4" ]; then
 		#echo Raspberry-pi
     		export PS1="\n\[\e[01;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;32m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
 	elif [ $(hostname) = "oskar" ]; then
 		#echo Desktop-pc
     		export PS1="\n\[\e[01;33m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\]\[\e[00;37m\] \t \[\e[0m\]\[\e[01;35m\]\w\[\e[0m\]\[\e[01;37m\] \[\e[0m\]\n$ "
+	elif [ $(hostname) = "octopi" ]; then
+		#echo octopi
+            export PS1="\[\033[38;5;46m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;22m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;82m\]\W\[$(tput sgr0)\]\\$\[$(tput sgr0)\]"
 	else
 		echo Warning! Unrecognized hostname from .bashrc! /Oskar
     		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	fi
+
 else
 	echo triggerd nto
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -161,6 +173,6 @@ set -o vi
 
 unset color_prompt force_color_prompt
 
-export LC_ALL="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
+
+
 
