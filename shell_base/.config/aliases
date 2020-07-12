@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Pager
+#export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+#export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
+#export MANPAGER="nvimpager"
+
+command -v nvim > /dev/null && export MANPAGER='nvim +Man!'
+#export MANWIDTH=999
+#export PAGER='nvim -R'
+
+command -v nvim > /dev/null && command -v git > /dev/null &&
+	git config --global core.pager "nvim -R" && git config --global color.pager no
+
+
+# Make vifm exit on current directory
+
+vicd()
+{
+	local dst="$(command vifm --choose-dir - "$@")"
+    	if [ -z "$dst" ]; then
+		echo 'Directory picking cancelled/failed'
+	return 1
+	fi
+	cd "$dst"
+}
+
+alias pi="ssh -p 2718 pi@crazyminecuber.xyz"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias svim='vim -u ~/.SpaceVim/vimrc -N'
+alias vim="nvim"
+alias ll='ls -hlAF --color'
+alias ls='ls -hF --color'
+alias vifm="vicd"
+alias ex="exa --icons -aF --group-directories-first"
+alias exl="exa --icons -al --git --group-directories-first"
+
