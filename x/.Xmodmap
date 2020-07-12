@@ -1,0 +1,23 @@
+!keycode  24 = Hyper_L Hyper_L Hyper_L
+!keycode  34 = Alt_R Alt_R Alt_R
+!keycode  47 = Mode_switch Mode_switch Mode_switch
+!keycode 254 = q Q U013F U03EF
+!keycode 255 = semicolon colon
+!
+!remove mod4 = Hyper_L
+!add mod3 = Hyper_L
+!remove Control = Control_R
+!keycode 69 = Return
+!keycode 24 = Control_R
+!add Control = Control_R
+
+keycode 66 = ISO_Level3_Shift
+
+!xcape -e 'Control_L=F12'
+!xcape -e 'Shift_L=F10;Shift_R=Control_L|x;Super_L=F11'
+!xcape -e 'Alt_R=F9'
+!xcape -e 'Mode_switch=semicolon'
+!xcape -e 'Hyper_L=q'
+!xcape -e 'Alt_L=F7'
+!xcape -e 'Control_R=Return'
+
