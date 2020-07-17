@@ -1,6 +1,13 @@
 # TODO Make remappig of caplock work in both tty and X.
 # TODO Go through grep man page and select good default flags.
 # TODO Fix a way of trashing files instead of deleating them.
+# TODO CTRL-R does not work. Also bind to fuzzyfinder, togeter with other things.
+# TODO Change options so that when i have typed stuff and hit up arrow, it finds commands from history that are matching instead of taking the one that i most recently typen. See arch wiki.
+# TODO Make config files use makefile intead? A good way to learn?
+# TODO Test managing dotfiles with bare repository inside docker container.
+# TODO Fix so that commands are loaded immediattely to current shell after program install.
+
+
 #  If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
