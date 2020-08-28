@@ -1,1 +1,1 @@
-../shell_base/.profile
+../dependencies/shell_base/.profile
