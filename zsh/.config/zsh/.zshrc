@@ -1,18 +1,33 @@
+# DONE Fix a way of trashing files instead of deleating them.
+# DONE CTRL-R does not work. Also bind to fuzzyfinder, togeter with other things.
+# DONE Fix so that commands are loaded immediattely to current shell after program install.
+# DONE fzf completion does not work properly.
 # TODO Make remappig of caplock work in both tty and X.
 # TODO Go through grep man page and select good default flags.
-# TODO Fix a way of trashing files instead of deleating them.
-# TODO CTRL-R does not work. Also bind to fuzzyfinder, togeter with other things.
+# TODO fzf for man pages
 # TODO Change options so that when i have typed stuff and hit up arrow, it finds commands from history that are matching instead of taking the one that i most recently typen. See arch wiki.
 # TODO Make config files use makefile intead? A good way to learn?
 # TODO Test managing dotfiles with bare repository inside docker container.
-# TODO Fix so that commands are loaded immediattely to current shell after program install.
-
+# TODO Make tutorials and motivational videos for my self. I think i need it.
+# TODO Learn web scraping
+# DONE VI mode copying does not use the same clipboard as i do
+# DONE VI cursor is invisible in visual mode. (solutin was to set cursor color
+	 # in alacritty
+# TODO Clone google drive via rclone
+# TODO Spacship rpromt is on second row. I want it on the first. (Open github
+	 # issue, cannot resolve myself.
+# TODO What is the use of activity notifications. Justa annoying?
 
 #  If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # A nice message from the one and only cow
-fortune | cowsay
+fortune -so | cowsay
+
+# Always reload programs from path
+zstyle ':completion:*' rehash true
+
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 setopt appendhistory autocd
@@ -50,7 +65,8 @@ bindkey "^?" backward-delete-char
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
+  if [[ ${KEYMAP} == visual ]] ||
+     [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
     echo -ne '\e[1 q'
   elif [[ ${KEYMAP} == main ]] ||
@@ -97,15 +113,24 @@ source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
 
 # Spaceship
 SPACESHIP_PROMPT_ORDER=(
+	jobs
 	user
 	host
 	time
 	dir
-	git
 	char
 )
 
+SPACESHIP_RPROMPT_ORDER=(
+	venv
+	git
+)
+
+SPACESHIP_JOBS_SHOW=true
+SPACESHIP_JOBS_PREFIX=""
+SPACESHIP_JOBS_SUFFIX=" "
 SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
 SPACESHIP_HOST_COLOR="yellow"
 SPACESHIP_HOST_SHOW="always"
@@ -124,6 +149,9 @@ SPACESHIP_TIME_PREFIX="["
 SPACESHIP_TIME_SUFFIX="]"
 SPACESHIP_GIT_PREFIX=" "
 SPACESHIP_GIT_SUFFIX=""
+SPACESHIP_VENV_PREFIX=""
+SPACESHIP_VENV_SUFFIX=""
+SPACESHIP_VENV_SYMBOL=" "
 
 # Spaceship Prompt
 autoload -U promptinit; promptinit
@@ -136,6 +164,26 @@ if [ -f ~/.config/aliases ]; then
     . ~/.config/aliases
 fi
 
+# Fzf-keybinds
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    source /usr/share/fzf/key-bindings.zsh
+	source /usr/share/fzf/completion.zsh
+fi
 # Broot
 source /home/oskar/.config/broot/launcher/bash/br
+# Make up and down smarter
 
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey -M vicmd "k" up-line-or-beginning-search # Up
+bindkey -M vicmd "j" down-line-or-beginning-search # Down
+
+
+# Use correct clipboard
+source /usr/share/zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh
+# Source .profilc
+#[ -f ~/.profile ] && source ~/.profile

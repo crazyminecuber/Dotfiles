@@ -1,30 +1,85 @@
-"TODO Learn language server for python when learning django. 
-"TODO Get a better solotion for formatting text in latex or markdwon. Wrap is horrible. More like work/libreoffice
+"TODO Learn language server for python when learning django.
+"DONE Get a better solotion for formatting text in latex or markdwon. Wrap is horrible. More like work/libreoffice
 "TODO Make a vim wiki.
-"TODO Make tabs look better.
+"DONE Make tabs look better.
 "TODO When i open a file, convert spaces in the beginning to tabs to show them. And when i save the file write them back as spaces
-"TODO fix bug with remapping of scrolling. Does move cursor in directions.
-"TODO fix bug with formatoptions not being correctly set on startup
-"TODO make resizing nicer:
+"DONE fix bug with formatoptions not being correctly set on startup
+	"Still have not figured out the settings though. Is there a way to filter categorys better? For example, i do not want tables to be reformatted in that way.
+
+"DONE make resizing nicer:
 "TODO Add plugin to preview what buttons do.
 "TODO Make special search engines for each type of programming. Do so in order to search the documentation! Use openbrowser plugin.
 "TODO Find way to make word *bold* and ~curly~ in markdown. I know surround is probably the answer but i have to type things fast in order to make it work.
 "TODO Learn to access arduino terminal as said in arch wiki. Then learn to make a makefile to compile and upload.
-"TODO Find source of cheat sheets for programming languages.
+"DONE Find source of cheat sheets for programming languages.
 "TODO Tabsettings change when opening python filTabsettings change when opening python file
 "TODO Make nice keybindings for jumping to defintion and tests.
-"
+"TODO Find keybinding for jumping to tag in split
+"TODO Find out how to remove timout from comands (surround is hard to not have
+"TODO Decide if I want to keep wrap off or if i want to turn it on and use gk and gj for navigation.
+"TODO sudo does not work in vim so saving as root does not work with :w!!
+"TODO Vim does not automatilly update the contents of the file and does not sync with undotree. Have a clear warning imedially and not when saving that buffer has been updated? See diff between saved file and current buffer? Dynamically update buffer?0
+"TODO f,F,t,T only searches current line?
+"TODO Highliting of the word i am currently on when searching is not very clear.
+"TODO Use makfile for makng documents and updating figures.
+"TODO Use snippets for latex. Nice for \frac and \begin espically
+"TODO Maybe use emacs and ORG-mode for making pdf:s? Depends on if tables are nicer.
+"TODO Highlighting for one second when yanking would be nice.
+"TODO Make my autocommands for number toggleable.
+"TODO Would be nice to get errors in quickfixlist from django.
+"TODO Look up how to smart rename (using language server) to rename variable in
+	"entire project
+"TODO CoC 'K' does not work with thing like global and nonlocal in python. Vim
+"original does that
+"TODO Linter is buggy? Figure out why!
+"TODO Autcompletion for html,css, jinja?
+"TODO Reload browser automatically?
+"TODO Have to write file to have linter update some stuff (i.e. when i have
+	 "removed unnasisary whitespace or added an empty line for style
+"TODO Nerdtree does not sync across tabs
+"DONE Automatically add and format braces when hitting enter.(Autoload to the
+"reque!)
+"TODO Show matching html tag somehow.
+"TODO Checkout synctex in latex
+"DONE CSS comments does not work properly. When i try to comment one part, it
+	 "cmments the whole line.
+	 "But not happy. The ways i would like to comment. A line, multiple lines
+	 "with nice formatting, alternative comment markers, comment to the end.
+	 "Comment a selected region inside a line (probably not that useful since
+	 "it is a bad idea in most circomstances.), should work in both normalmode
+	 "and visual mode.
+"TODO Change so that search only searched the buffer in fokus.
+"TODO Setup ultisnips with a language server to get autocompletion snippets.
+
+"Regarding autoformatting, it is probably just an anoyance. But autowrapping
+"could be nice for booth comments in code and text in md and latex. Probably
+"nice to not autowrap lines that are already longer than textwidth. So
+"tcqln(jw?) and remove t for programming. w could be questionable for code
+"commited to repos since they could care about whitespaces not being at the end.
+"I will try without it for now.
+" Autoformatting behaviour i want.
+" * Autolinebreak on comments and text.
+" * Auto-comment if i press shift-enter
+" * Fix indenting quickly
+" * Maybe quickly toogle autoformatting?
+
+" Disable compatibility for vi. No point in not having it
+	set nocompatible
+
+
 
 autocmd!
 let mapleader =" "
-set formatoptions=cjqa
-let g:airline#extensions#tabline#enabled = 1
+set textwidth=79
+set formatoptions=cqlnj
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " Scrolling
 	nnoremap <C-H> 3zh
-	nnoremap <C-L> 3zl 
+	nnoremap <C-L> 3zl
 	nnoremap <C-J> 3<C-E>
 	nnoremap <C-K> 3<C-Y>
+
 
 "Någon form ut av script för att kolla om plugins pluginet är installerat
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -52,134 +107,83 @@ Plug 'bling/vim-airline'
 Plug 'RRethy/vim-hexokinase'
 
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 
 Plug 'junegunn/goyo.vim'
-Plug 'jreybert/vimagit'
+"Plug 'jreybert/vimagit'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'tpope/vim-fugitive'
-Plug 'vimwiki/vimwiki'
+"Plug 'tpope/vim-fugitive'
+"Plug 'vimwiki/vimwiki'
 
-Plug 'kovetskiy/sxhkd-vim'
+"Plug 'kovetskiy/sxhkd-vim'
+" Open url under cursor. Better than default
 Plug 'tyru/open-browser.vim'
 " Practice
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 " Toggle zoom
 Plug 'troydm/zoomwintab.vim'
+" Many languages and fast
+Plug 'sheerun/vim-polyglot'
+Plug 'liuchengxu/vista.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end()
 
-"-------------------- Fix annoyances --------------------
-" Disable compatibility for vi. No point in not having it
-	set nocompatible
+"-------------------- Fix annoyances and improve quality of life --------------
 " openbrowser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-
 
 set noerrorbells
 "Allows for mouse controll
 set mouse=a
 "Combines systemclipboard with vim :D
 set clipboard+=unnamedplus
-	let g:netrw_nogx = 1 " disable netrw's gx mapping.
-	nmap gx <Plug>(openbrowser-smart-search)
-	vmap gx <Plug>(openbrowser-smart-search)
+
 " Something to do with plugins. Probably leave it if I dont know better.
 filetype plugin on
+"filetype on
 " Sets encoding. Any point in using anything else?
 	set encoding=utf-8
-"-----------------------Color and highlights----------------------------------
-	" Enable true color
-	set termguicolors
-" Set colorscheme
-	colorscheme gruvbox
 
- " Highlight syntax
-	syntax on
-	set colorcolumn=80
-	highlight ColorColumn ctermbg=0 guibg=lightgrey
-	highlight Cursor guibg=#101010
+" Makes windcmd o toggle zoom instead of permanent zoom
+nnoremap <leader>wo :ZoomWinTabToggle<CR>
 
-	set bg=dark
-"	highlight Whitespace guibg=grey
-
-
-"highlight Whitespace guifg=gray
-
-
-" Scrolls sidways when 5 columns away from side
-	set sidescrolloff=5
-" Some basics:
-    " Makes c not store deleted text in register. Dumps in null register. Dont know if i want it.
-	nnoremap c "_c
+" Makes c not store deleted text in register. Dumps in null register. Dont know if i want it.
+nnoremap c "_c
 
 " Enable autocompletion, maybe look further into this?
 	set wildmode=longest,list,full
 	set wildmenu
 
-"Scrolls when there is only one row left
+"Scrolls when there is only one row left instead of 0
 	set scrolloff=1
-" Splits open at the top and right, which is non-retarded, unlike vim defaults and luke.
+" Splits open at the bottom and right
 	set nosplitbelow splitright
 
-" Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
-	"Highlights file open in buffer in nerdtree.
-	map <leader>t :NERDTreeFind<CR><c-w><c-p>
+" Auto resize windows when resizing terminal
+	autocmd VimResized * wincmd =
 
-" Quits Vim if nerd tree is only window open
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Replace all is aliased to S.
-	nnoremap S :%s//gc<Left><Left><Left>
-
-" Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !compiler <c-r>%<CR>
-
-" Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
-
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
-
-" Ensure files are read as what luke wants:
-    " Just a variable? Does vim-wiki read it?
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-    "Shortcut to open vimwiki
-	map <leader>v :VimwikiIndexlinewrap
-    " Another variable
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
-	"autocmd FileType tex setlocal formatoptions=qrctja
-
-" Save file as sudo on files that require root permission
-	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-" Automatically deletes all trailing whitespace on save.
-	"autocmd BufWritePre * %s/\s\+$//e
-
-" Source when vimrc is saved
-    autocmd BufWritePost $MYVIMRC echo "vimrc sourced" | source $MYVIMRC
-
-
-
-"let g:Hexokinase_highlighters = ['foreground']
-" Oskars tests----------------------------------------------
+" ctrl_a, ctrl_x werks on hexadecimal as well
 set nrformats+=alpha
+" ignore case when autocompleting in cmd-mode
+	set ignorecase
 
-" Enabels ctrl-s
-	imap <C-s> <C-O>:w<CR>
-	nmap <C-s> :w<CR>
-	vmap <C-s> <C-C>:w<CR>
-
+" Case insensitive search until I use capital letter
+	set smartcase
+" Go to matching during the typing of a search
+	set incsearch
 " Uses spaces instead of tabs. I will try tabs for a while
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -190,42 +194,24 @@ set shiftwidth=4
 " Tries to do smart indent
  set smartindent
  set autoindent
-" Makes me less insane in some ways but more in others.
-	set nowrap
 
-" Makes backspace work everywhere
-	set backspace=indent,eol,start
+" Does not wrap
+	set nowrap
 
 " Sets path to all under path
 " Used for using find
 set path+=$PWD/**
 
 " Highlightes all matches when searching and stops highliting matches when escape in normal mode is pressed is pressed.
-" Bug, shows previous search before typing new search
 set nohlsearch
 nnoremap / :let @/=''<CR>:set hlsearch<CR>/
 nnoremap ? :let @/=''<CR>:set hlsearch<CR>?
 nnoremap <esc> :nohlsearch<CR>
 
-" Shortcutting split navigation, saving a keypress:
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-
-" Switches between relative line numbers and normal line number.
-" Relative line numbers only in normal and visual mode when windows is active.
-" The events are before the * and the command to execute is after.
-	set number relativenumber
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * set norelativenumber
-	autocmd VimResized * execute "normal! \<c-w>="
-
-" Scrolls 5 chars when cursor get to edge of screen in horizontal direction
-	set sidescroll=5
+set hidden
+"--------------------------- Whitespace reprecentation ------------------------
 " Display symbols instead of whitespace etc
 	set list
-
 " Replaces whitespace with symbols. And when there is text to scroll to horizontally.
 	"Tabs do not tick out. Would be nice to make it more pronounced and put it to the right side.
 	set listchars+=tab:\ \ ┋
@@ -254,25 +240,133 @@ nnoremap <leader>l :wincmd l<CR>
 "┫
 "┋
 
+"------------------------ Smart line numbers----------------------------------
+
+" Switches between relative line numbers and normal line number.
+" Relative line numbers only in normal and visual mode when windows is active.
+" The events are before the * and the command to execute is after. Wrapped in
+" fucntion in order to make goyu able to enable /disable numbers on the fly.
+
+" Start with number and relative number on
+	set number relativenumber
+
+" Function to set correct autocommands for above to work
+function! SetSmartNumbers()
+	augroup numbers
+		autocmd!
+		autocmd BufEnter,FocusGained,InsertLeave,WinEnter * set relativenumber
+		autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * set norelativenumber
+	augroup END
+endfunction
+" call it imideatelly
+call SetSmartNumbers()
+" Goyo plugin makes text more readable when writing prose:
+	map <leader>G :Goyo \| set norelativenumber<CR>
+
+" Autogrup for goyo to make it able to handly my special line numbers.
+augroup goyo
+	autocmd! | set nonumber
+    autocmd User GoyoLeave call SetSmartNumbers()
+    autocmd User GoyoEnter autocmd! numbers | set nonumber norelativenumber
+augroup END
+
+"----------------------Color and highlights----------------------------------
+" Enable true color
+  set termguicolors
+
+" Set colorscheme
+	colorscheme gruvbox
+
+ " Highlight syntax
+	syntax on
+	set colorcolumn=80
+	highlight ColorColumn ctermbg=0 guibg=lightgrey
+	highlight Cursor guibg=#101010
+
+	set bg=dark
+	"highlight Whitespace guibg=grey
+	"highlight Whitespace guifg=gray
+
+" Highlighs unchanged text with grey
+if &diff
+    highlight! link DiffText MatchParen
+endif
+
+"-----------------------Windows and related------------------------------------
+" Scrolls sidways when 5 columns away from side
+	set sidescrolloff=5
+
+"-----------------------Nice shortcuts------------------------------------
+" Spell-check set to <leader>L for Language
+map <leader>L :setlocal spell! spelllang=se<CR>
+
+" Enabels ctrl-s
+	imap <C-s> <C-O>:w<CR>
+	nmap <C-s> :w<CR>
+	vmap <C-s> <C-C>:w<CR>
+
+" Nerd tree
+	map <leader>n :NERDTreeToggle<CR>
+	"Highlights file open in buffer in nerdtree.
+	map <leader>t :NERDTreeFind<CR><c-w><c-p>
+
+" Shortcutting split navigation, saving a keypress:
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+
+" Windowcommand is nicer
+nnoremap <leader>w <C-w>
+"----------------------- Luke scripts ----------------------------------------
+
+" Quits Vim if nerd tree is only window open
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Replace all is aliased to S. ( Not so nice when using interactive search and
+	" replace)
+	nnoremap S :%s//gc<Left><Left><Left>
+
+" Compile document, be it groff/LaTeX/markdown/etc. ( Use inbuilt compiler
+	" instead and have it jump to errors?)
+	nnoremap <leader>c :w! \| !compiler <c-r>%<CR>
+
+" Open corresponding .pdf/.html or preview
+	nnoremap <leader>p :!opout <c-r>%<CR><CR>
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+	autocmd VimLeave *.tex !texclear %
+
+" Save file as sudo on files that require root permission
+	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Automatically deletes all trailing whitespace on save.
+	autocmd BufWritePre * %s/\s\+$//e
 
 
-" Case insensitive search until I use capital letter
-	set ignorecase
-	set smartcase
-" Go to matching during the typing of a search
-	set incsearch
+" Source when vimrc is saved
+    autocmd BufWritePost $MYVIMRC echo "vimrc sourced" | source $MYVIMRC
 
-" EXPERIMENTAL ALTERNATIVE TO SWAPFILE
+
+
+
+" Scrolls 5 chars when cursor get to edge of screen in horizontal direction
+	set sidescroll=5
+
+
+
+" EXPERIMENTAL ALTERNATIVE TO SWAPFILE (seems to work pretty well exept for
+" when i edit the file externaly, then vim forgets about the changes :( )
 	set noswapfile
 	set nobackup
+	set nowritebackup
 	set undodir=~/.config/nvim/undodir
 	set undofile
 
-	set nowritebackup
 
-" Undotree mapping
+"----------------Undotree mapping -------------------------------------------
 nnoremap <leader>u :UndotreeToggle<cr>
-" Undotree options https://github.com/mbbill/undotree/blob/master/plugin/undotree.vim#L15
+" Undotree options https://github.com/mbbill/undotree/blob/master/plugin/undtree.vim#L15
 	let g:undotree_WindowLayout = 2
 	let g:undotree_ShortIndicators = 1
 	let g:undotree_SplitWidth = 30
@@ -288,10 +382,67 @@ nnoremap <leader>u :UndotreeToggle<cr>
 	let g:undotree_HighlightSyntaxChange = "DiffChange"
 	let g:undotree_HighlightSyntaxDel = "DiffDelete"
 "
-"------------------------------------------------------------------------------
-" Coc stuff
-" TextEdit might fail if hidden is not set.
+" FzF-----------------------------------------------------------
+	" FZFSearch lines in the current file (open buffers? Have to look it up!)
+	noremap <leader>fl <ESC>:BLines!<CR>
+	" FZFSearch file from the current working directory
+	nnoremap <leader>ff <ESC>:Files!<CR>
+	" FZFSearch commits to the current git repo
+	nnoremap <leader>fg <ESC>:BCommits!<CR>
+	" FZFSearch the first command in command mode. Not the best. Could have
+	" some work done to it.
+	cnoremap <C-f> Commands<CR>
 
+
+"-------------------------Hexokinase-----------------------------------------
+ " Vim Hexokinase
+  let g:Hexokinase_refreshEvents = ['InsertLeave']
+
+  let g:Hexokinase_optInPatterns = [
+  \     'full_hex',
+  \     'triple_hex',
+  \     'rgb',
+  \     'rgba',
+  \     'hsl',
+  \     'hsla',
+  \     'colour_names'
+  \ ]
+
+  let g:Hexokinase_highlighters = ['backgroundfull']
+
+  " Reenable hexokinase on enter
+  autocmd VimEnter * HexokinaseTurnOn
+
+" ------------------------------ Web dev -------------------------------------
+
+" reload browser from vim Obs! not generic!
+nnoremap <leader>br :!sh ~/Scripts/reload_browser2.sh<CR>
+
+"------------------------------ NERDcommenter--------------------------------
+    let g:NERDCustomDelimiters = {
+        \ 'python': { 'left': '#', 'leftAlt': '"""', 'rightAlt': '"""' }
+    \ }
+	let g:NERDSpaceDelims = 1
+"------------------------------ Vim which key--------------------------------
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+"------------------------------------------------------------------------------
+"CoC stuff
+
+
+"Noted on lsp, coc and ale
+" ale is mainly a linter and fixer, linter displays errors and things missed in
+" formatting. Fixers fix formatting. CoC can be used for code completion and go
+" to definition, documentation, locations used. It can show diagnostics,
+" whatever that is, and it can go to implementation, call code action on stuff,
+" whatever that is. It can also fix stuff
+
+" TextEdit might fail if hidden is not set.
+set hidden "already set
+
+" Some servers have issues with backup files, see #649.
+set nobackup "already set
+set nowritebackup "already set
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -305,12 +456,12 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("patch-8.1.1564")
+"if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
+  "set signcolumn=number
+"else
   set signcolumn=yes
-endif
+"endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -326,8 +477,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -339,6 +488,7 @@ else
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -349,7 +499,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -377,17 +527,8 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Map function and class text objects
+" Map function and class text objects (Does this remap the default text object
+" in vim as well?
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
@@ -398,112 +539,4 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-"nmap <silent> <C-s> <Plug>(coc-range-select)
-"xmap <silent> <C-s> <Plug>(coc-range-select)
 
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings using CoCList:
-" Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-"nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-"nnoremap <silent> <space>j  :<C-u>CocNext<CR> Do default action for previous
-"item.
-"nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-"nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-
-" FzF-----------------------------------------------------------
-	noremap <leader>fl <ESC>:BLines!<CR>
-	nnoremap <leader>ff <ESC>:Files!<CR>
-	nnoremap <leader>fg <ESC>:BCommits!<CR>
-	cnoremap <C-f> Commands<CR>
-
-
-
-"------------------------------------------------------------------------------
-
-" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
-if &diff
-    highlight! link DiffText MatchParen
-endif
-
-" Goyo plugin makes text more readable when writing prose:
-	map <leader>G :Goyo \| set bg=dark \| set linebreak<CR>
-
-" Less usefull stuff?_________________________________________________________________________
-
-" Spell-check set to <leader>L for Language
-	map <leader>L :setlocal spell! spelllang=se<CR>
-
-" Autoformatting behaviour i want.
-" * Autolinebreak on comments and text.
-" * Auto-comment if i press shift-enter
-" * Fix indenting quickly
-" * Maybe quickly toogle autoformatting?
-
-"set textwidth=80
-"set formatoptions+=c auto break comments set formatoptions+=t auto break
-"set formatoptions+=t "auto break text
-"set formatoptions+=a "format paragraf after any textchange
-"set formatoptions+=n "recognice numbered lists
-"set formatoptions+=j "removes comment character when joining lines
-"set formatoptions+=q "reformat with gq
-"set formatoptions+=w "make vim recognice that two lines are connected in the same paragraph by that the line ends in a whitespace
-
-
-
-
-
-" Disables automatic commenting on newline:
-" what i acctually whant +c,-r,-o+q
-" Seams like you can make vim know two rows are in the same paragraph if they
-" end with whitespace. But formatoptions+c does not end my comments with
-" whitespace :(
-
-" To fokus and unfokus a split
-"nnoremap <leader>z <C-w>\|<C-w>\_
-"nnoremap <leader>Z <C-w>=
-"nnoremap <leader>z :tab split<CR>
-"nnoremap <leader>Z <C-w><C-q>
-" Windowcommand is nicer
-nnoremap <leader>w <C-w>
-nnoremap <leader>wo :ZoomWinTabToggle<CR>
-
-autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-" Fancy stuff for man pages
-autocmd FileType man
-	\ call man#show_toc() |
-	\ setlocal laststatus=0 nonumber norelativenumber |
-	\ nnoremap <buffer> l <Enter> |
-	\ wincmd L |
-	\ exe 'vertical resize ' . (winwidth(0) * 1 / 2) |
-	"\ vert resize 35 |
-	\ nnoremap <buffer> <leader>n :wincmd p<CR> |
-	\ wincmd p |
-	\ nnoremap <buffer> <leader>n :wincmd p<CR> |
-	\ cnoreabbrev q qa! |
-	\ autocmd! 

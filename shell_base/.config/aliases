@@ -36,4 +36,9 @@ alias ls='ls -hF --color'
 alias vifm="vicd"
 alias ex="exa --icons -aF --group-directories-first"
 alias exl="exa --icons -al --git --group-directories-first"
-
+alias fzfpacman="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias fzfyay="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias rm="echo 'You should use \"trash-put\" instead of \"rm\"'"
+alias rmdir="echo 'You should use \"trash-put\" instead of \"rmdir\"'"
+#alias rm='function _rm(){ echo "You should use \"trash-put $1\" instead of \"rm $1\""; };_rm'
+#alias rmdir='function _rmdir(){ echo "You should use \"trash-put $1\" instead of \"rmdir $1\""; };_rmdir'
