@@ -50,6 +50,11 @@
 	 "and visual mode.
 "TODO Change so that search only searched the buffer in fokus.
 "TODO Setup ultisnips with a language server to get autocompletion snippets.
+"TODO Latex ligatures?
+"TODO Image preview?
+"TODO Open file in same location as i last cloed it? Or jump to it with
+"shortcut?
+"TODO Add <leader>fiw to insert wiki page or image in current wiki.
 
 "Regarding autoformatting, it is probably just an anoyance. But autowrapping
 "could be nice for booth comments in code and text in md and latex. Probably
@@ -120,7 +125,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "Plug 'tpope/vim-fugitive'
-"Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
 "Plug 'kovetskiy/sxhkd-vim'
 " Open url under cursor. Better than default
@@ -137,6 +142,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+"Plug 'lervag/vimtex'
+"Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 "-------------------- Fix annoyances and improve quality of life --------------
@@ -349,7 +357,6 @@ nnoremap <leader>w <C-w>
 
 
 
-
 " Scrolls 5 chars when cursor get to edge of screen in horizontal direction
 	set sidescroll=5
 
@@ -392,6 +399,9 @@ nnoremap <leader>u :UndotreeToggle<cr>
 	" FZFSearch the first command in command mode. Not the best. Could have
 	" some work done to it.
 	cnoremap <C-f> Commands<CR>
+	" Insert wiki file
+	"TODO
+	"nnoremap <leader>fiwf
 
 
 "-------------------------Hexokinase-----------------------------------------
@@ -425,6 +435,19 @@ nnoremap <leader>br :!sh ~/Scripts/reload_browser2.sh<CR>
 	let g:NERDSpaceDelims = 1
 "------------------------------ Vim which key--------------------------------
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+"------------------------------ Vim wiki --------------------------------
+  "let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      "\ 'syntax': 'markdown', 'ext': '.wiki'}]
+  "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown':'markdown'}
+  let g:vimwiki_ext2syntax = {}
+  let g:vimwiki_list = [{
+  \ 'path': '$HOME/vimwiki',
+  \ 'template_path': '$HOME/vimwiki/template',
+  \ 'template_default': 'default',
+  \ 'auto_export': 1,
+  \ 'template_ext': '.html'}]
+
 
 "------------------------------------------------------------------------------
 "CoC stuff
@@ -500,6 +523,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
+nmap <silent> gh  :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
