@@ -25,6 +25,7 @@ vicd()
 	cd "$dst"
 }
 
+alias doom="~/.emacs.d/bin/doom"
 alias pi="ssh -p 2718 pi@crazyminecuber.xyz"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

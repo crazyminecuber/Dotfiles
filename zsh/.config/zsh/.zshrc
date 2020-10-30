@@ -17,12 +17,14 @@
 # TODO Spacship rpromt is on second row. I want it on the first. (Open github
 	 # issue, cannot resolve myself.
 # TODO What is the use of activity notifications. Justa annoying?
+# TODO Shell is broken when ssh into bash.
 
 #  If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # A nice message from the one and only cow
 fortune -so | cowsay
+figlet Figlet
 
 # Always reload programs from path
 zstyle ':completion:*' rehash true
