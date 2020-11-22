@@ -32,12 +32,6 @@ zstyle ':completion:*' rehash true
 
 # Enable colors and change prompt:
 autoload -U colors && colors
-setopt appendhistory autocd
-
-# History in cache directory:
-HISTFILE=~/.bash_history
-HISTSIZE=10000
-SAVEHIST=1000000000
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -189,3 +183,9 @@ bindkey -M vicmd "j" down-line-or-beginning-search # Down
 source /usr/share/zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh
 # Source .profilc
 #[ -f ~/.profile ] && source ~/.profile
+setopt appendhistory autocd INC_APPEND_HISTORY HIST_IGNORE_DUPS
+
+# History in cache directory:
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000000
+SAVEHIST=1000000000

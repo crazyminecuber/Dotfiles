@@ -1,0 +1,29 @@
+--svt--
+https://www.svt.se/nyheter/rss.xml
+--youtube--
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-9C9d1qDDzA2jdH53vSIuA "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-N9mbZUjWvBgGO4BlzuwLA "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-rfOx4cRFtdeMI94caWd8Q "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-wR4ekYCWwbIuqwGe1H9vg "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0AE_22J0kAo30yjasaeFqw "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0I1XLjHb_I9g-1Fq22GL1A "YouTube-prenumerationer"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0pBauLp63yzf6sVdEOIUbA "YouTube-prenumerationer"
+--redit--
+https://www.reddit.com/r/vim.rss
+--lukesmit--
+https://lukesmith.xyz/rss.xml
+https://lukesmith.xyz/youtube.xml
+https://notrelated.xyz/rss
+https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3
+--liu--
+https://liu.se/liu-nytt/arkiv/nyhetsarkiv?format=rss&l=sv
+--blogs--
+http://christiangustavsson.se/?feed=rss2
+--nitter--
+https://nitter.net/elonmusk/rss
+https://nitter.net/SpaceX/rss
+--github--
+https://github.com/lukesmithxyz/voidrice/commits/master.atom
+--podcasts--
+http://podcasts.joerogan.net/feed
+--facbook can be used via an RSS-bridge instance--

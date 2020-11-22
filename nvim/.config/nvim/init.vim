@@ -75,8 +75,8 @@
 
 autocmd!
 let mapleader =" "
-set textwidth=79
-set formatoptions=cqlnj
+set textwidth=80
+set formatoptions=cqlnjt
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " Scrolling
@@ -121,7 +121,6 @@ Plug 'junegunn/goyo.vim'
 "Plug 'jreybert/vimagit'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 "Plug 'tpope/vim-fugitive'
@@ -159,7 +158,6 @@ set noerrorbells
 set mouse=a
 "Combines systemclipboard with vim :D
 set clipboard+=unnamedplus
-set tm=100
 
 
 " Something to do with plugins. Probably leave it if I dont know better.
@@ -538,10 +536,11 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-implementation)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
+nmap <silent> gh <Plug>(coc-hover)
 " Use K to show documentation in preview window.
 nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
 nmap <silent> gh  :call <SID>show_documentation()<CR>
