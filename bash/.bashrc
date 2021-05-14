@@ -70,5 +70,4 @@ set -o vi
 set completion-ignore-case on
 set show-all-if-ambiguous on
 
-source /home/oskar/.config/broot/launcher/bash/br
 #this is a new change

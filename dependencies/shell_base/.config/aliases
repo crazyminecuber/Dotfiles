@@ -1,17 +1,11 @@
 #!/bin/sh
 
 # Pager
-#export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
-#export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
-#export MANPAGER="nvimpager"
 
 command -v nvim > /dev/null && export MANPAGER='nvim +Man!'
-#export MANWIDTH=999
-#export PAGER='nvim -R'
 
 command -v nvim > /dev/null && command -v git > /dev/null &&
 	git config --global core.pager "nvim -R" && git config --global color.pager no
-
 
 # Make vifm exit on current directory
 
@@ -23,6 +17,22 @@ vicd()
 	return 1
 	fi
 	cd "$dst"
+}
+colorTest()
+{
+	awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
+		s="/\\";
+		for (colnum = 0; colnum<term_cols; colnum++) {
+			r = 255-(colnum*255/term_cols);
+			g = (colnum*510/term_cols);
+			b = (colnum*255/term_cols);
+			if (g>255) g = 510-g;
+			printf "\033[48;2;%d;%d;%dm", r,g,b;
+			printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+			printf "%s\033[0m", substr(s,colnum%2+1,1);
+		}
+		printf "\n";
+	}'
 }
 
 alias doom="~/.emacs.d/bin/doom"
@@ -41,5 +51,4 @@ alias fzfpacman="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -r
 alias fzfyay="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias rm="echo 'You should use \"trash-put\" instead of \"rm\"'"
 alias rmdir="echo 'You should use \"trash-put\" instead of \"rmdir\"'"
-#alias rm='function _rm(){ echo "You should use \"trash-put $1\" instead of \"rm $1\""; };_rm'
-#alias rmdir='function _rmdir(){ echo "You should use \"trash-put $1\" instead of \"rmdir $1\""; };_rmdir'
+alias ssh="TERM=xterm-256color ssh"

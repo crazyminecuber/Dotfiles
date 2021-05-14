@@ -1,1 +1,15 @@
+nvim/.config/nvim/plugged/
+nvim/.config/nvim/autoload/
+nvim/.config/nvim/undodir/
+newsboat/.newsboat/cache.db
+tmux/.config/tmux/plugins
+vifm/.config/vifm/colors
+vifm/.config/vifm/scripts
 vifm/.config/vifm/vifminfo*
+*.zcompdump
+zsh/.config/zsh/.zinit
+zsh/.config/zsh/.zfunctions
+zsh/.config/zsh/zinit
+zsh/.config/zsh/spaceship-prompt
+zsh/.config/zsh/fzf
+*.zwc

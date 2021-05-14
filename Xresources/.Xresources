@@ -6,6 +6,14 @@ st.font: DroidSansMono Nerd Font-11;
 
 ! st.termname: st-256color
 ! st.borderpx: 2
+!
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
 !! Set the background, foreground and cursor colors as below:
 /*.background: black */
