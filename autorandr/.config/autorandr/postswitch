@@ -1,0 +1,18 @@
+#!/bin/sh
+notify-send -a autorandr "Display configurations changed"
+echo "i got run" >> /home/oskar/autorandrtester
+
+x=$(autorandr --detected | sed '/.*autorandr.*/,+d')
+l=$(echo "$x" | wc -l)
+
+if [ $l -gt 1 ]
+then
+	echo "$x" | rofi -dmenu -p "Display profile: "| xargs autorandr --load
+fi
+
+if [ $l -eq 0 ]
+then
+	notify-send -a autorandr "No display profile found" "Please configure how
+	you like with for example arandr and then save a profile with autorandr
+	--save profilename"
+fi
