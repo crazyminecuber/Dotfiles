@@ -1,3 +1,5 @@
+Xcursor.size: 16
+
 !! Transparency (0-1):
 st.alpha: 0.92
 
@@ -8,10 +10,10 @@ st.font: DroidSansMono Nerd Font-11;
 ! st.borderpx: 2
 !
 Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.autohint: 0
 Xft.rgba: rgb
-Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
