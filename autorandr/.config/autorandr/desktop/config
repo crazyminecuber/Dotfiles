@@ -1,0 +1,16 @@
+output HDMI-A-2
+off
+output HDMI-A-3
+off
+output DisplayPort-1
+crtc 1
+mode 2560x1440
+pos 2560x0
+rate 165.00
+rotate right
+output DisplayPort-0
+crtc 0
+mode 2560x1440
+pos 0x632
+primary
+rate 165.00
