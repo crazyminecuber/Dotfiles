@@ -91,7 +91,17 @@
 " could not be found from h-files and sometimes it jumped to other files. I
 " could also not get it to go to deklaration / definiton, it seemed random, wich
 " one of the ones it went to.
-"
+
+
+"TODO Can i serach the edit history? For example if i am missing a line which i know some word in, then i can get that exact line back.
+
+"TODO should learn checking utillities (formatting and compliency) for all languages
+
+"TODO snippets
+
+"TODO Vim wiki: kan man få en varning om man tar bort ett stycke som ett annat stycke länkar till? Så att länkar som inte leder någon vart undviks
+
+
 "TODO checkout cheat.sh. It is better than google for programming questions and
 "integrates nicely with vim. It know what language you are editing based on the
 "file and you can type any query you want and can have the answer displayed in a
@@ -455,6 +465,7 @@ nnoremap <leader>u :UndotreeToggle<cr>
 	nnoremap <leader>ff <ESC>:Files<CR>
 	" FZFSearch commits to the current git repo
 	nnoremap <leader>fg <ESC>:BCommits<CR>
+	nnoremap <leader>fr <ESC>:History<CR>
 	" FZFSearch the first command in command mode. Not the best. Could have
 	" some work done to it.
 	cnoremap <C-f> Commands<CR>

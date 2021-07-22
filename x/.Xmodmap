@@ -12,8 +12,8 @@
 !add Control = Control_R
 
 clear lock
-keycode 66 = ISO_Level3_Shift
-keycode 66 = Control_L
+keycode 66 = Escape
+!keycode 66 = Control_L
 !xcape -e 'Control_L=F12'
 !xcape -e 'Shift_L=F10;Shift_R=Control_L|x;Super_L=F11'
 !xcape -e 'Alt_R=F9'

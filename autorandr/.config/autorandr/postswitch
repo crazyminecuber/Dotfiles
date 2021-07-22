@@ -1,6 +1,5 @@
 #!/bin/sh
 notify-send -a autorandr "Display configurations changed"
-echo "i got run" >> /home/oskar/autorandrtester
 
 x=$(autorandr --detected | sed '/.*autorandr.*/,+d')
 l=$(echo "$x" | wc -l)
