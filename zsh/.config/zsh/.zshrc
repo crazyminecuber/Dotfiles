@@ -2,10 +2,8 @@
 # DONE CTRL-R does not work. Also bind to fuzzyfinder, togeter with other things.
 # DONE Fix so that commands are loaded immediattely to current shell after program install.
 # DONE fzf completion does not work properly.
-# TODO fzf for man pages
 # DONE Change options so that when i have typed stuff and hit up arrow, it finds commands from history that are matching instead of taking the one that i most recently typen. See arch wiki.
 # TODO Make tutorials and motivational videos for my self. I think i need it.
-# TODO Learn web scraping
 # DONE VI mode copying does not use the same clipboard as i do
 # DONE VI cursor is invisible in visual mode. (solutin was to set cursor color
 	 # in alacritty
@@ -50,13 +48,15 @@ source $ZSH_CONFIG_DIR/zinit/bin/zinit.zsh
 # Plugin that tells you when there is an alias for the given command
 zinit light denysdovhan/spaceship-prompt
 zinit ice lucid wait'!0'
-zinit light "MichaelAquilina/zsh-you-should-use"
 # Makes vi-mode use the same clipbard as system
 zinit ice lucid wait'!0'
 zinit light "kutsan/zsh-system-clipboard"
 # Plugin for syntax highlighting
 zinit ice lucid wait'!0'
 zinit load zdharma/fast-syntax-highlighting
+
+zinit ice lucid wait'!0'
+zinit load zsh-users/zsh-completions
 # ---------------------- Commands welcomming the user ------------------------
 
 # A nice message from the one and only cow
@@ -117,7 +117,7 @@ SPACESHIP_VENV_SYMBOL=" "
 #
 # Spaceship Prompt
 autoload -U promptinit; promptinit
-prompt spaceship
+#prompt spaceship
 
 
 # ------------------------ Smart last commands with up arrow ------------------
@@ -247,16 +247,3 @@ source $ZSH_CONFIG_DIR/fzf/shell/completion.zsh
 if [ -f ~/.config/aliases ]; then
     . ~/.config/aliases
 fi
-
-#Deletable?
-
-
-#if ! command -v starship > /dev/null;
-#then
-#	curl -fsSL https://starship.rs/install.sh | bash
-#fi
-#
-#eval "$(starship init zsh)"
-
-# Enable colors and change prompt:
-#autoload -U colors && colors

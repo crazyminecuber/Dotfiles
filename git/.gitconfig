@@ -2,3 +2,6 @@
 	pager = nvim -R
 [color]
 	pager = no
+[user]
+	email = crazyminecuber@gmail.com
+	name = crazyminecuber

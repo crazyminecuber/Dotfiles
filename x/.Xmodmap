@@ -11,6 +11,7 @@
 !keycode 24 = Control_R
 !add Control = Control_R
 
+! Should set capslock to escape.
 clear lock
 keycode 66 = Escape
 !keycode 66 = Control_L
