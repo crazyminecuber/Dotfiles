@@ -155,7 +155,7 @@ keys.globalkeys = gears.table.join(
       {description = "open a terminal", group = "launcher"}
    ),
    -- launch rofi
-   awful.key({modkey}, "d",
+   awful.key({modkey}, "a",
       function()
          awful.spawn(apps.launcher)
       end,
@@ -239,7 +239,7 @@ keys.globalkeys = gears.table.join(
    -- =========================================
 
    -- Reload Awesome
-   awful.key({modkey, "Shift"}, "r",
+   awful.key({modkey, "Control"}, "r",
       awesome.restart,
       {description = "reload awesome", group = "awesome"}
    ),

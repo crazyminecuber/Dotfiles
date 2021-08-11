@@ -25,6 +25,7 @@
 --Notes
 --Taggar: Varje skärm har taggar. Vill kunna byta applikationer mellan taggar.
 --Kan gör genom att ha aktiv och 2-clicka på tagicon.
+--Terminalcommandot awesome-clent är awesome! (på riktigt alltså!)
 --
 
 -- Standard awesome libraries
@@ -359,6 +360,16 @@ main_titlebar: setup {
 	}
 end)
 
+-- FIX
+tag.connect_signal(
+	--'property::selected',
+	'property::selected',
+	function(t)
+		if t == awful.screen.focused().selected_tag and #(t:clients()) > 0 then
+			awful.client.getmaster():activate()
+		end
+	end
+)
 
 client.connect_signal("manage", function (c)
     c.shape = beautiful.client_shape_rounded
@@ -378,9 +389,10 @@ awesome.spawn("paplay /usr/share/sounds/freedesktop/stereo/service-login.oga")
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
 
-   awful.spawn.with_shell(
-       'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
-       'xrdb -merge <<< "awesome.started:true";' ..
-       -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
-       'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
-       )
+awful.spawn.with_shell(
+   'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
+   'xrdb -merge <<< "awesome.started:true";' ..
+   -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
+   'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
+   )
+
