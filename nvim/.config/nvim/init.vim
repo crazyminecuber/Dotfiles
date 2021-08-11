@@ -360,6 +360,9 @@ endif
 	set sidescrolloff=5
 
 "-----------------------Nice shortcuts------------------------------------
+
+" Run code in awesomewm
+nnoremap <leader>a :w<cr>:!cat test \| awesome-client <enter>
 " Spell-check set to <leader>L for Language
 map <leader>L :setlocal spell! spelllang=se<CR>
 
@@ -396,7 +399,7 @@ nnoremap <leader>w <C-w>
 
 " Open corresponding .pdf/.html or preview
 	nnoremap <leader>p :!opout <c-r>%<CR><CR>
-
+	nnoremap <leader>a :w<cr>:!cat test \| awesome-client <enter>
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 
