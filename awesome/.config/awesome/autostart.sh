@@ -13,6 +13,7 @@ run xfce4-power-manager
 #run blueman-applet
 run volctl
 run keepassxc
+run firefox
 #run nm-applet
 #run redshift-gtk
 #killall conky

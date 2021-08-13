@@ -15,12 +15,15 @@
 --TODO Hur switcha till client på annan skärm?
 --TODO Avsluta max när man fokuserar på ett annat fönster
 --TODO Fixa med rules så att saker som ska vara floating är floating
---TODO Steam spawnser i separat workspace.
+--DONE Steam spawnser i separat workspace.
 --TODO Borders Leaking through in full screen
 --TODO Spawna firefox på rimligt ställe
 --TODO Ändra så att ny fönster spawner på master.
 --TODO Lär kortkommandon hur man byter ordning på fönster. Flytta till master
 --TODO Fokusera primära fönstret när jag byter tag (kanske bara om det är en enskilld tag)
+--TODO hur flytta fönster mellan taggar på smidigt sätt? Windosklicka på den
+--taggen så flyttas fönster i fokus till den? Drag och drop?
+--TODO fltta till annan skärm
 --
 --Notes
 --Taggar: Varje skärm har taggar. Vill kunna byta applikationer mellan taggar.
