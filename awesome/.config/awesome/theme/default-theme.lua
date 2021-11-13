@@ -140,6 +140,9 @@ local awesome_overrides = function(theme)
 	theme.client_shape_rounded = function(cr, width, height)
 		gears.shape.rounded_rect(cr, width, height, dpi(12))
 	end
+	theme.client_shape_rect = function(cr, width, height)
+		gears.shape.rectangle(cr, width, height, dpi(12))
+	end
 
 	-- Menu
 	theme.menu_font = 'Inter Regular 11'
@@ -173,7 +176,7 @@ local awesome_overrides = function(theme)
 	theme.layout_tile = theme.icons .. 'layouts/tile.svg'
 	theme.layout_dwindle = theme.icons .. 'layouts/dwindle.svg'
 	theme.layout_floating = theme.icons .. 'layouts/floating.svg'
-	
+
 	-- Taglist
 	theme.taglist_bg_empty = theme.background .. '99'
 	theme.taglist_bg_occupied =  '#ffffff' .. '1A'
@@ -199,7 +202,7 @@ local awesome_overrides = function(theme)
 	theme.notification_spacing = dpi(5)
 	theme.notification_icon_resize_strategy = 'center'
 	theme.notification_icon_size = dpi(32)
-	
+
 	-- Client Snap Theme
 	theme.snap_bg = theme.background
 	theme.snap_shape = gears.shape.rectangle

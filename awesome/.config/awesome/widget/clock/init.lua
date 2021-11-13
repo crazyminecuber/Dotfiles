@@ -11,9 +11,10 @@ local create_clock = function(s)
 
 	local clock_format = nil
 	if not military_mode then
-		clock_format = '<span font="Inter Bold 11">%I:%M %p</span>'
+		clock_format = '<span font=>%I:%M %p</span>'
+
 	else
-		clock_format = '<span font="Inter Bold 11">%H:%M</span>'
+		clock_format = '<span font="Inter Bold 12">%H:%M</span>'
 	end
 
 	s.clock_widget = wibox.widget.textclock(
@@ -66,8 +67,8 @@ local create_clock = function(s)
 			local day = os.date('%d')
 			local month = os.date('%B')
 
-			local first_digit = string.sub(day, 0, 1) 
-			local last_digit = string.sub(day, -1) 
+			local first_digit = string.sub(day, 0, 1)
+			local last_digit = string.sub(day, -1)
 
 			if first_digit == '0' then
 				day = last_digit
@@ -84,7 +85,7 @@ local create_clock = function(s)
 			end
 
 			local date_str = 'Today is the ' ..
-			'<b>' .. day .. ordinal .. 
+			'<b>' .. day .. ordinal ..
 			' of ' .. month .. '</b>.\n' ..
 			'And it\'s fucking ' .. os.date('%A')
 
@@ -101,7 +102,7 @@ local create_clock = function(s)
 			end
 		end
 	)
-	
+
 	s.clock_widget:buttons(
 		gears.table.join(
 			awful.button(

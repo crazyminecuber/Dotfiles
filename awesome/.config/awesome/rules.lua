@@ -59,7 +59,7 @@ function rules.create(clientkeys, clientbuttons)
             keys = clientkeys,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
-            placement = awful.placement.centered
+            --placement = awful.placement.centered --FIXME maybe wrong thing to do?
          },
       },
       -- Floating clients.
@@ -83,7 +83,7 @@ function rules.create(clientkeys, clientbuttons)
             type = {
                "dialog"
             }
-         }, properties = {floating = true}
+         }, properties = {floating = true, titlebars_enabled=false},
       },
 
       -- Fullscreen clients
@@ -100,7 +100,7 @@ function rules.create(clientkeys, clientbuttons)
       {
          rule_any = {
             class = {
-               "Firefox"
+               "firefox"
             },
          }, properties = {switchtotag = true}
       },
@@ -139,10 +139,37 @@ function rules.create(clientkeys, clientbuttons)
          rule_any = {class = {"Pavucontrol"}, name = {"Bluetooth Devices"}},
          properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.45}
       },
+	  -- Steam
 	  {
 		rule_any = {class = {"Steam"}, name = {"Steam"}},
 		properties = {floating = true, tag = "steam",switchtotag=true}
-	},
+	  },
+	  -- Matlab tab completion and previous command
+	  {
+		rule = {class = "MATLAB*", name = "Figure*"},
+		--rule = {class = "matlab", name = "TabCompletionPopup"},
+		properties = {floating=false, tag = 'matlab',switchtotag=true},
+		callback = function (c)
+			c.first_tag.layout = awful.layout.suit.fair
+			print("figure!")
+
+		end
+	  },
+	  {
+		rule = {class = "matlab", name = "Command HistoryWindow"},
+		properties = {titlebars_enabled=false}
+	  },
+	  {
+		rule = {type = "dialog"},
+		properties = {titlebars_enabled=false},
+		callback = function (c)
+			print("splash!")
+		end
+	  },
+	  {
+		rule_any = {class = {"Steam"}, name = {"Steam"}},
+		properties = {floating = true, tag = "steam",switchtotag=true}
+	  },
    }
 end
 

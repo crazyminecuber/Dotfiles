@@ -18,12 +18,17 @@
 --DONE Steam spawnser i separat workspace.
 --TODO Borders Leaking through in full screen
 --TODO Spawna firefox på rimligt ställe
---TODO Ändra så att ny fönster spawner på master.
+--DONE Ändra så att ny fönster spawner på master.
 --TODO Lär kortkommandon hur man byter ordning på fönster. Flytta till master
---TODO Fokusera primära fönstret när jag byter tag (kanske bara om det är en enskilld tag)
---TODO hur flytta fönster mellan taggar på smidigt sätt? Windosklicka på den
+--DONE Fokusera primära fönstret när jag byter tag (kanske bara om det är en enskilld tag)
+--DONE hur flytta fönster mellan taggar på smidigt sätt? Windosklicka på den
 --taggen så flyttas fönster i fokus till den? Drag och drop?
 --TODO fltta till annan skärm
+--DONE Flytt program till annat workspace med musen
+--DONE Flytta matlabgrafer till andra skrämen och tila
+--DONE matlab autocompletion fönstret är buggigt
+--DONE När jag går till en tag som har fönster men inte maximerade så blir det felmeddelande
+--
 --
 --Notes
 --Taggar: Varje skärm har taggar. Vill kunna byta applikationer mellan taggar.
@@ -108,6 +113,7 @@ end
 awful.layout.append_default_layouts({
    awful.layout.suit.tile,
    awful.layout.suit.floating,
+   --awful.layout.suit.fair,
    --awful.layout.suit.max,
 })
 -- Unmax when unfocus
@@ -200,14 +206,18 @@ end
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
 
-local main_titlebar = awful.titlebar(c, {
-	position = "left",
+local main_titlebar_vert = awful.titlebar(c, {
+	position = "right",
     size    = 25,
 	bg_focus = beautiful.titelbar_bg_focus,
 	bg_normal = beautiful.titelbar_bg_normal,
-	shape = function(cr, width, height)
-	    gears.shape.rounded_rect(cr, width, height, 20)
-	end
+})
+
+local main_titlebar_horiz = awful.titlebar(c, {
+	position = "top",
+    size    = 30,
+	bg_focus = beautiful.titelbar_bg_focus,
+	bg_normal = beautiful.titelbar_bg_normal,
 })
 --[[
 local double_click_event_handler = function(double_click_event)
@@ -281,8 +291,55 @@ local buttons = gears.table.join(
 )
 
 
+-- left--bot right--top top--left bot right
 
-main_titlebar: setup {
+main_titlebar_horiz: setup {
+	{
+		{
+			awful.titlebar.widget.closebutton(c),
+			awful.titlebar.widget.maximizedbutton(c),
+			awful.titlebar.widget.minimizebutton(c),
+			spacing = dpi(7),
+			layout  = wibox.layout.fixed.horizontal,
+		},
+		bottom   = dpi(4),
+        top  = dpi(4),
+        right    = 0,
+        left = dpi(4),
+        layout = wibox.container.margin
+	},
+	{
+		nil,
+		{
+			awful.titlebar.widget.iconwidget(c),
+			{ -- Title
+            widget = awful.titlebar.widget.titlewidget(c),
+			},
+			layout  = wibox.layout.align.horizontal,
+
+		},
+		buttons= buttons,
+		expand = "outside",
+		layout  = wibox.layout.align.horizontal,--ush! Men det funkar!
+	},
+ 	{
+		{
+			awful.titlebar.widget.floatingbutton (c),
+			awful.titlebar.widget.stickybutton   (c),
+			spacing = dpi(10),
+			layout  = wibox.layout.fixed.horizontal,
+		},
+		bottom   = dpi(4),
+        top  = dpi(4),
+        right    = dpi(4),
+        left = 0,
+        layout = wibox.container.margin
+	},
+	expand="inside",
+	layout = wibox.layout.align.horizontal
+}
+
+main_titlebar_vert: setup {
 	{
 		{
 			awful.titlebar.widget.closebutton(c),
@@ -295,6 +352,7 @@ main_titlebar: setup {
         right  = dpi(3),
         top    = dpi(2),
         bottom = 0,
+		buttons= buttons,
         layout = wibox.container.margin
 	},
 	{
@@ -316,6 +374,7 @@ main_titlebar: setup {
 			spacing = dpi(10),
 			layout  = wibox.layout.fixed.vertical,
 		},
+		buttons= buttons,
 		left   = dpi(3),
         right  = dpi(3),
         top    = 0,
@@ -352,7 +411,7 @@ main_titlebar: setup {
 		buttons = buttons2,
 		layout = wibox.layout.stack,
 	}
-	awful.titlebar(c, {position="top",
+	awful.titlebar(c, {position="left",
 		bg_focus = beautiful.titelbar_bg_focus,
 		bg_normal = beautiful.titelbar_bg_normal,
 		size=beautiful.resizer_size}):setup
@@ -369,13 +428,19 @@ tag.connect_signal(
 	'property::selected',
 	function(t)
 		if t == awful.screen.focused().selected_tag and #(t:clients()) > 0 then
-			awful.client.getmaster():activate()
+			if awful.client.getmaster() then
+				awful.client.getmaster():activate()
+			else
+				t:clients()[1].minimized = false
+			end
 		end
 	end
 )
 
 client.connect_signal("manage", function (c)
-    c.shape = beautiful.client_shape_rounded
+	if not c.requests_no_titlebar or c.class == "firefox" then
+	    c.shape = beautiful.client_shape_rounded
+	end
 end)
 
 local central_panel =  require('layout.central-panel')

@@ -12,7 +12,7 @@ run flameshot
 run xfce4-power-manager
 #run blueman-applet
 run volctl
-run keepassxc
+run keepassxc "Bigdata/Nextcloud/Viktiga\ dokument/Passwords.kdbx"
 run firefox
 #run nm-applet
 #run redshift-gtk

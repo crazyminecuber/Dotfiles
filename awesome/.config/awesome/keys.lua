@@ -100,6 +100,22 @@ local function raise_client()
 end
 
 
+-- Tooggle fullscreen and fix shape so corners are not rounded. Should probably
+-- be rewritten so it uses the same function as i use when i set the round
+-- corners for the first time
+local function toggle_fullscreen(c)
+	if not c.fullscreen then
+		c.fullscreen = true
+		c.shape = beautiful.client_shape_rect
+	elseif not c.requests_no_titlebar or c.class == "firefox" then
+		c.fullscreen = false
+	    c.shape = beautiful.client_shape_rounded
+	else
+		c.fullscreen = false
+	end
+end
+
+
 -- ===================================================================
 -- Mouse bindings
 -- ===================================================================
@@ -339,13 +355,15 @@ keys.globalkeys = gears.table.join(
    -- Focus client by index (cycle through clients)
    awful.key({modkey}, "Tab",
       function()
-         awful.client.focus.byidx(1)
+         --awful.client.focus.byidx(1)
+		awful.tag.viewprev(1)
       end,
       {description = "focus next by index", group = "client"}
    ),
    awful.key({modkey, "Shift"}, "Tab",
+
       function()
-         awful.client.focus.byidx(-1)
+		awful.tag.viewnext(1)
       end,
       {description = "focus previous by index", group = "client"}
    ),
@@ -569,7 +587,8 @@ keys.clientkeys = gears.table.join(
    -- toggle fullscreen
    awful.key({modkey}, "f",
       function(c)
-         c.fullscreen = not c.fullscreen
+		 toggle_fullscreen(c)
+
       end,
       {description = "toggle fullscreen", group = "client"}
    ),

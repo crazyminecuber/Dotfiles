@@ -27,9 +27,9 @@ local theme = {}
 theme.name = "pastel"
 
 -- Font
-theme.font = "JetbrainsMono Nerd 12" --TODO Fix later
+theme.font = "JetbrainsMono Nerd 14" --TODO Fix later
 --theme.font = "gurk 10"
-theme.title_font = "JetbrainsMono Nerd 14"
+theme.title_font = "JetbrainsMono Nerd 10"
 
 theme.transparent = "#00000011"
 theme.background = "#1f2430ff"
@@ -45,10 +45,13 @@ theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"
 
 -- Foreground
-theme.fg_normal = "#ffffff"
-theme.fg_focus = "#e4e4e4"
-theme.fg_urgent = "#ffffff"
-theme.fg_minimize = "#ffffff"
+theme.fg_normal = "#ebdbb2"
+theme.fg_focus= "#ebdbb2"
+theme.fg_urgent = "#ebdbb2"
+theme.fg_minimize = "#ebdbb2"
+--theme.fg_focus = "#e4e4e4"
+--theme.fg_urgent = "#ffffff"
+--theme.fg_minimize = "#ffffff"
 
 -- Window Gap Distance
 theme.useless_gap = dpi(7)
@@ -121,6 +124,7 @@ theme.titlebar_size = dpi(80)
 --theme.titelbar_bg_normal = "#333344ff"
 theme.titelbar_bg_focus = "#2e3440"
 theme.titelbar_bg_normal = "#2e3440"
+theme.titelbar_fg_normal = "#ebdbb2"
 
 
 --theme.titlebar_bg_focus = gtk_variable().bg_color:sub(1,7) .. '66'

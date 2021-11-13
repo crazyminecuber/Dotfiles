@@ -1,8 +1,7 @@
 configuration {
-	font: "Inter Regular 10";
+	font: "Inter Regular 15";
 	show-icons: true;
 	drun-display-format: "{name}";
-	fullscreen: false;
 	threads: 0;
 	matching: "fuzzy";
 	scroll-method: 0;
@@ -120,11 +119,15 @@ element {
 }
 
 element-icon {
+	background-color: @transparent;
 	size: 72px;
 	border: 0;
+	horizontal-align: 0.5;
 }
 
 element-text {
+	background-color: @transparent;
+	text-color: @foreground;
 	expand: true;
 	horizontal-align: 0.5;
 	vertical-align: 0.5;

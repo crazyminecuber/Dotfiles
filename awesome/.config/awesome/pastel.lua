@@ -41,7 +41,7 @@ pastel.initialize = function()
          left_panel.create(s)
       for i = 1, 9, 1
       do
-         awful.tag.add(i == 6 and 'steam' or i, {
+         awful.tag.add((i == 6 and 'steam') or (i==7 and 'matlab') or i, {
             icon = gears.filesystem.get_configuration_dir() .. "/icons/tags/pastel/" .. i .. ".png",
             icon_only = true,
             layout = i==6 and awful.layout.suit.floating or awful.layout.suit.tile,
