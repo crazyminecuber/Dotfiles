@@ -31,7 +31,7 @@ if [ ! -d "$ZSH_CONFIG_DIR/zinit/bin" ]
 then
 	echo "Installing zinit"
 	mkdir -p "$ZSH_CONFIG_DIR/zinit"
-	git clone https://github.com/zdharma/zinit.git $ZSH_CONFIG_DIR/zinit/bin
+	git clone https://github.com/zdharma-continuum/zinit.git $ZSH_CONFIG_DIR/zinit/bin
 fi
 
 # Install fzf if not installed.
@@ -53,7 +53,7 @@ zinit ice lucid wait'!0'
 zinit light "kutsan/zsh-system-clipboard"
 # Plugin for syntax highlighting
 zinit ice lucid wait'!0'
-zinit load zdharma/fast-syntax-highlighting
+zinit load zdharma-continuum/fast-syntax-highlighting
 
 zinit ice lucid wait'!0'
 zinit load zsh-users/zsh-completions
@@ -247,3 +247,6 @@ source $ZSH_CONFIG_DIR/fzf/shell/completion.zsh
 if [ -f ~/.config/aliases ]; then
     . ~/.config/aliases
 fi
+
+path+=("$HOME/.bin")
+export PATH

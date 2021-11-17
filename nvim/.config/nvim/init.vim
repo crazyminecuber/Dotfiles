@@ -148,7 +148,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sirtaj/vim-openscad'
 
 Plug 'bling/vim-airline'
-Plug 'RRethy/vim-hexokinase'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-commentary'
@@ -170,7 +170,7 @@ Plug 'vimwiki/vimwiki'
 " Open url under cursor. Better than default
 Plug 'tyru/open-browser.vim'
 " Practice
-Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+"Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 " Toggle zoom
 Plug 'troydm/zoomwintab.vim'
 " Many languages and fast
@@ -185,7 +185,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "Plug 'lervag/vimtex'
 "Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'Jacotsu/CoVim-Neovim'
+"Plug 'Jacotsu/CoVim-Neovim'
 Plug 'linluk/vim-c2h'
 Plug 'rhysd/vim-clang-format'
 Plug 'dbeniamine/cheat.sh-vim'
