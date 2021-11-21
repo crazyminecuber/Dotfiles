@@ -38,3 +38,5 @@ export CM_LAUNCHER='rofi'
 #QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_QPA_PLATFORMTHEME=gtk2
 #export QT_QPA_PLATFORMTHEME=gnome
+path+=($HOME/.local/bin)
+export PATH

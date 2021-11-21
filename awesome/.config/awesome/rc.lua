@@ -88,7 +88,11 @@ local run_on_start_up = {
    --"redshift",
    --"unclutter"
 }
-
+local function set_shape(c)
+	if not c.requests_no_titlebar or c.class == "firefox" then
+	    c.shape = beautiful.client_shape_rounded
+	end
+end
 
 -- ===================================================================
 -- Initialization
@@ -438,9 +442,7 @@ tag.connect_signal(
 )
 
 client.connect_signal("manage", function (c)
-	if not c.requests_no_titlebar or c.class == "firefox" then
-	    c.shape = beautiful.client_shape_rounded
-	end
+	set_shape(c)
 end)
 
 local central_panel =  require('layout.central-panel')
@@ -451,7 +453,17 @@ screen.connect_signal(
 		s.central_panel = central_panel(s)
 	end
 )
-
+--much nicer than before
+client.connect_signal("request::geometry", function(c, context, ...)
+    if context == "fullscreen" then
+		if not c.fullscreen then
+			set_shape(c)
+		else
+			c.shape = beautiful.client_shape_rect
+		end
+    end
+end
+)
 
 awesome.spawn("paplay /usr/share/sounds/freedesktop/stereo/service-login.oga")
 
@@ -463,4 +475,5 @@ awful.spawn.with_shell(
    -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
    'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
    )
+
 

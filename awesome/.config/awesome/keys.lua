@@ -100,20 +100,6 @@ local function raise_client()
 end
 
 
--- Tooggle fullscreen and fix shape so corners are not rounded. Should probably
--- be rewritten so it uses the same function as i use when i set the round
--- corners for the first time
-local function toggle_fullscreen(c)
-	if not c.fullscreen then
-		c.fullscreen = true
-		c.shape = beautiful.client_shape_rect
-	elseif not c.requests_no_titlebar or c.class == "firefox" then
-		c.fullscreen = false
-	    c.shape = beautiful.client_shape_rounded
-	else
-		c.fullscreen = false
-	end
-end
 
 
 -- ===================================================================
@@ -182,6 +168,12 @@ keys.globalkeys = gears.table.join(
          awful.spawn(apps.clipboard)
       end,
       {description = "open clipboad manager", group = "launcher"}
+   ),
+   awful.key({modkey}, "e",
+      function()
+         awful.spawn(apps.filebrowser)
+      end,
+      {description = "application launcher", group = "launcher"}
    ),
 
    -- =========================================
@@ -587,8 +579,7 @@ keys.clientkeys = gears.table.join(
    -- toggle fullscreen
    awful.key({modkey}, "f",
       function(c)
-		 toggle_fullscreen(c)
-
+		 c.fullscreen = not c.fullscreen
       end,
       {description = "toggle fullscreen", group = "client"}
    ),

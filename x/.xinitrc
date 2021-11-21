@@ -19,7 +19,6 @@ xmodmap ~/.Xmodmap
 autorandr -c
 clipmenud &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-clipster -d &
 picom &
 udiskie --tray &
 
