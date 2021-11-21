@@ -5,3 +5,5 @@
 [user]
 	email = crazyminecuber@gmail.com
 	name = crazyminecuber
+[pull]
+	rebase = false
