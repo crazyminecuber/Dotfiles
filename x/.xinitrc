@@ -13,7 +13,6 @@ fi
 xrandr &&
 xrdb -merge ~/.Xresources &&
 
-xset r rate 200 30
 xmodmap ~/.Xmodmap
 
 autorandr -c

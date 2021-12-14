@@ -14,6 +14,8 @@ run xfce4-power-manager
 run volctl
 run keepassxc "Bigdata/Nextcloud/Viktiga\ dokument/Passwords.kdbx"
 run firefox
+xset r rate 200 30
+setxkbmap se -variant nodeadkeys
 #run nm-applet
 #run redshift-gtk
 #killall conky

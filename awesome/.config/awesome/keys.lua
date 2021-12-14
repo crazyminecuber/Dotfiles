@@ -126,6 +126,20 @@ keys.clientbuttons = gears.table.join(
          c:raise()
       end
    ),
+   -- Raise client
+   awful.button({}, 2,
+      function(c)
+         client.focus = c
+         c:raise()
+      end
+   ),
+   -- Raise client
+   awful.button({}, 3,
+      function(c)
+         client.focus = c
+         c:raise()
+      end
+   ),
 
    -- Move and Resize Client
    awful.button({modkey}, 1, awful.mouse.client.move),
