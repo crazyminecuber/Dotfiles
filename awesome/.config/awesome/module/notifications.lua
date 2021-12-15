@@ -248,11 +248,11 @@ naughty.connect_signal(
 		-- Destroy popups if dont_disturb mode is on
 		-- Or if the central_panel is visible
 		local focused = awful.screen.focused()
-		if _G.dont_disturb or
-			(focused.central_panel and focused.central_panel.visible) then
+		if n.app_name ~= 'xfce4-power-manager' and n.urgency ~= 'critical' and (_G.dont_disturb or
+			(focused.central_panel and focused.central_panel.visible)) then
 			naughty.destroy_all_notifications(nil, 1)
         else
-            awesome.spawn("paplay /usr/share/sounds/freedesktop/stereo/message.oga")
+            --awesome.spawn("paplay /usr/share/sounds/freedesktop/stereo/message.oga")
 		end
 
 	end
