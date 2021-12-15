@@ -78,7 +78,6 @@ function rules.create(clientkeys, clientbuttons)
             },
             role = {
                "pop-up",
-               "GtkFileChooserDialog"
             },
             type = {
                "dialog"
@@ -131,7 +130,8 @@ function rules.create(clientkeys, clientbuttons)
       -- File chooser dialog
       {
          rule_any = {role = {"GtkFileChooserDialog"}},
-         properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.65}
+         properties = {floating = true, placement = awful.placement.centered, width = screen_width * 0.55, height = screen_height * 0.65}
+
       },
 
       -- Pavucontrol & Bluetooth Devices
