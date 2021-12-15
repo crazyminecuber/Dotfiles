@@ -35,12 +35,14 @@ theme.transparent = "#00000011"
 theme.background = "#1f2430ff"
 -- Background
 --theme.bg_normal = "#1f2430ee"
-theme.bg_normal = "#2e3440"
+--theme.bg_normal = "#2e3440"
+theme.bg_normal = "#3e4450"
 
 theme.bg_dark = "#000000"
 --theme.bg_focus = "#151821"
 --theme.bg_focus = "#888888aa"
-theme.bg_focus = "#8022aaff"
+--theme.bg_focus = "#8022aaff"
+theme.bg_focus = "#248811ff"
 theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"
 
@@ -54,7 +56,7 @@ theme.fg_minimize = "#ebdbb2"
 --theme.fg_minimize = "#ffffff"
 
 -- Window Gap Distance
-theme.useless_gap = dpi(7)
+theme.useless_gap = dpi(1)
 
 -- Show Gaps if Only One Client is Visible
 theme.gap_single_client = true
@@ -68,7 +70,8 @@ theme.border_marked = theme.fg_urgent
 -- Taglist
 theme.taglist_bg_empty = "#00000000"
 --theme.taglist_bg_occupied = "#8022aaff"
-theme.taglist_bg_occupied = "#888888aa"
+--theme.taglist_bg_occupied = "#888888aa"
+theme.taglist_bg_occupied = "#cc6655aa"
 theme.taglist_bg_urgent = "#ff1e00ff"
 theme.taglist_bg_focus = theme.bg_focus
 
