@@ -13,7 +13,8 @@ run xfce4-power-manager
 #run blueman-applet
 run volctl
 run keepassxc "Bigdata/Nextcloud/Viktiga\ dokument/Passwords.kdbx"
-run firefox
+#run firefox
+run brave
 #run nm-applet
 #run redshift-gtk
 #killall conky
