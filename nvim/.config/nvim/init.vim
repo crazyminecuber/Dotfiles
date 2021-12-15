@@ -108,10 +108,13 @@
 "buffer or immediattely paste it in. If you use a linter that finds errors, you
 "do not even have to type! You can just querry the error immediatelly
 " Disable compatibility for vi. No point in not having it
-	set nocompatible
+"
+if exists('g:vscode')
+    " VSCode extension
+    " ordinary neovim
+else
 
-
-
+set nocompatible
 autocmd!
 let mapleader =" "
 set textwidth=80
@@ -172,6 +175,8 @@ Plug 'tyru/open-browser.vim'
 " Practice
 "Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 " Toggle zoom
+"Plug 'beauwilliams/imnotaquitter.vim'
+
 Plug 'troydm/zoomwintab.vim'
 " Many languages and fast
 Plug 'sheerun/vim-polyglot'
@@ -244,7 +249,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
  set smarttab
 " Uncomment if i get tired of seing tabs all over
-"    set expandtab
+    set expandtab
 
 " Tries to do smart indent
  set smartindent
@@ -1110,3 +1115,4 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 
+endif
