@@ -1,0 +1,20 @@
+[Unit]
+Description=Lock the screen
+Before=sleep.target
+
+[Service]
+#User=%I
+User=oskar
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -c 000000
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
+#Before=sleep.traget suspend.target
+
+
+
+
