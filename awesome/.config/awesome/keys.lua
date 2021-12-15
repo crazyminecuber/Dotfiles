@@ -238,8 +238,15 @@ keys.globalkeys = gears.table.join(
    -- Screenshot on prtscn using scrot
    awful.key({}, "Print",
       function()
-         awful.util.spawn(apps.screenshot, false)
-      end
+         awful.spawn(apps.screenshot, false)
+      end,
+      {description = "Take screenshot", group = "hotkeys"}
+   ),
+   awful.key({modkey}, "o",
+      function()
+         awful.spawn(apps.ocr)
+      end,
+      {description = "Prompt for screenshot and perform ocr", group = "hotkeys"}
    ),
 
    -- =========================================
@@ -345,14 +352,14 @@ keys.globalkeys = gears.table.join(
    ),
 
    -- Focus client by index (cycle through clients)
-   awful.key({modkey}, "Tab",
+   awful.key({modkey, "Shift"}, "Tab",
       function()
          --awful.client.focus.byidx(1)
 		awful.tag.viewprev(1)
       end,
       {description = "focus next by index", group = "client"}
    ),
-   awful.key({modkey, "Shift"}, "Tab",
+   awful.key({modkey}, "Tab",
 
       function()
 		awful.tag.viewnext(1)
