@@ -60,8 +60,8 @@ zinit load zsh-users/zsh-completions
 # ---------------------- Commands welcomming the user ------------------------
 
 # A nice message from the one and only cow
-fortune | cowsay
-figlet Figlet
+#figlet gurk | cowsthink -ns
+figlet "Gurk!" | cowthink -pn -T " U"
 
 # --------------------------- Spaceship prompt --------------------------------
 # Left normal prompt
