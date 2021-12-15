@@ -64,21 +64,23 @@ local theme_config_dir = gears.filesystem.get_configuration_dir() .. "configurat
 -- define default apps (global variable so other components can access it)
 apps = {
    network_manager = "nm-connection-editor", -- recommended: nm-connection-editor
-   power_manager = "xfce4-power-manager", -- recommended: xfce4-power-manager
+   power_manager = "xfce4-power-manager-settings", -- recommended: xfce4-power-manager
    terminal = "alacritty",
    --launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
    launcher = "rofi -show drun -sort -i -theme " .. theme_config_dir .. "rofi2.rasi",
    lock = "i3lock -c 222233",
    screenshot = "flameshot gui",
    filebrowser = "nautilus",
-   clipboard = "clipmenu -sort -i -p 'Clipboard'" -- Rofi thingy
+   clipboard = "clipmenu -sort -i -p 'Clipboard'", -- Rofi thingy
+   --ocr = "maim -s | tesseract -c debug_file=/dev/null stdin stdout | xclip -sel clip && notify-send \"<span color='#9624c7' font='32px'><i><b>Tesseract</b></i></span>\" \"OCR copied to clipboard\" --app-name='Gurk Incorporate'"
+   ocr = "sh " .. "/home/oskar/.config/awesome/utilities/ocr"
 
 }
 
 -- define wireless and ethernet interface names for the network widget
 -- use `ip link` command to determine these
 network_interfaces = {
-   --wlan = 'wlp1s0',
+   wlan = 'wlan0',
    lan = 'eno1'
 }
 
@@ -101,6 +103,7 @@ end
 -- Import notification appearance
 --require("components.notifications")
 require("module.notifications")
+require("module.dynamic-wallpaper")
 
 -- Run all the apps listed in run_on_start_up
 for _, app in ipairs(run_on_start_up) do
@@ -172,7 +175,7 @@ end)
 
 
 -- Autofocus a new client when previously focused one is closed
---require("awful.autofocus")
+require("awful.autofocus")
 
 -- Focus clients under mouse
 --client.connect_signal("mouse::enter", function(c)
