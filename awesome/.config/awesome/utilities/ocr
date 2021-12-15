@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+maim -s | tesseract -c debug_file=/dev/null stdin stdout | xclip -sel clip && notify-send "<span color='#9624c7' font='32px'><i><b>Tesseract</b></i></span>" "OCR copied to clipboard" --app-name='Gurk Incorporate'
