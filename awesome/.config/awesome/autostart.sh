@@ -18,7 +18,7 @@ run brave
 xset r rate 200 30
 setxkbmap se -variant nodeadkeys
 #run nm-applet
-#run redshift-gtk
+run redshift-gtk
 #killall conky
 #run conky -c $HOME/.config/awesome/system-overview
 

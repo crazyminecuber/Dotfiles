@@ -28,6 +28,7 @@
 --DONE Flytta matlabgrafer till andra skrämen och tila
 --DONE matlab autocompletion fönstret är buggigt
 --DONE När jag går till en tag som har fönster men inte maximerade så blir det felmeddelande
+--TODO Fönster i float läge spawner ibland off screen
 --
 --
 --Notes
