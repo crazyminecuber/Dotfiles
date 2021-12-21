@@ -138,6 +138,7 @@ endif
 
 " Live substitution
 set inccommand=split
+nnoremap Q <Nop>
 
 " Olika plugins vet inte vad alla gör
 call plug#begin('~/.config/nvim/plugged')
