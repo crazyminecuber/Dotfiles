@@ -51,7 +51,7 @@ pastel.initialize = function()
       end
   else
          awful.tag.add(0, {
-            layout = awful.layout.suit.tile,
+            layout = awful.layout.suit.tile.bottom,
             screen = s,
             selected = true
          })

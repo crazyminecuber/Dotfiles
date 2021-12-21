@@ -66,6 +66,7 @@ local create_clock = function(s)
 
 			local day = os.date('%d')
 			local month = os.date('%B')
+            local week = os.date("%V")
 
 			local first_digit = string.sub(day, 0, 1)
 			local last_digit = string.sub(day, -1)
@@ -84,10 +85,15 @@ local create_clock = function(s)
 				ordinal = 'th'
 			end
 
-			local date_str = 'Today is the ' ..
-			'<b>' .. day .. ordinal ..
-			' of ' .. month .. '</b>.\n' ..
-			'And it\'s fucking ' .. os.date('%A')
+			--local date_str = 'Today is the ' ..
+			--'<b>' .. day .. ordinal ..
+			--' of ' .. month .. '</b>.\n' ..
+			--local date_str = os.date("%Y%m%d%H%M%S") ..
+			--'And it\'s fucking ' .. os.date('%A') .. '\nWeek number is ' .. week
+
+			local date_str = '<b>' .. os.date("%Y-%m-%d") ..
+			'</b>\n' ..
+			'It\'s a fucking <b>' .. os.date('%A') .. '</b>\nw:<b>' .. week .. '</b>'
 
 			return date_str
 		end,
