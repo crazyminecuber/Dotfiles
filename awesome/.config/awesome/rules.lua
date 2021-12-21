@@ -59,8 +59,17 @@ function rules.create(clientkeys, clientbuttons)
             keys = clientkeys,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
-            --placement = awful.placement.centered --FIXME maybe wrong thing to do?
          },
+      },
+      {
+         rule = {},
+         except_any = { name = {"Command HistoryWindow","TabCompletionPopup"}}, --Non causal behavior??? But it werks now.
+         properties = {
+            placement = awful.placement.centered
+         },
+         callback = function(c)
+			print("clien called " .. c.name)
+         end
       },
       -- Floating clients.
       {
