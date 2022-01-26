@@ -262,6 +262,12 @@ keys.globalkeys = gears.table.join(
       end,
       {description = "Prompt for screenshot and perform ocr", group = "hotkeys"}
    ),
+   awful.key({modkey}, "b",
+      function()
+         awful.spawn(apps.beats)
+      end,
+      {description = "Rofi beats", group = "hotkeys"}
+   ),
 
    -- =========================================
    -- RELOAD / QUIT AWESOME

@@ -72,7 +72,7 @@ local return_button = function()
 	local check_internet_health = [=[
 	status_ping=0
 
-	packets="$(ping -q -w2 -c2 example.com | grep -o "100% packet loss")"
+	packets="$(ping -q -w2 -c2 1.1.1.1 | grep -o "100% packet loss")"
 	if [ ! -z "${packets}" ];
 	then
 		status_ping=0

@@ -28,7 +28,9 @@
 --DONE Flytta matlabgrafer till andra skrämen och tila
 --DONE matlab autocompletion fönstret är buggigt
 --DONE När jag går till en tag som har fönster men inte maximerade så blir det felmeddelande
---TODO Fönster i float läge spawner ibland off screen
+--DONE Fönster i float läge spawner ibland off screen
+--TODO Ibland blir master/stacken jättesmala utan att jag vet att jag har pillat på dem
+--TODO Blir fel nör fönster swawnar h är maximerat och relaterat
 --
 --
 --Notes
@@ -74,7 +76,8 @@ apps = {
    filebrowser = "nautilus",
    clipboard = "clipmenu -sort -i -p 'Clipboard'", -- Rofi thingy
    --ocr = "maim -s | tesseract -c debug_file=/dev/null stdin stdout | xclip -sel clip && notify-send \"<span color='#9624c7' font='32px'><i><b>Tesseract</b></i></span>\" \"OCR copied to clipboard\" --app-name='Gurk Incorporate'"
-   ocr = "sh " .. "/home/oskar/.config/awesome/utilities/ocr"
+   ocr = "sh " .. "/home/oskar/.config/awesome/utilities/ocr",
+   beats = "sh " .. "/home/oskar/.config/awesome/utilities/rofi-beats",
 
 }
 
@@ -126,7 +129,7 @@ awful.layout.append_default_layouts({
 })
 -- Unmax when unfocus
 
-client.connect_signal("unfocus", function(c) c.maximized = false end)
+--client.connect_signal("unfocus", function(c) c.maximized = false end)
 
 -- Import theme
 local beautiful = require("beautiful")
@@ -191,6 +194,9 @@ require("awful.autofocus")
 
 -- Reload config when screen geometry changes
 screen.connect_signal("property::geometry", awesome.restart)
+screen.connect_signal("added", awesome.restart)
+screen.connect_signal("removed", awesome.restart)
+screen.connect_signal("primary_changed", awesome.restart)
 
 
 -- ===================================================================
