@@ -11,7 +11,8 @@ function run {
 run flameshot
 run xfce4-power-manager
 #run blueman-applet
-run volctl
+#run volctl
+run pasystray
 run keepassxc "Nextcloud/Viktiga\ dokument/Passwords.kdbx"
 #run firefox
 run brave
@@ -19,9 +20,6 @@ xset r rate 200 30
 setxkbmap se -variant nodeadkeys
 #run nm-applet
 run redshift-gtk
-nmcli connection down thinker
-nmcli connection up thinker
-#killall conky
-#run conky -c $HOME/.config/awesome/system-overview
+run autorandr -c
 
 #run applications from startup

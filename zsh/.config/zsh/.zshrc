@@ -60,7 +60,7 @@ zinit load zsh-users/zsh-completions
 
 # A nice message from the one and only cow
 #figlet gurk | cowsthink -ns
-figlet "Gurk!" | cowthink -pn -T " U"
+#figlet "Gurk!" | cowthink -pn -T " U"
 
 # --------------------------- Spaceship prompt --------------------------------
 # Left normal prompt

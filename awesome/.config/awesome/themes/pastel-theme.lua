@@ -117,7 +117,7 @@ theme.icon_theme = "Tela-dark"
 --Oskar
 
 theme.resizer_focus = "#cc0000"
-theme.resizer_size = dpi(8)
+theme.resizer_size = dpi(5)
 
 tip = "~/.config/awesome/theme/icons/titlebar/blocks/"
 
