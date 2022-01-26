@@ -16,7 +16,6 @@
 # DONE Text-gitch when startup (had not added lucid)
 #!! setopt sets options and is case-insensitive and igores '_'!
 #  If not running interactively, don't do anything
-# TODO Behöver inte alla filer. Troligtvis bara .profile
 
 # ----------- Check if interactive and install necisarry stuff ---------------
 
