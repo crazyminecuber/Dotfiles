@@ -119,7 +119,7 @@ else
 set nocompatible
 autocmd!
 let mapleader =" "
-set textwidth=80
+set textwidth=100
 set formatoptions=cqlnjt
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -360,7 +360,7 @@ augroup END
 
  " Highlight syntax
 	syntax on
-	set colorcolumn=80
+	set colorcolumn=100
 	highlight ColorColumn ctermbg=0 guibg=lightgrey
 	highlight Cursor guibg=#101010
 
@@ -705,7 +705,7 @@ augroup END
 
  " Highlight syntax
 	syntax on
-	set colorcolumn=80
+	set colorcolumn=100
 	highlight ColorColumn ctermbg=0 guibg=lightgrey
 	highlight Cursor guibg=#101010
 
@@ -1114,8 +1114,12 @@ xmap af <Plug>(coc-funcobj-a)
 omap af <Plug>(coc-funcobj-a)
 xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
+xmap ac <Plug>(coc-csobj-a)
+omap ac <Plug>(coc-clasobj-a)
 
+
+" Temporary bindings TDDD95
+vnoremap f :normal ^yss"$i\n<ESC>
+"nnoremap dT hxdT "Cannot get this to work as i want
 
 endif
