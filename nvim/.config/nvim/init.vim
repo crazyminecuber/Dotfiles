@@ -109,6 +109,8 @@
 "do not even have to type! You can just querry the error immediatelly
 " Disable compatibility for vi. No point in not having it
 "
+"
+" TODO This file is a mess. Duplicates of CoC and hexokinase
 if exists('g:vscode')
     " VSCode extension
     " ordinary neovim
