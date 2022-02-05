@@ -183,7 +183,7 @@ command! reload :write | restart
 
 " Open all these file extensions with xdg-open. Should be the most of what i
 " care about. If it is not in the list, open with neovim
-filextype *.pdf,*.ps,*.eps,*.ps.gz,*.djvu,*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.html,*.htm,*.o,*.[1-8],*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.ora,*.vym,*.md5,*.sha1,*.sha256,*.sha512,*.asc,*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx xdg-open
+filextype *.pdf,*.ps,*.eps,*.ps.gz,*.djvu,*.svg,*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.html,*.htm,*.o,*.[1-8],*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.ora,*.vym,*.md5,*.sha1,*.sha256,*.sha512,*.asc,*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx xdg-open
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
