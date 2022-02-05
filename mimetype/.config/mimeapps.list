@@ -20,3 +20,4 @@ video/x-matroska=vlc.desktop;mpv.desktop;org.gnome.gThumb.desktop;org.gnome.eog.
 image/svg+xml=org.gnome.eog.desktop;
 audio/mpeg=vlc.desktop;brave-browser.desktop;
 video/mp4=vlc.desktop;brave-browser.desktop;
+inode/directory=vscodium.desktop;
