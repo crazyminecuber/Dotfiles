@@ -8,7 +8,7 @@ function run {
 }
 
 #run variety
-run keepassxc "~/Nextcloud/Documents/viktiga_dokument/Passwords.kdbx"
+run keepassxc ~/Nextcloud/Documents/viktiga_dokument/Passwords.kdbx
 run flameshot
 run xfce4-power-manager
 #run blueman-applet
