@@ -8,12 +8,12 @@ function run {
 }
 
 #run variety
+run keepassxc "~/Nextcloud/Documents/viktiga_dokument/Passwords.kdbx"
 run flameshot
 run xfce4-power-manager
 #run blueman-applet
 #run volctl
 run pasystray
-run keepassxc "Nextcloud/Viktiga\ dokument/Passwords.kdbx"
 #run firefox
 run brave
 xset r rate 200 30
