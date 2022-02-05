@@ -27,6 +27,7 @@ local wibox = require("wibox")
 local clickable_container = require("widgets.clickable-container")
 local gears = require("gears")
 local dpi = require("beautiful").xresources.apply_dpi
+local naughty = require("naughty")
 
 local PATH_TO_ICONS = os.getenv("HOME") .. "/.config/awesome/icons/battery/"
 
@@ -65,7 +66,7 @@ local battery_popup = awful.tooltip({
 
 local function show_battery_warning()
    naughty.notify {
-      icon = PATH_TO_ICONS .. "battery-alert.svg",
+      icon = PATH_TO_ICONS .. "battery-alert-red.svg",
       icon_size = dpi(48),
       text = "Huston, we have a problem",
       title = "Battery is dying",
@@ -78,14 +79,19 @@ local function show_battery_warning()
    }
 end
 
-local last_battery_check = os.time()
+--local last_battery_check = os.time()
+local last_battery_check = 0
 
 watch("acpi -i", 1,
+--watch('echo "Battery 0: Charging, 50%, charging at zero rate - will never fully charge.\nBattery 0: design capacity 3037 mAh, last full capacity 2218 mAh = 73%"', 1,
    function(_, stdout)
+       --print(stdout)
+       --print(last_battery_check)
+       --print(os.time())
       local battery_info = {}
       local capacities = {}
       for s in stdout:gmatch("[^\r\n]+") do
-         local status, charge_str, time = string.match(s, ".+: (%a+), (%d?%d?%d)%%,?.*")
+         local status, charge_str, time = string.match(s, ".+: ([%a ]+), (%d?%d?%d)%%,?.*")
          if status ~= nil then
             table.insert(battery_info, {status = status, charge = tonumber(charge_str)})
          else
@@ -114,7 +120,7 @@ watch("acpi -i", 1,
       if (charge >= 0 and charge < 15) then
          if status ~= "Charging" and os.difftime(os.time(), last_battery_check) > 300 then
             -- if 5 minutes have elapsed since the last warning
-            last_battery_check = time()
+            last_battery_check = os.time()
 
             show_battery_warning()
          end
@@ -122,7 +128,8 @@ watch("acpi -i", 1,
 
       local battery_icon_name = "battery"
 
-      if status == "Charging" or status == "Full" then
+      if status == "Charging" or status == "Full" or status == "Not charging" then
+          print(status)
          battery_icon_name = battery_icon_name .. "-charging"
       end
 
@@ -131,6 +138,9 @@ watch("acpi -i", 1,
          battery_icon_name = battery_icon_name .. "-outline"
       elseif (rounded_charge ~= 100) then
          battery_icon_name = battery_icon_name .. "-" .. rounded_charge
+      end
+      if (charge >= 0 and charge < 15 and status ~="Charging") then
+            battery_icon_name = "battery-alert-red"
       end
 
       widget.icon:set_image(PATH_TO_ICONS .. battery_icon_name .. ".svg")

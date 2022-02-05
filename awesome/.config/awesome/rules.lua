@@ -59,6 +59,7 @@ function rules.create(clientkeys, clientbuttons)
             keys = clientkeys,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
+            maximized=false,
          },
       },
       {
