@@ -149,10 +149,19 @@ function rules.create(clientkeys, clientbuttons)
          rule_any = {class = {"Pavucontrol"}, name = {"Bluetooth Devices"}},
          properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.45}
       },
+      {
+         rule_any = {class = {"obs"}},
+         properties = {maximized = false}
+      },
 	  -- Steam
 	  {
 		rule_any = {class = {"Steam"}, name = {"Steam"}},
-		properties = {floating = true, tag = "steam",switchtotag=true}
+		properties = {floating = true, tag = "steam",switchtotag=true},
+		callback = function (c)
+			c.first_tag.layout = awful.layout.suit.fair
+			print("obs!")
+
+		end
 	  },
 	  -- Matlab tab completion and previous command
 	  {
