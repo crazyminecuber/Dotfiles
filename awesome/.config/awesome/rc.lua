@@ -7,6 +7,10 @@
 --      ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
 
+--  Stuff to block modeline
+
+--awesome_mode: api-level=4:screen=on
+-- awesome_mode: api-level=6:screen=on
 --TODO Ljudknappar funkar inte när inget ljud spelas. Annars funkar det bra. Är
 --för att amixer inte har någon ljudinfo om master då. Försökte lösa med pactl
 --istälet för amixer för att få volym, men då såg jag att de rapporterar olika
@@ -106,8 +110,7 @@ end
 
 -- Import notification appearance
 --require("components.notifications")
-require("module.notifications")
-require("module.dynamic-wallpaper")
+require("components.notifications")
 
 -- Run all the apps listed in run_on_start_up
 for _, app in ipairs(run_on_start_up) do
@@ -208,7 +211,7 @@ collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
 
 
-local resizer_container = require('resizer-container')
+local resizer_container = require('widgets.resizer-container')
 
 function resizer_widget()
 return	wibox.widget{
@@ -455,14 +458,6 @@ client.connect_signal("manage", function (c)
 	set_shape(c)
 end)
 
-local central_panel =  require('layout.central-panel')
-
-screen.connect_signal(
-	'request::desktop_decoration',
-	function(s)
-		s.central_panel = central_panel(s)
-	end
-)
 --much nicer than before
 client.connect_signal("request::geometry", function(c, context, ...)
     if context == "fullscreen" then

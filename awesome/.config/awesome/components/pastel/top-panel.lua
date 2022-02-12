@@ -17,7 +17,7 @@ local gears = require("gears")
 local dpi = beautiful.xresources.apply_dpi
 
 -- import widgets
-local task_list = require("widgets.task-list")
+local task_list = require("widgets.pastel.task-list")
 
 -- define module table
 local top_panel = {}
@@ -29,7 +29,7 @@ local top_panel = {}
 
 
 top_panel.create = function(s)
-	local clock 			= require('widget.clock')(s)
+	local clock 			= require('widgets.glorious.clock')(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
@@ -42,16 +42,17 @@ top_panel.create = function(s)
       expand = "none",
       layout = wibox.layout.align.horizontal,
       task_list.create(s),
-      --require("widgets.calendar").create(s),
 		clock,
       {
          layout = wibox.layout.fixed.horizontal,
          wibox.container.margin(wibox.widget.systray(), dpi(5), dpi(5), dpi(5), dpi(5)),
+         --require("widgets.pastel.calendar").create(s),
+         --require('widgets.glorious.central-panel-switch'),
          require("widgets.clipster"),
-         require("widgets.bluetooth"),
-         require("widgets.network")(),
-         require("widgets.battery"),
-         wibox.container.margin(require("widgets.layout-box"), dpi(5), dpi(5), dpi(5), dpi(5))
+         require("widgets.pastel.bluetooth"),
+         require("widgets.pastel.network")(),
+         require("widgets.pastel.battery"),
+         wibox.container.margin(require("widgets.pastel.layout-box"), dpi(5), dpi(5), dpi(5), dpi(5))
       }
    }
 

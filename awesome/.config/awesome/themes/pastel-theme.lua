@@ -18,6 +18,8 @@ local gears = require("gears")
 -- define module table
 local theme = {}
 
+local filesystem = gears.filesystem
+local config_dir = filesystem.get_configuration_dir()
 
 -- ===================================================================
 -- Theme Variables
@@ -107,9 +109,9 @@ theme.titlebars_enabled = true
 
 
 -- Define layout icons
-theme.layout_tile = "~/.config/awesome/icons/layouts/tiled.png"
-theme.layout_floating = "~/.config/awesome/icons/layouts/floating.png"
-theme.layout_max = "~/.config/awesome/icons/layouts/maximized.png"
+theme.layout_tile = config_dir .. "icons/layouts/tiled.png"
+theme.layout_floating = config_dir .. "icons/layouts/floating.png"
+theme.layout_max = config_dir .. "icons/layouts/maximized.png"
 
 theme.icon_theme = "Tela-dark"
 
@@ -119,7 +121,7 @@ theme.icon_theme = "Tela-dark"
 theme.resizer_focus = "#cc0000"
 theme.resizer_size = dpi(5)
 
-tip = "~/.config/awesome/theme/icons/titlebar/blocks/"
+local tip = config_dir .. "icons/titlebar/blocks/"
 
 -- Titlebar
 theme.titlebar_size = dpi(80)
