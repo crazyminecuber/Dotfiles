@@ -211,22 +211,25 @@ keys.globalkeys = gears.table.join(
    -- ALSA volume control
    awful.key({}, "XF86AudioRaiseVolume",
       function()
-         awful.spawn("amixer sset Master 5%+", false)
-         awesome.emit_signal("volume_change")
+        awful.spawn.easy_async_with_shell("amixer sset Master 5%+", function()
+                 awesome.emit_signal("volume_change")
+            end)
       end,
       {description = "volume up", group = "hotkeys"}
    ),
    awful.key({}, "XF86AudioLowerVolume",
       function()
-         awful.spawn("amixer sset Master 5%-", false)
-         awesome.emit_signal("volume_change")
+        awful.spawn.easy_async_with_shell("amixer sset Master 5%-", function()
+                 awesome.emit_signal("volume_change")
+            end)
       end,
       {description = "volume down", group = "hotkeys"}
    ),
    awful.key({}, "XF86AudioMute",
       function()
-         awful.spawn("amixer set Master 1+ toggle", false)
-         awesome.emit_signal("volume_change")
+        awful.spawn.easy_async_with_shell("amixer set Master 1+ toggle", function()
+                 awesome.emit_signal("volume_change")
+            end)
       end,
       {description = "toggle mute", group = "hotkeys"}
    ),

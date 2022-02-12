@@ -14,7 +14,7 @@ local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local clickable_container = require("widgets.clickable-container")
+local clickable_container = require("widgets.pastel.clickable-container")
 
 local dpi = beautiful.xresources.apply_dpi
 local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/" .. beautiful.name .. "/"

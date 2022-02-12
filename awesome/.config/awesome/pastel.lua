@@ -26,12 +26,17 @@ local pastel = {}
 pastel.initialize = function()
    -- Import components
    --require("components.pastel.wallpaper")
+   require("components.dynamic-wallpaper")
    require("components.exit-screen")
    require("components.volume-adjust")
 
    -- Import panels
    local left_panel = require("components.pastel.left-panel")
    local top_panel = require("components.pastel.top-panel")
+    local central_panel =  require('components.pastel.central-panel')
+
+
+
 
    -- Set up each screen (add tags & panels)
    awful.screen.connect_for_each_screen(function(s)
@@ -60,6 +65,7 @@ pastel.initialize = function()
 
       -- Add the top panel to every screen
       top_panel.create(s)
+	    s.central_panel = central_panel(s)
    end)
    awful.screen.connect_for_each_screen(function(s)
 	   print("Screen tags")

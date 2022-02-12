@@ -84,13 +84,15 @@ awesome.connect_signal("volume_change",
       -- set new volume value
       awful.spawn.easy_async_with_shell(
 --"pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'"
-         "amixer sget Master | grep 'Right:' | awk -F '[][]' '{print $2}'| sed 's/[^0-9]//g'",
-         function(stdout)
-            local volume_level = tonumber(stdout)
+         "amixer sget Master | grep 'Right:'",
+
+         function(stdout, stderr, reason, exit_code)
+         local volume_level, mute = string.match(stdout, ".+%[(%d?%d?%d)%%%].*%[(%a?%a%a)%].*")
+         volume_level = tonumber(volume_level)
             volume_bar.value = volume_level
-            if (volume_level > 40) then
+            if (volume_level > 40 and mute == 'on') then
                volume_icon:set_image(icon_dir .. "volume.png")
-            elseif (volume_level > 0) then
+            elseif (volume_level > 0 and mute == 'on') then
                volume_icon:set_image(icon_dir .. "volume-low.png")
             else
                volume_icon:set_image(icon_dir .. "volume-off.png")
