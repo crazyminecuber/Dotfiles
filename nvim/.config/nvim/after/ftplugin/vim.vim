@@ -1,1 +1,1 @@
-"set formatoptions=cjqa
+set formatoptions=cqlnjt
