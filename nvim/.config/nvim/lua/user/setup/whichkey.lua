@@ -192,17 +192,24 @@ local mappings = {
    r = {
       name = "Random",
       a = { ":w<cr>:!cat test | awesome-client <enter>", "Awesome run repl" },
+      p = {
+         function()
+            require("nabla").popup({ border = "rounded" })
+         end,
+         "Preview latex",
+      }, --" Customize with popup({border = ...})  : 'single' (default), 'double', 'rounded' end
    },
+
    q = {
       name = "Location list",
-      n = { ":lnext", "Location list next" },
-      p = { ":lprev", "Location list prev" },
+      n = { ":lnext<cr>", "Location list next" },
+      p = { ":lprev<cr>", "Location list prev" },
       q = { "<cmd>Telescope loclist<cr>", "Location list toggle" },
    },
    Q = {
       name = "Quickfix list",
-      n = { ":cnext", "Quickfix next" },
-      p = { ":cprev", "Quickfix prev" },
+      n = { ":cnext<cr>", "Quickfix next" },
+      p = { ":cprev<cr>", "Quickfix prev" },
       q = { "<cmd>Telescope quickfix<cr>", "Quickfix list toggle" },
    },
    s = {

@@ -399,7 +399,8 @@ working_directory: None
 #winpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: false
+#alt_send_esc: false
+alt_send_esc: true # This will cause some problems somewhere
 
 mouse:
   # Click settings

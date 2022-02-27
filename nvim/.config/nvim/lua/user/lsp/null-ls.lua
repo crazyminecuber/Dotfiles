@@ -15,7 +15,7 @@ null_ls.setup({
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.yapf,
-		formatting.stylua.with({ extra_args = { "--indent-type", "spaces", "--indent-width", "3"} }),
+		formatting.stylua.with({ extra_args = { "--indent-type", "spaces", "--indent-width", "3", "--line-endings", "Unix"} }),
 		-- formatting.stylua,
 		diagnostics.flake8,
 	},

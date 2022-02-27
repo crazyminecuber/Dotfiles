@@ -11,19 +11,21 @@
 --   print("sigtermcheck")
 --   if dying ~= 0 then
 --     print("saving on kill")
---     --vim.cmd("wa!")
+--     vim.cmd("wa!")
 --     vim.cmd("!sleep 2")
+--     return
 --   end
 --   print("not saving")
 --   vim.cmd("!sleep 2")
+--   return
 -- end
 
     -- "autocmd VimLeavePre * wall
     -- "autocmd VimLeave * wall
     --"autocmd VimLeavePre * wall
-    --autocmd VimLeavePre * lua save_sigterm(v:dying)
     --autocmd BufWritePre * lua print("Gurk2")
     --"autocmd VimLeavePre * wall
+    --autocmd VimLeavePre * lua save_sigterm(v:dying)
 
 
 

@@ -129,6 +129,7 @@ return packer.startup({
       -- snippets
       use("L3MON4D3/LuaSnip") --snippet engine
       use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+      use("jbyuki/nabla.nvim")
 
       use({
          "kyazdani42/nvim-tree.lua",
@@ -198,6 +199,19 @@ return packer.startup({
       use("tjdevries/colorbuddy.vim")
       use("tjdevries/gruvbuddy.nvim")
 
+      --use("MortenStabenau/matlab-vim")
+
+      --use {'Rahlir/nvim-matlab', run = 'vim.cmd [[UpdateRemotePlugins]]'}
+      --use({ "daeyun/vim-matlab" })
+      use("kassio/neoterm")
+
+      use({
+         "ray-x/lsp_signature.nvim",
+         requires = {},
+         config = function()
+            require("user.setup.lsp_signature")
+         end,
+      })
       -- Other plugins
       use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
       use({
@@ -269,6 +283,13 @@ return packer.startup({
             require("user.setup.todo_comments")
          end,
       })
+      use({
+       "akinsho/toggleterm.nvim",
+         requires = {},
+         config = function()
+            require("user.setup.toggleterm")
+         end,
+      })
       -- calls autocmd:s to much
       -- use({
       -- "Pocco81/AutoSave.nvim",
@@ -278,7 +299,6 @@ return packer.startup({
       --    end,
       -- })
       --plugins to try someday
-      --use "akinsho/toggleterm.nvim"
       ----Plug 'glepnir/lspsaga.nvim'
       --Plug 'simrat39/symbols-outline.nvim'
 

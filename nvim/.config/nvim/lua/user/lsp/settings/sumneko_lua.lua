@@ -1,19 +1,37 @@
 return {
-	settings = {
+   settings = {
 
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-		},
-	},
-} 
+      Lua = {
+         diagnostics = {
+            enable = true,
+            globals = { "vim" },
+
+            "use", -- Packer use keyword
+
+            -- AwesomeWM
+
+            "awesome",
+
+            "client",
+
+            "root",
+         },
+      },
+      workspace = {
+         library = {
+            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+            [vim.fn.stdpath("config") .. "/lua"] = true,
+
+            ["/usr/share/nvim/runtime/lua"] = true,
+
+            ["/usr/share/nvim/runtime/lua/lsp"] = true,
+
+            ["/usr/share/awesome/lib"] = true,
+         },
+      },
+   },
+}
+
 --[[
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
@@ -46,6 +64,5 @@ return {
     },
   },
 }
-]]--
-
-
+]]
+--

@@ -187,7 +187,14 @@ keys.globalkeys = gears.table.join(
       function()
          awful.spawn(apps.filebrowser)
       end,
-      {description = "application launcher", group = "launcher"}
+      {description = "Filebrowser", group = "launcher"}
+   ),
+   awful.key({modkey}, "v",
+      function()
+         print("gurk")
+         awful.spawn(apps.neovim)
+      end,
+      {description = "Neovim", group = "launcher"}
    ),
 
    -- =========================================

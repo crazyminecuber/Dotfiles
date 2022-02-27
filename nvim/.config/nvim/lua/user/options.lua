@@ -16,12 +16,13 @@ local options = {
   smartindent = true, --good                     -- make indenting smarter again
   splitbelow = true,  -- check my settings               -- force all horizontal splits to go below current window
   splitright = true,  --check my settings                     -- force all vertical splits to go to the right of current window
-  swapfile = false,   --dunno I am not happy with current settings                     -- creates a swapfile
+  swapfile = true,   --dunno I am not happy with current settings                     -- creates a swapfile
   termguicolors = true,  --good                  -- set term gui colors (most terminals support this)
   timeoutlen = 1000,     --good about there             -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,       --shoudl improve this alot before i am happy                  -- enable persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  writebackup = false,     -- i dont quite get this comment but documentation strongly recomends this being on                -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  --updatetime = 300,                        -- faster completion (4000ms default)
+  updatetime = 4000,                        -- faster completion (4000ms default)
+  writebackup = true,     -- i dont quite get this comment but documentation strongly recomends this being on                -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,        -- I decide                  -- the number of spaces inserted for each indentation
   tabstop = 2,         -- I decide                    -- insert 2 spaces for a tab
@@ -33,7 +34,7 @@ local options = {
   wrap = false,     --good                       -- display lines as one long line
   scrolloff = 8,    -- play around with                       -- is one of my fav
   sidescrolloff = 8,
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  guifont = "JetBrainsMono Nerd Font:h12",               -- the font used in graphical neovim applications
   textwidth = 80,      -- Textwidth for when to hard wrap
 	wildmode="longest,list,full", -- Enable autocompletion, maybe look further into this?
   colorcolumn="+1",
@@ -41,8 +42,11 @@ local options = {
 
 vim.opt.shortmess:append "c" -- "
 
+vim.g.neoterm_default_mod = 'botright:vertical' ;
+
 vim.opt.formatoptions="cqlnjt"
 vim.g.netrw_nogx = 1 -- disable netrw's gx mapping.
+vim.g.cursorhold_updatetime = 100 -- Plugin decouples corsortime from updatetime
 
 for k, v in pairs(options) do
   vim.opt[k] = v
@@ -127,3 +131,4 @@ vim.cmd[[set list
 -- for _, plugin in pairs(disabled_built_ins) do
 --     vim.g["loaded_" .. plugin] = 1
 -- end
+--

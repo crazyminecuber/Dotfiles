@@ -45,6 +45,7 @@
 -- try lspsaga and lsp_signature
 -- TODO: Check if latex editing is nicer nowdays
 -- TODO: Status message from language servers in statusbar
+-- TODO: Jump to previous file how? ctrl + ´´
 -- TODO: Jump to previous file how?
 -- FIXME: gurkan burkan
 -- HACK: its a hack
@@ -81,6 +82,10 @@
     --
     -- So to fix most things: Auto save on exit if kill signal bla bla,, gui
     -- already does what is best....
+-- swapfiles are the answer! Works great in the terminal but not so much in
+-- graphical clients. Something to look into some other day. Or just use
+-- terminal for now. No reason for a gui then right now. Now its just external
+-- undotree that sucks.
 
 ]]
 
@@ -108,8 +113,8 @@
 --  how to get this working.
 --
 
-require("user.options")
 require("user.plugins")
+require("user.options")
 require("user.keymaps")
 require("user.colorscheme")
 require("user.autocommands")
