@@ -126,6 +126,19 @@ return packer.startup({
          requires = {},
       })
 
+      use({
+ 'kosayoda/nvim-lightbulb',
+         config = function()
+            require("user.setup.lightbulb")
+         end,
+         requires = {},
+      })
+
+      use({
+      'tpope/vim-fugitive',
+         requires = {},
+      })
+
       -- snippets
       use("L3MON4D3/LuaSnip") --snippet engine
       use("rafamadriz/friendly-snippets") -- a bunch of snippets to use

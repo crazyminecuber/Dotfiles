@@ -268,6 +268,9 @@ end
          -- WILL EXECUTE THIS ON DOUBLE CLICK
          if double_click_event_handler() then
             c.maximized = not c.maximized
+            if c.maximized then
+               awful.client.setmaster(c)
+            end
             c:raise()
          else
             awful.mouse.client.move(c)

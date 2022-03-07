@@ -111,6 +111,7 @@ local mappings = {
 
    g = {
       name = "Git",
+      s = { "<cmd>Gcommit<cr>", "Commit to git" },
       g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
       k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -130,6 +131,7 @@ local mappings = {
          "<cmd>Gitsigns diffthis HEAD<cr>",
          "Diff",
       },
+      s = { "<cmd>G<cr>", "Fugative menu" },
    },
 
    l = {

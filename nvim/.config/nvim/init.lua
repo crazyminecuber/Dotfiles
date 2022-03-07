@@ -119,6 +119,10 @@ require("user.keymaps")
 require("user.colorscheme")
 require("user.autocommands")
 
+
+
+
+
 -- Try some day
 --require "user.project"
 -- Plug 'tpope/vim-fugitive'

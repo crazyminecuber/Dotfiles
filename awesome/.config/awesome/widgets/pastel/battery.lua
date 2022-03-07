@@ -30,6 +30,7 @@ local dpi = require("beautiful").xresources.apply_dpi
 local naughty = require("naughty")
 
 local PATH_TO_ICONS = os.getenv("HOME") .. "/.config/awesome/icons/battery/"
+local PATH_TO_SOUNDS = os.getenv("HOME") .. "/.config/awesome/sounds/"
 
 
 -- ===================================================================
@@ -64,19 +65,21 @@ local battery_popup = awful.tooltip({
    referred_positions = {"right", "left", "top", "bottom"}
 })
 
-local function show_battery_warning()
+local function show_battery_warning(charge)
    naughty.notify {
       icon = PATH_TO_ICONS .. "battery-alert-red.svg",
       icon_size = dpi(48),
       text = "Huston, we have a problem",
-      title = "Battery is dying",
+      title = "Battery is dying (" .. tostring(charge) .. " %)",
       timeout = 5,
       hover_timeout = 0.5,
       position = "top_right",
       bg = "#d32f2f",
       fg = "#EEE9EF",
-      width = 248
+      width = 248,
+      urgency = 'critical',
    }
+   awesome.spawn("paplay --volume=3000 " .. PATH_TO_SOUNDS .. 'low_bat.ogg')
 end
 
 --local last_battery_check = os.time()
@@ -117,19 +120,19 @@ watch("acpi -i", 1,
       end
       charge = charge / capacity
 
-      if (charge >= 0 and charge < 15) then
-         if status ~= "Charging" and os.difftime(os.time(), last_battery_check) > 300 then
+         if status ~= "Charging" and os.difftime(os.time(), last_battery_check) > 60 then
+            if (charge >= 0 and charge < 15) then
             -- if 5 minutes have elapsed since the last warning
             last_battery_check = os.time()
 
-            show_battery_warning()
+            show_battery_warning(charge)
          end
       end
 
       local battery_icon_name = "battery"
 
       if status == "Charging" or status == "Full" or status == "Not charging" then
-          print(status)
+          --print(status)
          battery_icon_name = battery_icon_name .. "-charging"
       end
 

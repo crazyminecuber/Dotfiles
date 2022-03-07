@@ -24,5 +24,10 @@ run autorandr -c
 run clipmenud
 run udiskie --tray
 
+run picom
+
+run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+
 
 #run applications from startup

@@ -218,7 +218,8 @@ keys.globalkeys = gears.table.join(
    -- ALSA volume control
    awful.key({}, "XF86AudioRaiseVolume",
       function()
-        awful.spawn.easy_async_with_shell("amixer sset Master 5%+", function()
+        --awful.spawn.easy_async_with_shell("amixer sset Master 5%+", function()
+        awful.spawn.easy_async_with_shell(" pactl -- set-sink-volume 0 +5% ", function()
                  awesome.emit_signal("volume_change")
             end)
       end,
@@ -226,7 +227,8 @@ keys.globalkeys = gears.table.join(
    ),
    awful.key({}, "XF86AudioLowerVolume",
       function()
-        awful.spawn.easy_async_with_shell("amixer sset Master 5%-", function()
+        --awful.spawn.easy_async_with_shell("amixer sset Master 5%-", function()
+        awful.spawn.easy_async_with_shell(" pactl -- set-sink-volume 0 -5% ", function()
                  awesome.emit_signal("volume_change")
             end)
       end,
@@ -234,7 +236,7 @@ keys.globalkeys = gears.table.join(
    ),
    awful.key({}, "XF86AudioMute",
       function()
-        awful.spawn.easy_async_with_shell("amixer set Master 1+ toggle", function()
+        awful.spawn.easy_async_with_shell(" pactl set-sink-mute @DEFAULT_SINK@ toggle ", function()
                  awesome.emit_signal("volume_change")
             end)
       end,
