@@ -127,7 +127,7 @@ return packer.startup({
       })
 
       use({
- 'kosayoda/nvim-lightbulb',
+         "kosayoda/nvim-lightbulb",
          config = function()
             require("user.setup.lightbulb")
          end,
@@ -135,12 +135,25 @@ return packer.startup({
       })
 
       use({
-      'tpope/vim-fugitive',
+         "stevearc/dressing.nvim",
+         config = function()
+            require("user.setup.dressing")
+         end,
+         requires = {},
+      })
+
+      use({
+         "tpope/vim-fugitive",
          requires = {},
       })
 
       -- snippets
-      use("L3MON4D3/LuaSnip") --snippet engine
+      use({
+            "L3MON4D3/LuaSnip",
+         config = function()
+            require("user.setup.luasnip")
+         end,
+      })
       use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
       use("jbyuki/nabla.nvim")
 
@@ -208,10 +221,13 @@ return packer.startup({
       -- Colorschemes
       use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
       use("lunarvim/darkplus.nvim")
-      use({ "ellisonleao/gruvbox.nvim" }) -- gruvbox of course
+      use("ellisonleao/gruvbox.nvim")
       use("tjdevries/colorbuddy.vim")
       use("tjdevries/gruvbuddy.nvim")
-
+     -- use("sainnhe/gruvbox-material")
+      use("folke/tokyonight.nvim")
+      use("ful1e5/onedark.nvim")
+     -- use("eddyekofo94/gruvbox-flat.nvim")
       --use("MortenStabenau/matlab-vim")
 
       --use {'Rahlir/nvim-matlab', run = 'vim.cmd [[UpdateRemotePlugins]]'}
@@ -297,12 +313,34 @@ return packer.startup({
          end,
       })
       use({
-       "akinsho/toggleterm.nvim",
+         "akinsho/toggleterm.nvim",
          requires = {},
          config = function()
             require("user.setup.toggleterm")
          end,
       })
+
+      use({
+         "mfussenegger/nvim-dap",
+         requires = {
+            "rcarriga/nvim-dap-ui",
+            "theHamsta/nvim-dap-virtual-text",
+         },
+         config = function()
+            require("user.setup.dap")
+         end,
+      })
+      use({
+         "stevearc/vim-arduino",
+         config = function()
+            require("user.setup.vim-arduino")
+         end,
+      })
+      use("EdenEast/nightfox.nvim")
+      use("marko-cerovac/material.nvim")
+      use("savq/melange")
+      use("sainnhe/sonokai")
+      use("sainnhe/everforest")
       -- calls autocmd:s to much
       -- use({
       -- "Pocco81/AutoSave.nvim",

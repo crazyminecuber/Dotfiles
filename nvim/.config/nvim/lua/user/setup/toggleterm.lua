@@ -72,12 +72,16 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 -- end
 -- -- Could be interresting to have something like this. A nice repl to quickly bring up. Would also be
 -- -- nice to be able to send code to it.
--- local python = Terminal:new({ cmd = "python", hidden = true })
---
--- function _PYTHON_TOGGLE()
--- 	python:toggle()
--- end
-matlab = Terminal:new({
+ local python = Terminal:new({ cmd = "python", hidden = true })
+
+ function _PYTHON_TOGGLE()
+ 	python:toggle()
+ end
+arduino_serial = Terminal:new({
+   cmd = "picocom /dev/ttyACM* -b 57600",
+   hidden = true,
+})
+local matlab = Terminal:new({
    cmd = "matlab -nodesktop -nosplash",
    hidden = true,
    on_open = function(t)

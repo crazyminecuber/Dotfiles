@@ -99,7 +99,25 @@ local mappings = {
    ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
    --
    ["u"] = { ":UndotreeToggle<cr>", "Toggle undotree" },
-
+   a = {
+      name = "Arduino",
+      a = { "<cmd>ArduinoAttach<CR>", "Attach arduino" },
+      m = { "<cmd>ArduinoVerify<CR>", "Verifiy arduino sketch" },
+      s = { "<cmd>lua arduino_serial:toggle()<CR>", "Open serial" },
+      u = {
+         function()
+            arduino_serial:shutdown()
+            vim.cmd([[ArduinoUpload]]) -- Gör denna något?? Laddar packer men borde väl ändå starta om nvim?
+            vim.cmd([[wincmd j]]) -- Gör denna något?? Laddar packer men borde väl ändå starta om nvim?
+            vim.cmd([[execute "normal! G"]]) -- Gör denna något?? Laddar packer men borde väl ändå starta om nvim?
+         end,
+         "Arduino upload"
+      },
+      --<cmd>ArduinoUpload<CR>", "Upload arduion sketch" },
+      d = { "<cmd>ArduinoUploadAndSerial<CR>", "Upload and serial" },
+      b = { "<cmd>ArduinoChooseBoard<CR>", "Choose board" },
+      p = { "<cmd>ArduinoChooseProgrammer<CR>", "Choose programmer" },
+   },
    p = {
       name = "Packer",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -108,7 +126,45 @@ local mappings = {
       S = { "<cmd>PackerStatus<cr>", "Status" },
       u = { "<cmd>PackerUpdate<cr>", "Update" },
    },
-
+   d = {
+      name = "Debug",
+      s = {
+         name = "Step",
+         c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
+         v = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
+         i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
+         o = { "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
+      },
+      h = {
+         name = "Hover",
+         h = { "<cmd>lua require('dap.ui.variables').hover()<CR>", "Hover" },
+         v = { "<cmd>lua require('dap.ui.variables').visual_hover()<CR>", "Visual Hover" },
+      },
+      u = {
+         name = "UI",
+         h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Hover" },
+         f = { "<cmd>lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", "Float" },
+      },
+      r = {
+         name = "Repl",
+         o = { "<cmd>lua require('dap').repl.open()<CR>", "Open" },
+         l = { "<cmd>lua require('dap').repl.run_last()<CR>", "Run Last" },
+      },
+      b = {
+         name = "Breakpoints",
+         c = {
+            "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+            "Breakpoint Condition",
+         },
+         m = {
+            "<cmd>lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>",
+            "Log Point Message",
+         },
+         t = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Create" },
+      },
+      c = { "<cmd>lua require('dap').scopes()<CR>", "Scopes" },
+      i = { "<cmd>lua require('dap').toggle()<CR>", "Toggle" },
+   },
    g = {
       name = "Git",
       s = { "<cmd>Gcommit<cr>", "Commit to git" },
@@ -233,10 +289,13 @@ local mappings = {
       --n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
       --u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
       --t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-      --p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-      --f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-      --h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-      --v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+      p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+      e = { "<cmd>!alacritty &<cr>", "external" },
+      d = { "<cmd>!alacritty -e gdb _test &<cr>", "debug tddd95" },
+      t = { "<cmd>TermExec cmd='make' direction=float<cr>", "make tddd95" },
+      f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+      h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+      v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
    },
    w = {
       name = "Window",

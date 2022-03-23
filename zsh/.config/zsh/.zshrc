@@ -23,6 +23,7 @@
 [[ $- != *i* ]] && return
 
 # Variable for zsh-config directory
+fpath=($HOME/.config/zsh/completion $fpath)
 ZSH_CONFIG_DIR="$HOME/.config/zsh"
 
 # Install zinit in nearby directory if not installed.
@@ -144,7 +145,7 @@ setopt APPEND_HISTORY
 
 
 setopt CORRECT
-setopt CORRECT_ALL
+#setopt CORRECT_ALL
 
 # expire duplicates first
 setopt HIST_EXPIRE_DUPS_FIRST

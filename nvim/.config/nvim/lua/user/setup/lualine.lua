@@ -72,6 +72,22 @@ local function myloc()
    return r .. "/" .. vim.api.nvim_buf_line_count(0)
 end
 
+local function arduino_status()
+  local ft = vim.api.nvim_buf_get_option(0, "ft")
+  if ft ~= "arduino" then
+    return ""
+  end
+  local port = vim.fn["arduino#GetPort"]()
+  local line = string.format("[%s]", vim.g.arduino_board)
+  if vim.g.arduino_programmer ~= "" then
+    line = line .. string.format(" [%s]", vim.g.arduino_programmer)
+  end
+  if port ~= 0 then
+    line = line .. string.format(" (%s:%s)", port, vim.g.arduino_serial_baud)
+  end
+  return line
+end
+
 lualine.setup({
    options = {
       icons_enabled = true,
@@ -87,7 +103,7 @@ lualine.setup({
       lualine_b = { mode },
       lualine_c = {},
       -- lualine_x = { "encoding", "fileformat", "filetype" },
-      lualine_x = { diff, spaces, "encoding", "filetype", "filename" },
+      lualine_x = { diff, spaces, "encoding", "filetype", "filename",arduino_status},
       lualine_y = { myloc },
       --lualine_z = { progress },
       lualine_z = {},

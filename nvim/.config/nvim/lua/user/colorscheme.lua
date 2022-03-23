@@ -5,6 +5,12 @@
 
 --vim.cmd[[colorscheme catppuccin]]
 vim.cmd[[colorscheme gruvbox]]
+--vim.cmd[[colorscheme gruvbox-flat]]
+
+--duskfox
+--material palenight
+--material darker
+
 
 -- And then somewhere in your vimrc, to set the colorscheme
 --require('colorbuddy').colorscheme('gruvbuddy')

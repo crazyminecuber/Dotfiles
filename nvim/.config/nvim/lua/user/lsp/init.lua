@@ -39,7 +39,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "tsserver","jedi_language_server","clangd", --[[ "pyright", ]] "ccls", "sumneko_lua" }
+local servers = { "arduino_language_server","tsserver","jedi_language_server","clangd", --[[ "pyright", ]] --[[ "ccls", ]] "sumneko_lua" }
 for _, lsp in pairs(servers) do
    local settings = {
       on_attach = on_attach,
@@ -51,6 +51,10 @@ for _, lsp in pairs(servers) do
    if lsp == "sumneko_lua" then
       local sumneko_settings = require("user.lsp.settings.sumneko_lua")
       settings = vim.tbl_deep_extend("error", sumneko_settings, settings)
+   end
+   if lsp == "arduino_language_server" then
+      local arduino_settings = require("user.lsp.settings.arduino_language_server")
+      settings = vim.tbl_deep_extend("error", arduino_settings, settings)
    end
 
    require("lspconfig")[lsp].setup(settings)

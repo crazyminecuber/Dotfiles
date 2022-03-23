@@ -21,6 +21,7 @@ local screen_width = awful.screen.focused().geometry.width
 local rules = {}
 
 
+local centered_properties = {floating = true, placement = awful.placement.centered, width = screen_width * 0.55, height = screen_height * 0.65}
 -- ===================================================================
 -- Rules
 -- ===================================================================
@@ -135,12 +136,13 @@ function rules.create(clientkeys, clientbuttons)
       },
 
       -- rofi rule determined above
-      rofi_rule,
+      --rofi_rule,
+
 
       -- File chooser dialog
       {
          rule_any = {role = {"GtkFileChooserDialog"}},
-         properties = {floating = true, placement = awful.placement.centered, width = screen_width * 0.55, height = screen_height * 0.65}
+         properties = centered_properties,
 
       },
 
@@ -165,8 +167,17 @@ function rules.create(clientkeys, clientbuttons)
 
 		end
 	  },
+
 	  {
-		rule = {class = "matlab", name = "Command HistoryWindow"},
+		rule = {class = "MATLAB*", name = "Select a new folder"},
+		properties = centered_properties,
+		callback = function (c)
+			print("select file")
+
+		end
+	  },
+	  {
+		rule = {class = "MATLAB*", name = "Command HistoryWindow"},
 		properties = {titlebars_enabled=false}
 	  },
 	  {
