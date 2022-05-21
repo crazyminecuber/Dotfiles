@@ -36,6 +36,7 @@
 --DONE Fönster i float läge spawner ibland off screen
 --TODO Ibland blir master/stacken jättesmala utan att jag vet att jag har pillat på dem
 --TODO Blir fel nör fönster swawnar h är maximerat och relaterat
+--TODO Flytta maximerat fönster till master så att det blir i fokus när jag byter taggar
 --
 --
 --Notes

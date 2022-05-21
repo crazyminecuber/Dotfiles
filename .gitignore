@@ -1,4 +1,5 @@
 nvim/.config/nvim/plugged/
+nvim/.config/nvim/plugin/
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/undodir/
 newsboat/.newsboat/cache.db

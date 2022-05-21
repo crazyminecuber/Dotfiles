@@ -127,7 +127,13 @@ return packer.startup({
       })
 
       -- snippets
-      use("L3MON4D3/LuaSnip") --snippet engine
+      use({
+      "L3MON4D3/LuaSnip", --snippet engine
+         config = function()
+            require("user.setup.lua-snip")
+         end,
+         requires = {},
+      })
       use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
       use({
