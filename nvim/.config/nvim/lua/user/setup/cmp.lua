@@ -125,9 +125,6 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	},
 	-- Dont know if i really like this
 	experimental = {
 		ghost_text = false,
