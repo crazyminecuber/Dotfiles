@@ -2,6 +2,7 @@ nvim/.config/nvim/plugged/
 nvim/.config/nvim/plugin/
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/undodir/
+nvim/.config/nvim/plugin/
 newsboat/.newsboat/cache.db
 tmux/.config/tmux/plugins
 vifm/.config/vifm/colors

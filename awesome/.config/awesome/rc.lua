@@ -7,7 +7,6 @@
 --      ██║  ██║╚███╔███╔╝███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗
 --      ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
-
 --  Stuff to block modeline
 
 --awesome_mode: api-level=4:screen=on
@@ -37,7 +36,15 @@
 --TODO Ibland blir master/stacken jättesmala utan att jag vet att jag har pillat på dem
 --TODO Blir fel nör fönster swawnar h är maximerat och relaterat
 --TODO Flytta maximerat fönster till master så att det blir i fokus när jag byter taggar
+=======
+--TODO Fixa power management! Fixa så att datorn sover istället för att stänga av (när den når typ 5 %
+--TODO Terminaler blir knaiga på floating fönstret. Gillar int floating generellt.
+--och minska ljusstyrkan kraftigt efter 5 minuter. Gå in i sovläge efter 20 minuter. Få den att pipa och skicka arga notiser
 --
+--TODO More logical tag names. Refer to them by shortcut names and maybe
+--keybinding secunsed instead of numbers. Hard to press and memoryize. Maybe
+--music workspace, notes workspace, programming workspace, term worksapce
+--filemanaer worksapce
 --
 --Notes
 --Taggar: Varje skärm har taggar. Vill kunna byta applikationer mellan taggar.
@@ -55,15 +62,13 @@ local dpi = beautiful.xresources.apply_dpi
 
 local wibox = require("wibox")
 
-
 -- ===================================================================
 -- User Configuration
 -- ===================================================================
 
-
 local themes = {
    "pastel", -- 1
-   "mirage"  -- 2
+   "mirage",  -- 2
 }
 
 -- change this number to use the corresponding theme
@@ -80,18 +85,18 @@ apps = {
    lock = "i3lock -c 222233",
    screenshot = "flameshot gui",
    filebrowser = "nautilus",
+   neovim = "nvim-qt",
    clipboard = "clipmenu -sort -i -p 'Clipboard'", -- Rofi thingy
    --ocr = "maim -s | tesseract -c debug_file=/dev/null stdin stdout | xclip -sel clip && notify-send \"<span color='#9624c7' font='32px'><i><b>Tesseract</b></i></span>\" \"OCR copied to clipboard\" --app-name='Gurk Incorporate'"
    ocr = "sh " .. "/home/oskar/.config/awesome/utilities/ocr",
    beats = "sh " .. "/home/oskar/.config/awesome/utilities/rofi-beats",
-
 }
 
 -- define wireless and ethernet interface names for the network widget
 -- use `ip link` command to determine these
 network_interfaces = {
-   wlan = 'wlan0',
-   lan = 'eno1'
+   wlan = "wlan0",
+   lan = "eno1",
 }
 
 -- List of apps to run on start-up
@@ -101,9 +106,9 @@ local run_on_start_up = {
    --"unclutter"
 }
 local function set_shape(c)
-	if not c.requests_no_titlebar or c.class == "firefox" then
-	    c.shape = beautiful.client_shape_rounded
-	end
+   if not c.requests_no_titlebar or c.class == "firefox" then
+      c.shape = beautiful.client_shape_rounded
+   end
 end
 
 -- ===================================================================
@@ -153,11 +158,10 @@ root.buttons(keys.desktopbuttons)
 local create_rules = require("rules").create
 awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
 
-
 -- remove gaps if layout is set to max
-tag.connect_signal('property::layout', function(t)
-   local current_layout = awful.tag.getproperty(t, 'layout')
-   if (current_layout == awful.layout.suit.max) then
+tag.connect_signal("property::layout", function(t)
+   local current_layout = awful.tag.getproperty(t, "layout")
+   if current_layout == awful.layout.suit.max then
       t.gap = 0
    else
       t.gap = beautiful.useless_gap
@@ -165,10 +169,10 @@ tag.connect_signal('property::layout', function(t)
 end)
 
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function (c)
+client.connect_signal("manage", function(c)
    -- Set the window as a slave (put it at the end of others instead of setting it as master)
    --if not awesome.startup then
-    --  awful.client.setslave(c)
+   --  awful.client.setslave(c)
    --end
 
    if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
@@ -177,25 +181,21 @@ client.connect_signal("manage", function (c)
    end
 end)
 
-
 -- ===================================================================
 -- Client Focusing
 -- ===================================================================
-
 
 -- Autofocus a new client when previously focused one is closed
 require("awful.autofocus")
 
 -- Focus clients under mouse
 --client.connect_signal("mouse::enter", function(c)
-   --c:emit_signal("request::activate", "mouse_enter", {raise = false})
+--c:emit_signal("request::activate", "mouse_enter", {raise = false})
 --end)
-
 
 -- ===================================================================
 -- Screen Change Functions (ie multi monitor)
 -- ===================================================================
-
 
 -- Reload config when screen geometry changes
 screen.connect_signal("property::geometry", awesome.restart)
@@ -203,42 +203,37 @@ screen.connect_signal("added", awesome.restart)
 screen.connect_signal("removed", awesome.restart)
 screen.connect_signal("primary_changed", awesome.restart)
 
-
 -- ===================================================================
 -- Garbage collection (allows for lower memory consumption)
 -- ===================================================================
 
-
 collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
 
-
-local resizer_container = require('widgets.resizer-container')
+local resizer_container = require("widgets.resizer-container")
 
 function resizer_widget()
-return	wibox.widget{
-	widget = resizer_container,
-}
+   return wibox.widget({
+      widget = resizer_container,
+   })
 end
-
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
+   local main_titlebar_vert = awful.titlebar(c, {
+      position = "right",
+      size = 25,
+      bg_focus = beautiful.titelbar_bg_focus,
+      bg_normal = beautiful.titelbar_bg_normal,
+   })
 
-local main_titlebar_vert = awful.titlebar(c, {
-	position = "right",
-    size    = 25,
-	bg_focus = beautiful.titelbar_bg_focus,
-	bg_normal = beautiful.titelbar_bg_normal,
-})
-
-local main_titlebar_horiz = awful.titlebar(c, {
-	position = "top",
-    size    = 30,
-	bg_focus = beautiful.titelbar_bg_focus,
-	bg_normal = beautiful.titelbar_bg_normal,
-})
---[[
+   local main_titlebar_horiz = awful.titlebar(c, {
+      position = "top",
+      size = 30,
+      bg_focus = beautiful.titelbar_bg_focus,
+      bg_normal = beautiful.titelbar_bg_normal,
+   })
+   --[[
 local double_click_event_handler = function(double_click_event)
 	if double_click_timer then
 		double_click_timer:stop()
@@ -255,232 +250,240 @@ local double_click_event_handler = function(double_click_event)
 	)
 end
 --]]
-  -- Double click titlebar
-    function double_click_event_handler(double_click_event)
-        if double_click_timer then
-            double_click_timer:stop()
-            double_click_timer = nil
-            return true
-        end
+   -- Double click titlebar
+   function double_click_event_handler(double_click_event)
+      if double_click_timer then
+         double_click_timer:stop()
+         double_click_timer = nil
+         return true
+      end
 
-        double_click_timer = gears.timer.start_new(0.20, function()
-            double_click_timer = nil
-            return false
-        end)
-    end
+      double_click_timer = gears.timer.start_new(0.20, function()
+         double_click_timer = nil
+         return false
+      end)
+   end
 
--- buttons for the titlebar
-local buttons = gears.table.join(
-            awful.button({ }, 1, function()
-                c:emit_signal("request::activate", "titlebar", {raise = true})
-            -- WILL EXECUTE THIS ON DOUBLE CLICK
-                if double_click_event_handler() then
-                    c.maximized = not c.maximized
-                    c:raise()
-                else
-                    awful.mouse.client.move(c)
-                end
-            end),
-		--awful.button(
-			--{},
-			--1,
-			--function()
-				--double_click_event_handler(function()
-					--if c.floating then
-						--c.floating = false
-						--return
-					--end
-					--c.maximized = not c.maximized
-					--c:raise()
-					--return
-				--end)
-				--c:activate {context = 'titlebar', action = 'mouse_move'}
-			--end
-		--),
-    --awful.button({ }, 1, function()
-        --client.focus = c
-        --c:raise()
-        --awful.mouse.client.move(c)
-    --end),
-    awful.button({ }, 3, function()
-        client.focus = c
-        c:raise()
-        awful.mouse.client.resize(c)
-    end)
-)
+   -- buttons for the titlebar
+   local buttons = gears.table.join(
+      awful.button({}, 1, function()
+         c:emit_signal("request::activate", "titlebar", { raise = true })
+         -- WILL EXECUTE THIS ON DOUBLE CLICK
+         if double_click_event_handler() then
+            c.maximized = not c.maximized
+            if c.maximized then
+               awful.client.setmaster(c)
+            end
+            c:raise()
+         else
+            awful.mouse.client.move(c)
+         end
+      end),
+      --awful.button(
+      --{},
+      --1,
+      --function()
+      --double_click_event_handler(function()
+      --if c.floating then
+      --c.floating = false
+      --return
+      --end
+      --c.maximized = not c.maximized
+      --c:raise()
+      --return
+      --end)
+      --c:activate {context = 'titlebar', action = 'mouse_move'}
+      --end
+      --),
+      --awful.button({ }, 1, function()
+      --client.focus = c
+      --c:raise()
+      --awful.mouse.client.move(c)
+      --end),
+      awful.button({}, 3, function()
+         client.focus = c
+         c:raise()
+         awful.mouse.client.resize(c)
+      end)
+   )
 
+   -- left--bot right--top top--left bot right
 
--- left--bot right--top top--left bot right
+   main_titlebar_horiz:setup({
+      {
+         {
+            awful.titlebar.widget.closebutton(c),
+            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.minimizebutton(c),
+            spacing = dpi(7),
+            layout = wibox.layout.fixed.horizontal,
+         },
+         bottom = dpi(4),
+         top = dpi(4),
+         right = 0,
+         left = dpi(4),
+         layout = wibox.container.margin,
+      },
+      {
+         nil,
+         {
+            awful.titlebar.widget.iconwidget(c),
+            { -- Title
+               widget = awful.titlebar.widget.titlewidget(c),
+            },
+            layout = wibox.layout.align.horizontal,
+         },
+         buttons = buttons,
+         expand = "outside",
+         layout = wibox.layout.align.horizontal, --ush! Men det funkar!
+      },
+      {
+         {
+            awful.titlebar.widget.floatingbutton(c),
+            awful.titlebar.widget.stickybutton(c),
+            spacing = dpi(10),
+            layout = wibox.layout.fixed.horizontal,
+         },
+         bottom = dpi(4),
+         top = dpi(4),
+         right = dpi(4),
+         left = 0,
+         layout = wibox.container.margin,
+      },
+      expand = "inside",
+      layout = wibox.layout.align.horizontal,
+   })
 
-main_titlebar_horiz: setup {
-	{
-		{
-			awful.titlebar.widget.closebutton(c),
-			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.minimizebutton(c),
-			spacing = dpi(7),
-			layout  = wibox.layout.fixed.horizontal,
-		},
-		bottom   = dpi(4),
-        top  = dpi(4),
-        right    = 0,
-        left = dpi(4),
-        layout = wibox.container.margin
-	},
-	{
-		nil,
-		{
-			awful.titlebar.widget.iconwidget(c),
-			{ -- Title
-            widget = awful.titlebar.widget.titlewidget(c),
-			},
-			layout  = wibox.layout.align.horizontal,
+   main_titlebar_vert:setup({
+      {
+         {
+            awful.titlebar.widget.closebutton(c),
+            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.minimizebutton(c),
+            spacing = dpi(7),
+            layout = wibox.layout.fixed.vertical,
+         },
+         left = dpi(3),
+         right = dpi(3),
+         top = dpi(2),
+         bottom = 0,
+         buttons = buttons,
+         layout = wibox.container.margin,
+      },
+      {
+         {
+            layout = wibox.layout.fixed.vertical,
+         },
+         buttons = buttons,
+         left = dpi(4),
+         right = dpi(4),
+         top = dpi(20),
+         bottom = 0,
+         layout = wibox.container.margin,
+      },
+      {
+         {
+            awful.titlebar.widget.iconwidget(c),
+            awful.titlebar.widget.stickybutton(c),
+            awful.titlebar.widget.floatingbutton(c),
+            spacing = dpi(10),
+            layout = wibox.layout.fixed.vertical,
+         },
+         buttons = buttons,
+         left = dpi(3),
+         right = dpi(3),
+         top = 0,
+         bottom = dpi(10),
+         layout = wibox.container.margin,
+      },
+      layout = wibox.layout.align.vertical,
+   })
 
-		},
-		buttons= buttons,
-		expand = "outside",
-		layout  = wibox.layout.align.horizontal,--ush! Men det funkar!
-	},
- 	{
-		{
-			awful.titlebar.widget.floatingbutton (c),
-			awful.titlebar.widget.stickybutton   (c),
-			spacing = dpi(10),
-			layout  = wibox.layout.fixed.horizontal,
-		},
-		bottom   = dpi(4),
-        top  = dpi(4),
-        right    = dpi(4),
-        left = 0,
-        layout = wibox.container.margin
-	},
-	expand="inside",
-	layout = wibox.layout.align.horizontal
-}
-
-main_titlebar_vert: setup {
-	{
-		{
-			awful.titlebar.widget.closebutton(c),
-			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.minimizebutton(c),
-			spacing = dpi(7),
-			layout  = wibox.layout.fixed.vertical,
-		},
-		left   = dpi(3),
-        right  = dpi(3),
-        top    = dpi(2),
-        bottom = 0,
-		buttons= buttons,
-        layout = wibox.container.margin
-	},
-	{
-		{
-			layout  = wibox.layout.fixed.vertical,
-		},
-		buttons= buttons,
-		left   = dpi(4),
-        right  = dpi(4),
-        top    = dpi(20),
-        bottom = 0,
-        layout = wibox.container.margin
-	},
- 	{
-		{
-			awful.titlebar.widget.iconwidget(c),
-			awful.titlebar.widget.stickybutton   (c),
-			awful.titlebar.widget.floatingbutton (c),
-			spacing = dpi(10),
-			layout  = wibox.layout.fixed.vertical,
-		},
-		buttons= buttons,
-		left   = dpi(3),
-        right  = dpi(3),
-        top    = 0,
-        bottom = dpi(10),
-        layout = wibox.container.margin
-	},
-	layout = wibox.layout.align.vertical
-}
-
-	-- Make three extra titlebars that i can click to resize
-	-- Buttons for the resizer
-    local buttons2 = gears.table.join(
-        awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
-        end)
-    )
-	-- The actual resizers.
-	awful.titlebar(c, {position="bottom",
-		bg_focus = beautiful.titelbar_bg_focus,
-		bg_normal = beautiful.titelbar_bg_normal,
-		size=beautiful.resizer_size}):setup
-	{
-		resizer_widget(),
-		buttons = buttons2,
-		layout = wibox.layout.stack,
-	}
-	awful.titlebar(c, {position="right",
-		bg_focus = beautiful.titelbar_bg_focus,
-		bg_normal = beautiful.titelbar_bg_normal,
-		size=beautiful.resizer_size}):setup
-	{
-		resizer_widget(),
-		buttons = buttons2,
-		layout = wibox.layout.stack,
-	}
-	awful.titlebar(c, {position="left",
-		bg_focus = beautiful.titelbar_bg_focus,
-		bg_normal = beautiful.titelbar_bg_normal,
-		size=beautiful.resizer_size}):setup
-	{
-		resizer_widget(),
-		buttons = buttons2,
-		layout = wibox.layout.stack,
-	}
+   -- Make three extra titlebars that i can click to resize
+   -- Buttons for the resizer
+   local buttons2 = gears.table.join(awful.button({}, 1, function()
+      c:emit_signal("request::activate", "titlebar", { raise = true })
+      awful.mouse.client.resize(c)
+   end))
+   -- The actual resizers.
+   awful.titlebar(
+      c,
+      {
+         position = "bottom",
+         bg_focus = beautiful.titelbar_bg_focus,
+         bg_normal = beautiful.titelbar_bg_normal,
+         size = beautiful.resizer_size,
+      }
+   ):setup({
+      resizer_widget(),
+      buttons = buttons2,
+      layout = wibox.layout.stack,
+   })
+   awful.titlebar(
+      c,
+      {
+         position = "right",
+         bg_focus = beautiful.titelbar_bg_focus,
+         bg_normal = beautiful.titelbar_bg_normal,
+         size = beautiful.resizer_size,
+      }
+   ):setup({
+      resizer_widget(),
+      buttons = buttons2,
+      layout = wibox.layout.stack,
+   })
+   awful.titlebar(
+      c,
+      {
+         position = "left",
+         bg_focus = beautiful.titelbar_bg_focus,
+         bg_normal = beautiful.titelbar_bg_normal,
+         size = beautiful.resizer_size,
+      }
+   ):setup({
+      resizer_widget(),
+      buttons = buttons2,
+      layout = wibox.layout.stack,
+   })
 end)
 
 -- FIX
 tag.connect_signal(
-	--'property::selected',
-	'property::selected',
-	function(t)
-		if t == awful.screen.focused().selected_tag and #(t:clients()) > 0 then
-			if awful.client.getmaster() then
-				awful.client.getmaster():activate()
-			else
-				t:clients()[1].minimized = false
-			end
-		end
-	end
+   --'property::selected',
+   "property::selected",
+   function(t)
+      if t == awful.screen.focused().selected_tag and #(t:clients()) > 0 then
+         if awful.client.getmaster() then
+            awful.client.getmaster():activate()
+         else
+            t:clients()[1].minimized = false
+         end
+      end
+   end
 )
 
-client.connect_signal("manage", function (c)
-	set_shape(c)
+client.connect_signal("manage", function(c)
+   set_shape(c)
 end)
 
 --much nicer than before
 client.connect_signal("request::geometry", function(c, context, ...)
-    if context == "fullscreen" then
-		if not c.fullscreen then
-			set_shape(c)
-		else
-			c.shape = beautiful.client_shape_rect
-		end
-    end
-end
-)
+   if context == "fullscreen" then
+      if not c.fullscreen then
+         set_shape(c)
+      else
+         c.shape = beautiful.client_shape_rect
+      end
+   end
+end)
 
 awesome.spawn("paplay /usr/share/sounds/freedesktop/stereo/service-login.oga")
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
 
 awful.spawn.with_shell(
-   'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
-   'xrdb -merge <<< "awesome.started:true";' ..
-   -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
-   'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
-   )
-
-
+   'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;'
+      .. 'xrdb -merge <<< "awesome.started:true";'
+      -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
+      .. 'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
+)

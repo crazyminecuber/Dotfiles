@@ -7,7 +7,8 @@ vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", op
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+
+local lsp_keymaps = function(bufnr)
    -- Enable completion triggered by <c-x><c-o>
    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -29,10 +30,16 @@ local on_attach = function(client, bufnr)
       opts
    )
 end
+local on_attach = function(client, bufnr)
+   lsp_keymaps(bufnr)
+   if client.name == "sumneko_lua" then
+      client.resolved_capabilities.document_formatting = false
+   end
+end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "pyright", "ccls", "sumneko_lua" ,"rust_analyzer"}
+local servers = { "arduino_language_server","tsserver","jedi_language_server","clangd", --[[ "pyright", ]] --[[ "ccls", ]] "sumneko_lua", "rust_analyzer", }
 for _, lsp in pairs(servers) do
    local settings = {
       on_attach = on_attach,
@@ -44,6 +51,10 @@ for _, lsp in pairs(servers) do
    if lsp == "sumneko_lua" then
       local sumneko_settings = require("user.lsp.settings.sumneko_lua")
       settings = vim.tbl_deep_extend("error", sumneko_settings, settings)
+   end
+   if lsp == "arduino_language_server" then
+      local arduino_settings = require("user.lsp.settings.arduino_language_server")
+      settings = vim.tbl_deep_extend("error", arduino_settings, settings)
    end
 
    require("lspconfig")[lsp].setup(settings)

@@ -62,7 +62,7 @@ return packer.startup({
          config = function()
             require("user.lsp")
          end,
-         requires = { --use "williamboman/nvim-lsp-installer", -- simple to use language server installer
+         requires = { "williamboman/nvim-lsp-installer", -- simple to use language server installer
             --use "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
             "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
          },
@@ -126,6 +126,27 @@ return packer.startup({
          requires = {},
       })
 
+      use({
+         "kosayoda/nvim-lightbulb",
+         config = function()
+            require("user.setup.lightbulb")
+         end,
+         requires = {},
+      })
+
+      use({
+         "stevearc/dressing.nvim",
+         config = function()
+            require("user.setup.dressing")
+         end,
+         requires = {},
+      })
+
+      use({
+         "tpope/vim-fugitive",
+         requires = {},
+      })
+
       -- snippets
       use({
       "L3MON4D3/LuaSnip", --snippet engine
@@ -135,6 +156,7 @@ return packer.startup({
          requires = {},
       })
       use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+      use("jbyuki/nabla.nvim")
 
       use({
          "kyazdani42/nvim-tree.lua",
@@ -200,10 +222,26 @@ return packer.startup({
       -- Colorschemes
       use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
       use("lunarvim/darkplus.nvim")
-      use({ "ellisonleao/gruvbox.nvim" }) -- gruvbox of course
+      use("ellisonleao/gruvbox.nvim")
       use("tjdevries/colorbuddy.vim")
       use("tjdevries/gruvbuddy.nvim")
+     -- use("sainnhe/gruvbox-material")
+      use("folke/tokyonight.nvim")
+      use("ful1e5/onedark.nvim")
+     -- use("eddyekofo94/gruvbox-flat.nvim")
+      --use("MortenStabenau/matlab-vim")
 
+      --use {'Rahlir/nvim-matlab', run = 'vim.cmd [[UpdateRemotePlugins]]'}
+      --use({ "daeyun/vim-matlab" })
+      use("kassio/neoterm")
+
+      use({
+         "ray-x/lsp_signature.nvim",
+         requires = {},
+         config = function()
+            require("user.setup.lsp_signature")
+         end,
+      })
       -- Other plugins
       use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
       use({
@@ -275,6 +313,35 @@ return packer.startup({
             require("user.setup.todo_comments")
          end,
       })
+      use({
+         "akinsho/toggleterm.nvim",
+         requires = {},
+         config = function()
+            require("user.setup.toggleterm")
+         end,
+      })
+
+      use({
+         "mfussenegger/nvim-dap",
+         requires = {
+            "rcarriga/nvim-dap-ui",
+            "theHamsta/nvim-dap-virtual-text",
+         },
+         config = function()
+            require("user.setup.dap")
+         end,
+      })
+      use({
+         "stevearc/vim-arduino",
+         config = function()
+            require("user.setup.vim-arduino")
+         end,
+      })
+      use("EdenEast/nightfox.nvim")
+      use("marko-cerovac/material.nvim")
+      use("savq/melange")
+      use("sainnhe/sonokai")
+      use("sainnhe/everforest")
       -- calls autocmd:s to much
       -- use({
       -- "Pocco81/AutoSave.nvim",
@@ -284,7 +351,6 @@ return packer.startup({
       --    end,
       -- })
       --plugins to try someday
-      --use "akinsho/toggleterm.nvim"
       ----Plug 'glepnir/lspsaga.nvim'
       --Plug 'simrat39/symbols-outline.nvim'
 
