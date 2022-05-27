@@ -112,7 +112,8 @@
 --  was in derived class or in specific class. I do not know where to figure out
 --  how to get this working.
 --
-
+require('impatient')
+--require'impatient'.enable_profile()
 require("user.plugins")
 require("user.options")
 require("user.keymaps")

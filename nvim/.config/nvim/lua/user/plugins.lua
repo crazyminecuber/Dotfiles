@@ -53,7 +53,7 @@ return packer.startup({
          "lewis6991/impatient.nvim",
          requires = {},
          config = function()
-            require("user.setup.impatient")
+            --require("user.setup.impatient")
          end,
       })
 
@@ -190,6 +190,7 @@ return packer.startup({
             require("user.setup.alpha")
          end,
       })
+      use "fladson/vim-kitty"
 
       -- Which key
       use({

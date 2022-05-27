@@ -378,9 +378,9 @@ thickness: 0.15
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 #
 shell:
-  program: /bin/zsh
-  args:
-    - --login
+  program: /bin/fish
+    #args:
+    #- --login
 
 # Startup directory
 #

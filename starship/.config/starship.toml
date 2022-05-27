@@ -1,0 +1,166 @@
+format = """$username$hostname$directory$sudo$fill$all$jobs$character"""
+
+#right_format = """$all"""
+continuation_prompt = "▶▶"
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+[username]
+style_user = "#d79921 bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = false
+
+[hostname]
+ssh_symbol = "🌏"
+ssh_only = true
+#format = "[$ssh_symbol](bold red)[$hostname](bold #b57614) "
+format = "[$ssh_symbol](bold blue)[$hostname](bold #d65d0e) "
+trim_at = ".companyname.com"
+disabled = false
+
+[sudo]
+format = "[$symbol ]($style)($symbol)"
+style = "bold yellow"
+disabled = false
+
+[localip]
+ssh_only = true
+format = "@[$localipv4](italic red) "
+disabled = false
+
+[shell]
+fish_indicator = ""
+powershell_indicator = "_"
+unknown_indicator = "mystery shell"
+style = "cyan bold"
+disabled = true
+
+[time]
+disabled = true
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "-5"
+#time_range = "22:00:00-04:00:00"
+
+# [status]
+# style = "bg:blue"
+# symbol = "🔴 "
+# success_symbol = "🟢 SUCCESS"
+# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+# map_symbol = true
+# disabled = false
+
+
+
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch) ]($style)"
+#symbol = "🌱 "
+#symbol = " "
+truncation_length = 5
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+up_to_date = "[✓](green)"
+staged = '[ ](green)'
+#staged = '[ ](green)'
+renamed = "👅"
+deleted = "🗑"
+
+
+
+# # disable the package module, hiding it from the prompt completely
+[package]
+symbol = " "
+disabled = true
+
+# [aws]
+
+[c]
+format = "[$name $version]($style)"
+symbol = " "
+
+# [conda]
+# symbol = " "
+
+# [dart]
+# symbol = " "
+
+# [directory]
+# read_only = " "
+
+# [docker_context]
+# symbol = " "
+
+# [elixir]
+# symbol = " "
+
+[lua]
+format = "[$symbol($version)]($style)"
+symbol = " "
+
+# [elm]
+# symbol = " "
+
+# [golang]
+# symbol = " "
+
+[hg_branch]
+symbol = " "
+
+# [java]
+# symbol = " "
+
+# [julia]
+# symbol = " "
+
+# [memory_usage]
+# symbol = " "
+
+# [nim]
+# symbol = " "
+
+# [nix_shell]
+# symbol = " "
+
+# [nodejs]
+# symbol = " "
+
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+
+[rust]
+format = "[$symbol($version)]($style)"
+style=	"bold #d7611b"
+# symbol = " "
+#disabled = true
