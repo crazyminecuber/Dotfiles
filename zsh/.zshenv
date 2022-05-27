@@ -9,6 +9,7 @@ export FILE="vifm"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/bin:"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH
 export WINIT_UNIX_BACKEND=x11
 
