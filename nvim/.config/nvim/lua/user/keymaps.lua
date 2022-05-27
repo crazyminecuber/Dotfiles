@@ -57,7 +57,7 @@ keymap("n", "<M-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "lkjh", "<ESC>", opts) -- Interresting, might try for a while
+--keymap("i", "lkjh", "<ESC>", opts) -- Interresting, might try for a while
 
 -- Visual --
 -- Stay in indent mode
@@ -103,5 +103,6 @@ keymap("n", "<C-.>", ":echo 'gurk'", opts)
 
 
 -- TDDD95
-keymap("v", "f", ':normal ^yss"$i\\n<ESC>', opts)
+--keymap("v", "<c-f>", ':normal ^yss"$i\\n<ESC>', opts)
+vim.keymap.set({ "v" }, "<c-f>", ':normal ^yss"$i\\n<ESC>')
 --vnoremap f :normal ^yss"$i\n<ESC>

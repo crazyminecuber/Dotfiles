@@ -1,4 +1,5 @@
 --
+--
 --       █████╗ ██╗    ██╗███████╗███████╗ ██████╗ ███╗   ███╗███████╗
 --      ██╔══██╗██║    ██║██╔════╝██╔════╝██╔═══██╗████╗ ████║██╔════╝
 --      ███████║██║ █╗ ██║█████╗  ███████╗██║   ██║██╔████╔██║█████╗
@@ -34,6 +35,7 @@
 --DONE Fönster i float läge spawner ibland off screen
 --TODO Ibland blir master/stacken jättesmala utan att jag vet att jag har pillat på dem
 --TODO Blir fel nör fönster swawnar h är maximerat och relaterat
+--TODO Flytta maximerat fönster till master så att det blir i fokus när jag byter taggar
 --TODO Fixa power management! Fixa så att datorn sover istället för att stänga av (när den når typ 5 %
 --TODO Terminaler blir knaiga på floating fönstret. Gillar int floating generellt.
 --och minska ljusstyrkan kraftigt efter 5 minuter. Gå in i sovläge efter 20 minuter. Få den att pipa och skicka arga notiser
