@@ -3,7 +3,7 @@
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="brave"
 export READER="zathura"
 export FILE="vifm"
 
@@ -41,3 +41,4 @@ export CM_LAUNCHER='rofi'
 #export QT_QPA_PLATFORMTHEME=gnome
 path+=($HOME/.local/bin)
 export PATH
+. "$HOME/.cargo/env"

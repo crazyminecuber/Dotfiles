@@ -61,7 +61,7 @@ cmp.setup({
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       ["<C-o>"] = cmp.mapping.complete(),
-      ["<CR>"] = cmp.mapping.confirm({ select = true }),
+      ["<S-CR>"] = cmp.mapping.confirm({ select = true }),
    }),
    formatting = {
       fields = { "kind", "abbr", "menu" },
