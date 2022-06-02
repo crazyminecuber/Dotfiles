@@ -95,6 +95,9 @@ if status is-interactive
   set fish_cursor_insert line
   set fish_cursor_replace_one underscore
   set fish_cursor_visual block
+  bind yy fish_clipboard_copy
+  bind Y fish_clipboard_copy
+  bind p fish_clipboard_paste
   command -v nvim > /dev/null && export MANPAGER='nvim +Man!'
 ### "nvim" as manpager
 

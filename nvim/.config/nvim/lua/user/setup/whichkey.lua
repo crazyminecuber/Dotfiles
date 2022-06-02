@@ -205,7 +205,7 @@ local mappings = {
          "<cmd>Telescope lsp_document_diagnostics<cr>",
          "Document Diagnostics",
       },
-      f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
+      f = { "<cmd>lua vim.lsp.buf.formatting { async = true }<cr>", "Format" },
 
       i = { "<cmd>LspInfo<cr>", "Info" },
       -- 	I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -284,7 +284,7 @@ local mappings = {
       s = { "<cmd>Telescope spell_suggest<cr>", "Spell suggestions" },
    },
 
-   t = {
+   T = {
       name = "Terminal",
       --n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
       --u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
@@ -296,6 +296,11 @@ local mappings = {
       f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
       h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
       v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+   },
+   t = {
+      name = "Tab",
+      n = { "<cmd>tabnext<cr>", "Next tab" },
+      p = { "<cmd>tabprevious<cr>", "Previous tab" },
    },
    w = {
       name = "Window",
