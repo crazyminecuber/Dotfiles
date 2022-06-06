@@ -9,7 +9,6 @@
 -- Initialization
 -- ===================================================================
 
-
 local beautiful = require("beautiful")
 local wibox = require("wibox")
 local dpi = beautiful.xresources.apply_dpi
@@ -25,27 +24,25 @@ local home_dir = os.getenv("HOME")
 -- define module table
 local left_panel = {}
 
-
 -- ===================================================================
 -- Bar Creation
 -- ===================================================================
 
 --local termbutton = wibox.widget{
-    --markup = 'This <i>is</i> a <b>textbox</b>!!!',
-    --align  = 'center',
-    --valign = 'center',
-    --widget = wibox.widget.textbox
+--markup = 'This <i>is</i> a <b>textbox</b>!!!',
+--align  = 'center',
+--valign = 'center',
+--widget = wibox.widget.textbox
 --}
 --
-  --termbutton:connect_signal(
-    --'button::release',
-    --function()
-		--awesome.spawn("alacritty")
-    --end
-  --)
+--termbutton:connect_signal(
+--'button::release',
+--function()
+--awesome.spawn("alacritty")
+--end
+--)
 
 left_panel.create = function(s)
-
    local panel_shape = function(cr, width, height)
       gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
    end
@@ -56,13 +53,13 @@ left_panel.create = function(s)
    panel = awful.wibar({
       screen = s,
       position = "left",
-      height = s.geometry.height * 7/10,
+      height = s.geometry.height * 7 / 10,
       width = beautiful.left_panel_width,
       ontop = true,
-      shape = panel_shape
+      shape = panel_shape,
    })
 
-   panel:setup {
+   panel:setup({
       expand = "none",
       layout = wibox.layout.align.vertical,
       nil,
@@ -80,10 +77,10 @@ left_panel.create = function(s)
             folder.create("trash://"),
             --termbutton,
             layout = wibox.layout.fixed.vertical,
-         }
+         },
       },
-      nil
-   }
+      nil,
+   })
 
    -- panel background that becomes visible when client is maximized
    panel_bg = wibox({
@@ -91,14 +88,12 @@ left_panel.create = function(s)
       position = "left",
       height = s.geometry.height,
       width = beautiful.left_panel_width,
-      visible = false
+      visible = false,
    })
-
 
    -- ===================================================================
    -- functionality
    -- ===================================================================
-
 
    -- hide panel when client is fullscreen
    local function change_panel_visibility(client)
@@ -111,7 +106,7 @@ left_panel.create = function(s)
    client.connect_signal("property::fullscreen", change_panel_visibility)
    client.connect_signal("focus", change_panel_visibility)
 
---[[   -- maximize panel if client is maximized
+   --[[   -- maximize panel if client is maximized
    local function toggle_maximize_left_panel(is_maximized)
       if s == awful.screen.focused() then
          panel_bg.visible = is_maximized
@@ -193,6 +188,7 @@ left_panel.create = function(s)
          toggle_maximize_left_panel(false)
       end
    end)
-]]--
+]]
+   --
 end
 return left_panel

@@ -1,4 +1,4 @@
---
+-- awesome_mode: api-level=6:screen=on
 --
 --       █████╗ ██╗    ██╗███████╗███████╗ ██████╗ ███╗   ███╗███████╗
 --      ██╔══██╗██║    ██║██╔════╝██╔════╝██╔═══██╗████╗ ████║██╔════╝
@@ -53,6 +53,7 @@
 
 -- Standard awesome libraries
 local gears = require("gears")
+local ruled = require("ruled")
 local awful = require("awful")
 local naughty = require("naughty")
 
@@ -61,13 +62,17 @@ local dpi = beautiful.xresources.apply_dpi
 
 local wibox = require("wibox")
 
+-- TODO: Autofocus a new client when previously focused one is closed (is deprecated
+-- but no solution is given??)
+--require("awful.autofocus")
+
 -- ===================================================================
 -- User Configuration
 -- ===================================================================
 
 local themes = {
    "pastel", -- 1
-   "mirage",  -- 2
+   "mirage", -- 2
 }
 
 -- change this number to use the corresponding theme
@@ -78,7 +83,7 @@ local theme_config_dir = gears.filesystem.get_configuration_dir() .. "configurat
 apps = {
    network_manager = "nm-connection-editor", -- recommended: nm-connection-editor
    power_manager = "xfce4-power-manager-settings", -- recommended: xfce4-power-manager
-   terminal = "alacritty",
+   terminal = "kitty",
    --launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
    launcher = "rofi -show drun -sort -i -theme " .. theme_config_dir .. "rofi2.rasi",
    lock = "i3lock -c 222233",
@@ -154,8 +159,9 @@ root.keys(keys.globalkeys)
 root.buttons(keys.desktopbuttons)
 
 -- Import rules
-local create_rules = require("rules").create
-awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
+ruled.client.connect_signal("request::rules", function()
+   require("rules").create(keys.clientkeys, keys.clientbuttons)
+end)
 
 -- remove gaps if layout is set to max
 tag.connect_signal("property::layout", function(t)
@@ -168,7 +174,7 @@ tag.connect_signal("property::layout", function(t)
 end)
 
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function(c)
+client.connect_signal("request::manage", function(c)
    -- Set the window as a slave (put it at the end of others instead of setting it as master)
    --if not awesome.startup then
    --  awful.client.setslave(c)
@@ -183,9 +189,6 @@ end)
 -- ===================================================================
 -- Client Focusing
 -- ===================================================================
-
--- Autofocus a new client when previously focused one is closed
-require("awful.autofocus")
 
 -- Focus clients under mouse
 --client.connect_signal("mouse::enter", function(c)
@@ -405,41 +408,32 @@ end
       awful.mouse.client.resize(c)
    end))
    -- The actual resizers.
-   awful.titlebar(
-      c,
-      {
-         position = "bottom",
-         bg_focus = beautiful.titelbar_bg_focus,
-         bg_normal = beautiful.titelbar_bg_normal,
-         size = beautiful.resizer_size,
-      }
-   ):setup({
+   awful.titlebar(c, {
+      position = "bottom",
+      bg_focus = beautiful.titelbar_bg_focus,
+      bg_normal = beautiful.titelbar_bg_normal,
+      size = beautiful.resizer_size,
+   }):setup({
       resizer_widget(),
       buttons = buttons2,
       layout = wibox.layout.stack,
    })
-   awful.titlebar(
-      c,
-      {
-         position = "right",
-         bg_focus = beautiful.titelbar_bg_focus,
-         bg_normal = beautiful.titelbar_bg_normal,
-         size = beautiful.resizer_size,
-      }
-   ):setup({
+   awful.titlebar(c, {
+      position = "right",
+      bg_focus = beautiful.titelbar_bg_focus,
+      bg_normal = beautiful.titelbar_bg_normal,
+      size = beautiful.resizer_size,
+   }):setup({
       resizer_widget(),
       buttons = buttons2,
       layout = wibox.layout.stack,
    })
-   awful.titlebar(
-      c,
-      {
-         position = "left",
-         bg_focus = beautiful.titelbar_bg_focus,
-         bg_normal = beautiful.titelbar_bg_normal,
-         size = beautiful.resizer_size,
-      }
-   ):setup({
+   awful.titlebar(c, {
+      position = "left",
+      bg_focus = beautiful.titelbar_bg_focus,
+      bg_normal = beautiful.titelbar_bg_normal,
+      size = beautiful.resizer_size,
+   }):setup({
       resizer_widget(),
       buttons = buttons2,
       layout = wibox.layout.stack,
@@ -461,7 +455,7 @@ tag.connect_signal(
    end
 )
 
-client.connect_signal("manage", function(c)
+client.connect_signal("request::manage", function(c)
    set_shape(c)
 end)
 

@@ -2,7 +2,6 @@
 -- Initialization
 -- ===================================================================
 
-
 local awful = require("awful")
 --local watch = require("awful.widget.watch")
 local wibox = require("wibox")
@@ -13,49 +12,39 @@ local dpi = require("beautiful").xresources.apply_dpi
 local PATH_TO_ICONS = os.getenv("HOME") .. "/.config/awesome/icons/"
 --local checker
 
-
 -- ===================================================================
 -- Initialization
 -- ===================================================================
 
-
-local widget = wibox.widget {
+local widget = wibox.widget({
    {
       id = "icon",
       widget = wibox.widget.imagebox,
       resize = true,
-	  image = PATH_TO_ICONS .. "clipster.svg"
+      image = PATH_TO_ICONS .. "clipster.svg",
    },
-   layout = wibox.layout.align.horizontal
-}
+   layout = wibox.layout.align.horizontal,
+})
 
 local widget_button = clickable_container(wibox.container.margin(widget, dpi(7), dpi(7), dpi(7), dpi(7)))
-widget_button:buttons(
-   gears.table.join(
-      awful.button({}, 1, nil,
-         function()
-            awful.spawn(apps.clipboard) -- Rofi thingy
-         end
-      )
-   )
-)
+widget_button:buttons(gears.table.join(awful.button({}, 1, nil, function()
+   awful.spawn(apps.clipboard) -- Rofi thingy
+end)))
 
-awful.tooltip(
-   {
-      objects = {widget_button},
-      mode = "outside",
-      align = "right",
-      timer_function = function()
-         --if checker ~= nil then
-          --  return "Bluetooth is on"
-         --else
-          --  return "Bluetooth is off"
-         --end
-		 return "Clipboard manager"
-      end,
-      preferred_positions = {"right", "left", "top", "bottom"}
-   }
-)
+awful.tooltip({
+   objects = { widget_button },
+   mode = "outside",
+   align = "right",
+   timer_function = function()
+      --if checker ~= nil then
+      --  return "Bluetooth is on"
+      --else
+      --  return "Bluetooth is off"
+      --end
+      return "Clipboard manager"
+   end,
+   preferred_positions = { "right", "left", "top", "bottom" },
+})
 
 --local last_bluetooth_check = os.time()
 --watch("bluetoothctl --monitor list", 5,

@@ -9,22 +9,20 @@
 -- Initialization
 -- ===================================================================
 
-
-local awful = require('awful')
-local wibox = require('wibox')
-local dpi = require('beautiful').xresources.apply_dpi
-local capi = {button = button}
-local clickable_container = require('widgets.pastel.clickable-container')
-local modkey = require('keys').modkey
+local awful = require("awful")
+local wibox = require("wibox")
+local dpi = require("beautiful").xresources.apply_dpi
+local capi = { button = button }
+local clickable_container = require("widgets.pastel.clickable-container")
+local modkey = require("keys").modkey
+local gears = require("gears")
 
 -- define module table
 local tag_list = {}
 
-
 -- ===================================================================
 -- Widget Creation Functions
 -- ===================================================================
-
 
 -- Create buttons
 local function create_buttons(buttons, object)
@@ -35,17 +33,13 @@ local function create_buttons(buttons, object)
          -- press and release events, and will propagate them to the
          -- button object the user provided, but with the object as
          -- argument.
-         local btn = capi.button {modifiers = b.modifiers, button = b.button}
-         btn:connect_signal('press',
-            function()
-               b:emit_signal('press', object)
-            end
-         )
-         btn:connect_signal('release',
-            function()
-               b:emit_signal('release', object)
-            end
-         )
+         local btn = capi.button({ modifiers = b.modifiers, button = b.button })
+         btn:connect_signal("press", function()
+            b:emit_signal("press", object)
+         end)
+         btn:connect_signal("release", function()
+            b:emit_signal("release", object)
+         end)
          btns[#btns + 1] = btn
       end
 
@@ -91,7 +85,7 @@ local function list_update(w, buttons, label, data, objects)
             tb = tb,
             bgb = bgb,
             tbm = tbm,
-            ibm = ibm
+            ibm = ibm,
          }
       end
 
@@ -99,7 +93,7 @@ local function list_update(w, buttons, label, data, objects)
       args = args or {}
 
       bgb:set_bg(bg)
-      if type(bg_image) == 'function' then
+      if type(bg_image) == "function" then
          -- TODO: Why does this pass nil as an argument?
          bg_image = bg_image(tb, o, nil, objects, i)
       end
@@ -112,58 +106,82 @@ local function list_update(w, buttons, label, data, objects)
       end
 
       bgb.shape = args.shape
-      bgb.shape_border_width = args.shape_border_width
-      bgb.shape_border_color = args.shape_border_color
+      bgb.border_width = args.border_width
+      bgb.border_color = args.border_color
 
       w:add(bgb)
    end
 end
 
+---------------------------------------------------------
 -- create the tag list widget
 tag_list.create = function(s)
-   return awful.widget.taglist(
-      s,
-      awful.widget.taglist.filter.all,
-      awful.util.table.join(
-         awful.button({}, 1,
-            function(t)
+   return awful.widget.taglist({
+
+      screen = s,
+      filter = awful.widget.taglist.filter.all,
+      --yuck!
+      -- style   = {
+      --     shape = gears.shape.powerline
+      -- },
+      buttons = gears.table.join(
+         awful.button({}, 1, function(t)
+            t:view_only()
+         end),
+         awful.button({}, 2, function(t)
+            if client.focus then
+               client.focus:move_to_tag(t)
                t:view_only()
             end
-         ),
-         awful.button({}, 2,
-            function(t)
-               if client.focus then
-                  client.focus:move_to_tag(t)
-                  t:view_only()
-               end
-            end
-         ),
-         awful.button({}, 3,
-            awful.tag.viewtoggle
-         ),
-		--To complex for me
-        -- awful.button({modkey}, 3,
-        --    function(t)
-         --      if client.focus then
-          --        client.focus:toggle_tag(t)
-           --    end
-           -- end
-       --  ),
-         awful.button({}, 4,
-            function(t)
-               awful.tag.viewprev(t.screen)
-            end
-         ),
-         awful.button({}, 5,
-            function(t)
-               awful.tag.viewnext(t.screen)
-            end
-         )
+         end),
+         awful.button({}, 3, awful.tag.viewtoggle),
+         --To complex for me
+         -- awful.button({modkey}, 3,
+         --    function(t)
+         --       if client.focus then
+         --          client.focus:toggle_tag(t)
+         --       end
+         --    end
+         -- ),
+         awful.button({}, 4, function(t)
+            awful.tag.viewprev(t.screen)
+         end),
+         awful.button({}, 5, function(t)
+            awful.tag.viewnext(t.screen)
+         end)
       ),
-      {},
-      list_update,
-      wibox.layout.fixed.vertical()
-   )
+      update_function = list_update,
+      layout = {
+
+         -- spacing = 10,
+         -- spacing_widget = {
+         --    color  = "#dddddd",
+         --    shape  = gears.shape.powerline,
+         --    widget = wibox.widget.separator,
+         -- },
+         layout = wibox.layout.fixed.vertical,
+      },
+      -- widget_template = {
+      --    {
+      --       {
+      --          id = "icon_role",
+      --          widget = wibox.widget.imagebox,
+      --       },
+      --       -- TODO: Adjust and export to theme file
+      --       margins = 10,
+      --       widget = wibox.container.margin,
+      --    },
+      --    id = "background_role",
+      --    widget = wibox.container.background,
+      --    -- Add support for hover colors and an index label
+      -- },
+   })
 end
+
+-- awful.widget.taglist {
+--     layout   = {
+--         layout  = wibox.layout.fixed.horizontal
+--     },
+-- }
 
 return tag_list

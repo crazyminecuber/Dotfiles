@@ -4,8 +4,8 @@ local awful = require('awful')
 local beautiful = require('beautiful')
 local spawn = awful.spawn
 local dpi = beautiful.xresources.apply_dpi
-local icons = require('theme.icons')
-local clickable_container = require('widget.clickable-container')
+local icons = require('icons.glorious')
+local clickable_container = require('widgets.glorious.clickable-container')
 
 local icon = wibox.widget {
 	layout = wibox.layout.align.vertical,
@@ -58,7 +58,7 @@ brightness_slider:connect_signal(
 	'property::value',
 	function()
 		local brightness_level = brightness_slider:get_value()
-		
+
 		spawn('light -S ' ..
 			math.max(brightness_level, 5),
 			false
@@ -104,7 +104,7 @@ brightness_slider:buttons(
 
 local update_slider = function()
 	awful.spawn.easy_async_with_shell(
-		'light -G', 
+		'light -G',
 		function(stdout)
 			local brightness = string.match(stdout, '(%d+)')
 			brightness_slider:set_value(tonumber(brightness))
@@ -130,7 +130,7 @@ local action_jump = function()
 end
 
 action_level:buttons(
-	awful.util.table.join(
+	gears.table.join(
 		awful.button(
 			{},
 			1,
