@@ -1,6 +1,5 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-print("gurk")
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
@@ -22,24 +21,26 @@ local lsp_keymaps = function(bufnr)
    vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
    vim.api.nvim_set_keymap("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
    vim.api.nvim_buf_set_keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-   vim.api.nvim_buf_set_keymap(
-      bufnr,
-      "n",
-      "gl",
-      '<cmd>lua vim.diagnostic.get()<CR>',
-      opts
-   )
+   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.get()<CR>", opts)
 end
+
 local on_attach = function(client, bufnr)
    lsp_keymaps(bufnr)
    if client.name == "sumneko_lua" then
-      client.resolved_capabilities.document_formatting = false
+      client.server_capabilities.document_formatting = false
    end
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "arduino_language_server","tsserver","jedi_language_server","clangd", --[[ "pyright", ]] --[[ "ccls", ]] "sumneko_lua", "rust_analyzer", }
+local servers = {
+   "arduino_language_server",
+   "tsserver",
+   "jedi_language_server",
+   "clangd", --[[ "pyright", ]] --[[ "ccls", ]]
+   "sumneko_lua",
+   "rust_analyzer",
+}
 for _, lsp in pairs(servers) do
    local settings = {
       on_attach = on_attach,
