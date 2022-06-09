@@ -79,7 +79,8 @@ end
 
 ### END OF FUNCTIONS ###
 
-source ~/.zshenv
+source ~/.config/env_variables
+
 
 
 

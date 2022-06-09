@@ -5,13 +5,13 @@ if not status_ok then
 end
 
 toggleterm.setup({
-size = function(term)
-    if term.direction == "horizontal" then
-      return 15
-    elseif term.direction == "vertical" then
-      return vim.o.columns * 0.4
-    end
-  end,
+   size = function(term)
+      if term.direction == "horizontal" then
+         return 15
+      elseif term.direction == "vertical" then
+         return vim.o.columns * 0.4
+      end
+   end,
    open_mapping = [[<c-\>]],
    hide_numbers = true,
    shade_filetypes = {},
@@ -72,11 +72,12 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 -- end
 -- -- Could be interresting to have something like this. A nice repl to quickly bring up. Would also be
 -- -- nice to be able to send code to it.
- local python = Terminal:new({ cmd = "python", hidden = true })
+local python = Terminal:new({ cmd = "python", hidden = true })
 
- function _PYTHON_TOGGLE()
- 	python:toggle()
- end
+function _PYTHON_TOGGLE()
+   python:toggle()
+end
+
 arduino_serial = Terminal:new({
    cmd = "picocom /dev/ttyACM* -b 57600",
    hidden = true,
@@ -96,10 +97,11 @@ matlab.__gurk = false
 function _MATLAB_OPEN()
    if matlab.__gurk == false then
       matlab:open()
-else
-	print("Nope")
+   else
+      print("Nope")
    end
 end
+
 function _MATLAB_TOGGLE()
    print("tog")
    matlab:toggle()
@@ -131,6 +133,10 @@ function _MATLAB_HELP()
    local gurk = vim.fn.expand("<cword>")
    print(gurk)
    matlab:send("help " .. gurk, false)
+end
+
+function run_gurk()
+      vim.cmd([[TermExec cmd=']]..vim.g.gurk_runner..[[' direction=float]])
 end
 
 -- function _MATLAB_RUN_FILE()

@@ -113,11 +113,11 @@
 --  how to get this working.
 --
 
-local present, impatient = pcall(require, "impatient")
-
-if present then
-   impatient.enable_profile()
-end
+-- local present, impatient = pcall(require, "impatient")
+--
+-- if present then
+--    impatient.enable_profile()
+-- end
 --require'impatient'.enable_profile()
 require("user.plugins")
 require("user.options")

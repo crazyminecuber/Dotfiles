@@ -34,11 +34,11 @@ run xset r rate 200 30
 run setxkbmap se -variant nodeadkeys -option caps:escape
 #run nm-applet
 #run redshift-gtk
-run autorandr -c
 run clipmenud
 run udiskie --tray
 
 run picom
+run autorandr -c
 
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 

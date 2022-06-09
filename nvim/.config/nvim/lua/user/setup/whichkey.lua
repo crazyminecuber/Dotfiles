@@ -142,6 +142,8 @@ local mappings = {
       },
       u = {
          name = "UI",
+         c = { "<cmd> lua require('dapui').close()<CR>", "close" },
+         o = { "<cmd> lua require('dapui').open()<CR>", "open" },
          h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Hover" },
          f = { "<cmd>lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", "Float" },
       },
@@ -309,6 +311,9 @@ local mappings = {
       k = { ":wincmd k<CR>", "Up window" },
       l = { ":wincmd l<CR>", "Right window" },
       o = { ":ZoomWinTabToggle<CR>", "Toggle window zoom" },
+   },
+   [","] = {
+      "<cmd>lua run_gurk()<cr>", "Gurk runner"
    },
 }
 

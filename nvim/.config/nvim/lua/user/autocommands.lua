@@ -4,7 +4,6 @@
 --    vim.cmd("wundo " .. fname)
 -- end
 
-
 -- Trying to fix behaviour i saw in terminal. Turns out gui already fixed it and
 -- i wasted a lot of time that i could have used better.
 -- function _SAVE_SIGTERM(dying)
@@ -20,17 +19,12 @@
 --   return
 -- end
 
-    -- "autocmd VimLeavePre * wall
-    -- "autocmd VimLeave * wall
-    --"autocmd VimLeavePre * wall
-    --autocmd BufWritePre * lua print("Gurk2")
-    --"autocmd VimLeavePre * wall
-    --autocmd VimLeavePre * lua save_sigterm(v:dying)
-
-
-
-
-
+-- "autocmd VimLeavePre * wall
+-- "autocmd VimLeave * wall
+--"autocmd VimLeavePre * wall
+--autocmd BufWritePre * lua print("Gurk2")
+--"autocmd VimLeavePre * wall
+--autocmd VimLeavePre * lua save_sigterm(v:dying)
 
 vim.cmd([[
   augroup _general_settings
@@ -65,9 +59,169 @@ vim.cmd([[
   augroup end
 ]])
 
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
--- oskpos gurk
+-- I could do fancy shit quering git what the repo name is but for now, it is
+-- probably fine to regex match against some folder and some file-ending
+local group = vim.api.nvim_create_augroup("SmashThatLikeButton", { clear = true })
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--    callback = function()
+--          print("gurk")
+--          print(vim.fn.expand("%"))
+--          print(vim.fn.expand("<afile>"))
+--          print("gurk")
+--    end,
+--    pattern = "*/*",
+--    group = group,
+-- })
+
+-- Use cargo run as gurk_runner for rust
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      -- print("gurk")
+      -- print(vim.fn.expand("%"))
+      -- print(vim.fn.expand("<afile>"))
+      -- print("gurk")
+      vim.g.gurk_runner = "cargo run"
+      print("gurk its rust")
+   end,
+   pattern = "*rs",
+   group = group,
+})
+-- Use manage.py to run webgruppen
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      -- print("gurk")
+      -- print(vim.fn.expand("%"))
+      -- print(vim.fn.expand("<afile>"))
+      -- print("gurk")
+      vim.g.gurk_runner = "./manage.py runserver"
+      print("gurk its webgruppen")
+   end,
+   pattern = { "*/webgruppen/*.py", "*/webgruppen/*.css", "*/webgruppen/*.js" },
+   group = group,
+})
+
+-- Use make as command for tddd95
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      -- print("gurk")
+      -- print(vim.fn.expand("%"))
+      -- print(vim.fn.expand("<afile>"))
+      -- print("gurk")
+      vim.g.gurk_runner = "make"
+      print("gurk its tddd95")
+   end,
+   pattern = { "*/TDDD95/*.cc" },
+   group = group,
+})
+
+
+-- Setting searchengine for word under cursor----------------------------------
+-- For rust
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=rust+{query}",
+      }
+   end,
+   pattern = { "*.rs" },
+   group = group,
+})
+
+-- For cpp
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=cpp+{query}",
+      }
+   end,
+   pattern = { "*.cc","*.cpp" },
+   group = group,
+})
+
+-- For arduino
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=arduino+{query}",
+      }
+   end,
+   pattern = { "*.ino" },
+   group = group,
+})
+
+-- For matlab
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=matlab+{query}",
+      }
+   end,
+   pattern = { "*.m" },
+   group = group,
+})
+
+-- For css
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=css+{query}",
+      }
+   end,
+   pattern = { "*.css" },
+   group = group,
+})
+
+-- For javascript
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=javascript+{query}",
+      }
+   end,
+   pattern = { "*.js" },
+   group = group,
+})
+
+-- For python
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=python+{query}",
+      }
+   end,
+   pattern = { "*.py" },
+   group = group,
+})
+
+-- For lua
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=lua+{query}",
+      }
+   end,
+   pattern = { "*.lua" },
+   group = group,
+})
+
+-- For c
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=c+{query}",
+      }
+   end,
+   pattern = { "*.c" },
+   group = group,
+})
+
+-- For latex
+vim.api.nvim_create_autocmd("BufEnter", {
+   callback = function()
+      vim.g.openbrowser_search_engines = {
+         favorite = "http://google.com/search?q=latex+{query}",
+      }
+   end,
+   pattern = { "*.tex" },
+   group = group,
+})

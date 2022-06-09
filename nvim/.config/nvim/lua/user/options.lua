@@ -48,6 +48,11 @@ vim.g.neoterm_default_mod = 'botright:vertical' ;
 vim.opt.formatoptions="cqlnjt"
 vim.g.netrw_nogx = 1 -- disable netrw's gx mapping.
 vim.g.cursorhold_updatetime = 100 -- Plugin decouples corsortime from updatetime
+vim.g.openbrowser_default_search="favorite"
+
+vim.g.openbrowser_search_engines = {
+  favorite = 'http://google.com/search?q={query}'
+}
 
 for k, v in pairs(options) do
   vim.opt[k] = v
