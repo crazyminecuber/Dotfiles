@@ -1,0 +1,14 @@
+[Unit]
+Description=Mount Share at boot
+
+[Mount]
+What=//home.lan/neodrive
+ForceUnmount=true
+Where=/mnt/neodrive
+Options=_netdev,credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw,soft,x-systemd.device-timeout=100ms,uid=oskar,gid=oskar
+Type=cifs
+Owner=oskar
+TimeoutSec=20
+
+[Install]
+WantedBy=multi-user.target
