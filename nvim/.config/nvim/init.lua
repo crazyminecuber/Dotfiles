@@ -112,7 +112,12 @@
 --  was in derived class or in specific class. I do not know where to figure out
 --  how to get this working.
 --
-require('impatient')
+
+-- local present, impatient = pcall(require, "impatient")
+--
+-- if present then
+--    impatient.enable_profile()
+-- end
 --require'impatient'.enable_profile()
 require("user.plugins")
 require("user.options")

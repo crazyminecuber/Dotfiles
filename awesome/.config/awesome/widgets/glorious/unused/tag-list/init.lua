@@ -117,7 +117,7 @@ local tag_list = function(s)
 	return awful.widget.taglist(
 		s,
 		awful.widget.taglist.filter.all,
-		awful.util.table.join(
+		gears.table.join(
 			awful.button(
 				{},
 				1,

@@ -9,7 +9,6 @@
 -- Initialization
 -- ===================================================================
 
-
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
@@ -22,14 +21,12 @@ local task_list = require("widgets.pastel.task-list")
 -- define module table
 local top_panel = {}
 
-
 -- ===================================================================
 -- Bar Creation
 -- ===================================================================
 
-
 top_panel.create = function(s)
-	local clock 			= require('widgets.glorious.clock')(s)
+   local clock = require("widgets.glorious.clock")(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
@@ -38,11 +35,11 @@ top_panel.create = function(s)
       width = s.geometry.width,
    })
 
-   panel:setup {
+   panel:setup({
       expand = "none",
       layout = wibox.layout.align.horizontal,
       task_list.create(s),
-		clock,
+      clock,
       {
          layout = wibox.layout.fixed.horizontal,
          wibox.container.margin(wibox.widget.systray(), dpi(5), dpi(5), dpi(5), dpi(5)),
@@ -52,15 +49,13 @@ top_panel.create = function(s)
          require("widgets.pastel.bluetooth"),
          require("widgets.pastel.network")(),
          require("widgets.pastel.battery"),
-         wibox.container.margin(require("widgets.pastel.layout-box"), dpi(5), dpi(5), dpi(5), dpi(5))
-      }
-   }
-
+         wibox.container.margin(require("widgets.pastel.layout-box"), dpi(5), dpi(5), dpi(5), dpi(5)),
+      },
+   })
 
    -- ===================================================================
    -- Functionality
    -- ===================================================================
-
 
    -- hide panel when client is fullscreen
    local function change_panel_visibility(client)
@@ -72,7 +67,6 @@ top_panel.create = function(s)
    -- connect panel visibility function to relevant signals
    client.connect_signal("property::fullscreen", change_panel_visibility)
    client.connect_signal("focus", change_panel_visibility)
-
 end
 
 return top_panel

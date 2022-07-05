@@ -93,7 +93,6 @@ awesome.connect_signal("volume_change", function()
    -- )
    awful.spawn.easy_async_with_shell(
       "pamixer --get-volume; pamixer --get-mute",
-
       function(stdout, stderr, reason, exit_code)
          --local volume_level, mute = string.match(stdout, ".+%[(%d?%d?%d)%%%].*%[(%a?%a%a)%].*")
          local volume_level, mute = string.match(stdout, "^(.+)\n(.+)\n$")
@@ -111,12 +110,14 @@ awesome.connect_signal("volume_change", function()
       end,
       false
    )
-
+   print("gurk")
    -- make volume_adjust component visible
-   if volume_adjust.visible then
-      hide_volume_adjust:again()
-   else
-      volume_adjust.visible = true
-      hide_volume_adjust:start()
-   end
+   -- if volume_adjust.visible then
+   --    hide_volume_adjust:again()
+   -- else
+   --    volume_adjust.visible = true
+   --    hide_volume_adjust:start()
+   -- end
+   hide_volume_adjust:again()
+   volume_adjust.visible = true
 end)

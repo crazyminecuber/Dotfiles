@@ -62,7 +62,8 @@ return packer.startup({
          config = function()
             require("user.lsp")
          end,
-         requires = { "williamboman/nvim-lsp-installer", -- simple to use language server installer
+         requires = {
+            "williamboman/nvim-lsp-installer", -- simple to use language server installer
             --use "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
             "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
          },
@@ -149,7 +150,7 @@ return packer.startup({
 
       -- snippets
       use({
-      "L3MON4D3/LuaSnip", --snippet engine
+         "L3MON4D3/LuaSnip", --snippet engine
          config = function()
             require("user.setup.lua-snip")
          end,
@@ -191,7 +192,7 @@ return packer.startup({
             require("user.setup.alpha")
          end,
       })
-      use "fladson/vim-kitty"
+      use("fladson/vim-kitty")
 
       -- Which key
       use({
@@ -226,10 +227,10 @@ return packer.startup({
       use("ellisonleao/gruvbox.nvim")
       use("tjdevries/colorbuddy.vim")
       use("tjdevries/gruvbuddy.nvim")
-     -- use("sainnhe/gruvbox-material")
+      -- use("sainnhe/gruvbox-material")
       use("folke/tokyonight.nvim")
       use("ful1e5/onedark.nvim")
-     -- use("eddyekofo94/gruvbox-flat.nvim")
+      -- use("eddyekofo94/gruvbox-flat.nvim")
       --use("MortenStabenau/matlab-vim")
 
       --use {'Rahlir/nvim-matlab', run = 'vim.cmd [[UpdateRemotePlugins]]'}
@@ -321,12 +322,19 @@ return packer.startup({
             require("user.setup.toggleterm")
          end,
       })
+      use({
+         "crazyminecuber/rust-tools.nvim",
+         config = function()
+             require("user.setup.rust-tools")
+         end,
+      })
 
       use({
          "mfussenegger/nvim-dap",
          requires = {
             "rcarriga/nvim-dap-ui",
             "theHamsta/nvim-dap-virtual-text",
+            "nvim-telescope/telescope-dap.nvim",
          },
          config = function()
             require("user.setup.dap")

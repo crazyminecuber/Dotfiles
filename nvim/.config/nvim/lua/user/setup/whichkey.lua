@@ -142,6 +142,8 @@ local mappings = {
       },
       u = {
          name = "UI",
+         c = { "<cmd> lua require('dapui').close()<CR>", "close" },
+         o = { "<cmd> lua require('dapui').open()<CR>", "open" },
          h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Hover" },
          f = { "<cmd>lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", "Float" },
       },
@@ -205,7 +207,7 @@ local mappings = {
          "<cmd>Telescope lsp_document_diagnostics<cr>",
          "Document Diagnostics",
       },
-      f = { "<cmd>lua vim.lsp.buf.formatting { async = true }<cr>", "Format" },
+      f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
 
       i = { "<cmd>LspInfo<cr>", "Info" },
       -- 	I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -309,6 +311,9 @@ local mappings = {
       k = { ":wincmd k<CR>", "Up window" },
       l = { ":wincmd l<CR>", "Right window" },
       o = { ":ZoomWinTabToggle<CR>", "Toggle window zoom" },
+   },
+   [","] = {
+      "<cmd>lua run_gurk()<cr>", "Gurk runner"
    },
 }
 

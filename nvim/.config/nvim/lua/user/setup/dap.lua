@@ -36,7 +36,7 @@ dap.configurations.cpp = {
 -- If you want to use this for rust and c, add something like this:
 
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+--dap.configurations.rust = dap.configurations.cpp
 
 require("nvim-dap-virtual-text").setup {
     enabled = true,                     -- enable this plugin (the default)
@@ -52,6 +52,9 @@ require("nvim-dap-virtual-text").setup {
     virt_text_win_col = nil             -- position the virtual text at a fixed window column (starting from the first text column) ,
                                         -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
 }
+
+
+
 
 
 require("dapui").setup({
@@ -95,3 +98,14 @@ require("dapui").setup({
   },
   windows = { indent = 1 },
 })
+
+local dapui = require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end

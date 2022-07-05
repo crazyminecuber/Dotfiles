@@ -3,7 +3,7 @@ local gears = require('gears')
 local beautiful = require('beautiful')
 local watch = require('awful.widget.watch')
 local dpi = beautiful.xresources.apply_dpi
-local icons = require('theme.icons')
+local icons = require('icons.glorious')
 
 local total_prev = 0
 local idle_prev = 0

@@ -58,8 +58,8 @@ volume_slider:connect_signal(
 	'property::value',
 	function()
 		local volume_level = volume_slider:get_value()
-		
-		spawn('amixer -D pulse sset Master ' .. 
+
+		spawn('amixer -D pulse sset Master ' ..
 			volume_level .. '%',
 			false
 		)
@@ -130,7 +130,7 @@ local action_jump = function()
 end
 
 action_level:buttons(
-	awful.util.table.join(
+	gears.table.join(
 		awful.button(
 			{},
 			1,
